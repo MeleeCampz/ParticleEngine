@@ -12,12 +12,14 @@ public:
 	Engine(void);
 	~Engine(void);
 
-	void addAffector(Affector toAddAffector);
-	void addProducer(Producer toAddProducer);
-	void draw();
 	void update();
+	void draw();
+
+	void addAffector(Affector* toAddAffector);
+	void addProducer(Producer* toAddProducer);
+
 private:
-	std::list <Affector> affectors_;
-	std::list <Particle> particles_;
-	std::list <Producer> producers_;
+	std::list <Affector*> affectors_;
+	std::list <Particle*> particles_;
+	std::list <Producer*> producers_;
 };
