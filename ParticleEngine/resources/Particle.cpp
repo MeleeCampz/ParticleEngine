@@ -14,7 +14,7 @@ void Particle::addForce(cml::vector3f force)
 {
 }
 
-void draw()
+void Particle::draw()
 {
 }
 

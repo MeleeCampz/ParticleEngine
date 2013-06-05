@@ -4,6 +4,8 @@
 #include "GL\glut.h"
 #include "cml\cml.h"
 
+#include "InputOutputController.h"
+
 
 /**
  * updates everything
@@ -42,9 +44,21 @@ int setupGLUT(int argc, char** argv);
 void init();
 
 /**
+* used for handling keyboard input
+*/
+void keyboardEvent(unsigned char i, int x, int y);
+
+/**
+* used fot handling mouse input
+*/
+void mouseEvent(int button, int state, int x, int y);
+
+/**
  * frees all memory
  */
 void cleanup();
+
+InputOutputController inputOutController_;
 
 
 int main(int argc, char** argv) 
@@ -72,15 +86,7 @@ void update(int value)
 
 void draw()
 {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	//test
-	glPushMatrix();
-		glTranslated(0.0, 0.0, -10.0);
-		glutSolidTeapot(1.0);
-	glPopMatrix();
-
-	glutSwapBuffers();
+	inputOutController_.draw();
 }
 
 
@@ -115,6 +121,8 @@ int setupGLUT(int argc, char** argv)
 	glutDisplayFunc(draw);
 	glutIdleFunc(idle);
 	glutReshapeFunc(reshape);
+	glutKeyboardFunc(keyboardEvent);
+	glutMouseFunc(mouseEvent);
 
 	glutTimerFunc(25, update, 0);
 
@@ -133,9 +141,19 @@ void init()
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 
+
 	std::cout << "Everything else is succesfully initialised." << std::endl;
 }
 
+void keyboardEvent(unsigned char i, int x, int y)
+{
+	inputOutController_.keyboard(i,x,y);
+}
+
+void mouseEvent(int button, int state, int x, int y)
+{
+	inputOutController_.mouseClick(button,x,y);
+}
 
 void cleanup()
 {
