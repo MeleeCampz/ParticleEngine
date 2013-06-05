@@ -1,7 +1,8 @@
 #include <cstdlib>
 #include <iostream>
 
-#include <GL/glut.h>
+#include "GL\glut.h"
+#include "cml\cml.h"
 
 
 /**
