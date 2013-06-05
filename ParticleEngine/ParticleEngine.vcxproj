@@ -65,16 +65,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="resources\Affector.cpp" />
+    <ClCompile Include="resources\Button.cpp" />
     <ClCompile Include="resources\Engine.cpp" />
     <ClCompile Include="resources\HudElement.cpp" />
+    <ClCompile Include="resources\Image.cpp" />
     <ClCompile Include="resources\InputOutputController.cpp" />
     <ClCompile Include="resources\main.cpp" />
+    <ClCompile Include="resources\Particle.cpp" />
+    <ClCompile Include="resources\Producer.cpp" />
+    <ClCompile Include="resources\SelectableObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Affector.h" />
+    <ClInclude Include="include\Button.h" />
     <ClInclude Include="include\Engine.h" />
     <ClInclude Include="include\GL\glut.h" />
     <ClInclude Include="include\HudElement.h" />
+    <ClInclude Include="include\Image.h" />
     <ClInclude Include="include\InputOutputController.h" />
+    <ClInclude Include="include\Particle.h" />
+    <ClInclude Include="include\Producer.h" />
+    <ClInclude Include="include\SelectableObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
