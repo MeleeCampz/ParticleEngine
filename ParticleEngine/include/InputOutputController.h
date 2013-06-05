@@ -20,4 +20,8 @@ private:
 	HudElement			hubElementBottom_;
 	HudElement			hudElementEight_;
 	SelectableObject	selectedObject_;
+	//Noch nicht im KlassenDiagramm:
+	GLfloat			distanceToCenter;
+	GLfloat			angleX;
+	GLfloat			angleY;
 };
