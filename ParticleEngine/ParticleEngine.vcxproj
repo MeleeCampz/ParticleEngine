@@ -65,10 +65,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="resources\Engine.cpp" />
+    <ClCompile Include="resources\HudElement.cpp" />
+    <ClCompile Include="resources\InputOutputController.cpp" />
     <ClCompile Include="resources\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Engine.h" />
     <ClInclude Include="include\GL\glut.h" />
+    <ClInclude Include="include\HudElement.h" />
+    <ClInclude Include="include\InputOutputController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
