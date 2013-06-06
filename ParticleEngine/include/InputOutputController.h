@@ -13,15 +13,16 @@ public:
 
 	void draw();
 	void keyboard(unsigned char key,int x, int y);
-	void mouseClick(int button, int x, int y);
+	void mouseClick(int button, int state, int x, int y);
 private:
 	cml::vector3f		cameraPosition_;
 	Engine				engine_;
-	HudElement			hubElementBottom_;
-	HudElement			hudElementEight_;
+	HudElement			hudElementBottom_;
+	HudElement			hudElementRight_;
 	SelectableObject	selectedObject_;
 	//Noch nicht im KlassenDiagramm:
-	GLfloat			distanceToCenter;
-	GLfloat			angleX;
-	GLfloat			angleY;
+	GLfloat			distanceToCenter_;
+	GLfloat			angleX;	//Rotation around the Y-Axe
+	GLfloat			angleY; //Rotation around the X-Axe
+
 };

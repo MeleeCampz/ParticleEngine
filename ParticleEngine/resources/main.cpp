@@ -154,7 +154,7 @@ void keyboardEvent(unsigned char i, int x, int y)
 
 void mouseEvent(int button, int state, int x, int y)
 {
-	inputOutController_.mouseClick(button,x,y);
+	inputOutController_.mouseClick(button,state,x,y);
 }
 
 void cleanup()
