@@ -5,7 +5,7 @@
 class Button : public HudElement
 {
 public:
-	Button(void(*funktion)(),cml::vector2i position,cml::vector2i size,cml::vector4f backgroundColor);
+	Button(void(*funktion)(),cml::vector2f position,cml::vector2f size,cml::vector4f backgroundColor);
 	~Button(void);
 
 	void draw();

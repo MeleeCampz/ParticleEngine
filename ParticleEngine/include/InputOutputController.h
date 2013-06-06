@@ -26,7 +26,9 @@ private:
 	GLfloat			angleX;	//Rotation around the Y-Axe
 	GLfloat			angleY; //Rotation around the X-Axe
 
-
+	void initSzeneLight();
+	void initSzeneMaterial();
+	//zum wieder löschen
 	std::list<HudElement*> buttonlist;
 	HudElement	hud;
 };
