@@ -7,7 +7,7 @@
 class HudElement
 {
 public:
-	HudElement(cml::vector2i position,cml::vector2i size,cml::vector4f backgroundColor,std::list<HudElement> subElements);
+	HudElement(cml::vector2i position,cml::vector2i size,cml::vector4f backgroundColor,std::list<HudElement*> subElements);
 	HudElement();
 	~HudElement(void);
 
@@ -19,5 +19,5 @@ protected:
 	cml::vector4f backgroundColor_;
 	cml::vector2i position_;
 	cml::vector2i size_;
-	std::list<HudElement> subElements_;
+	std::list<HudElement*> subElements_;
 };

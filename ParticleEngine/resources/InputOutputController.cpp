@@ -3,10 +3,12 @@
 #include <math.h>
 
 //wieder löschen:
+#include "HudElement.h"
 #include"Button.h"
 void test(){std::cout<<"button pressed!"<<std::endl;}
 void (*test_ptr)()(&test);
-Button b=Button(test_ptr,cml::vector2i(200,0),cml::vector2i(400,120),cml::vector4f(1,0.2,0.2,0));
+Button b=Button(test_ptr,cml::vector2i(200,100),cml::vector2i(400,120),cml::vector4f(1,0.2,0.2,0));
+
 
 
 InputOutputController::InputOutputController(void)
@@ -18,7 +20,13 @@ InputOutputController::InputOutputController(void)
 	angleX=0;
 	angleY=0;
 
-	hudElementBottom_=&b;
+	/*buttonlist.push_back(new Button(test_ptr,cml::vector2i(10,10),cml::vector2i(50,50),cml::vector4f(1,0.2,0.2,0)));
+	buttonlist.push_back(new Button(test_ptr,cml::vector2i(110,10),cml::vector2i(50,50),cml::vector4f(1,0.2,0.2,0)));
+	buttonlist.push_back(new Button(test_ptr,cml::vector2i(210,10),cml::vector2i(50,50),cml::vector4f(1,0.2,0.2,0)));
+	hud=HudElement(cml::vector2i(500,100),cml::vector2i(200,400),cml::vector4f(0,0.8,0,0.8),buttonlist);
+
+	hudElementRight_=&hud;*/
+	hudElementBottom_=0;
 }
 
 
@@ -47,9 +55,10 @@ void InputOutputController::draw()
 			//glutSolidTeapot(1);
 			engine_->draw();
 		glPopMatrix();
-		//hudElementRight_.draw();
-		hudElementBottom_->draw();
-		//b.draw();
+		if(hudElementBottom_!=0){
+			hudElementBottom_->draw();
+		}
+		//hudElementRight_->draw();
 	glPopMatrix();
 }
 
@@ -71,7 +80,7 @@ void InputOutputController::keyboard(unsigned char key,int x, int y)
 			}
 			break;
 		case 'a':
-				angleX+=2;
+				angleX-=2;
 			break;
 		case 's':
 			if(angleY>-89){
@@ -79,7 +88,7 @@ void InputOutputController::keyboard(unsigned char key,int x, int y)
 			}
 			break;
 		case 'd':
-				angleX-=2;
+				angleX+=2;
 			break;
 		case 'q':
 			distanceToCenter_--;

@@ -15,25 +15,32 @@ Button::~Button(void)
 
 void Button::draw()
 {
-		glMatrixMode(GL_PROJECTION);
-		glPushMatrix();
+	//Draw HudElement background rect
+	HudElement::draw();
+	//Draw an octangon around the button:
+	glMatrixMode(GL_PROJECTION);
+	glPushMatrix();
 		glLoadIdentity();
-		glOrtho(0,800,0,600,-1,1);
+		glOrtho(0,glutGet(GLUT_WINDOW_WIDTH),0,glutGet(GLUT_WINDOW_HEIGHT),-1,1);
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
-		glLoadIdentity();
-
-		glBegin(GL_QUADS);
-			glColor3f(backgroundColor_[0],backgroundColor_[1],backgroundColor_[2]);
-			glVertex2i(position_[0],position_[1]);
-			glVertex2i(position_[0]+size_[0],position_[1]);
-			glVertex2i(position_[0]+size_[0],position_[1]+size_[1]);
-			glVertex2i(position_[0],position_[1]+size_[1]);
-		glEnd();
-		glMatrixMode(GL_PROJECTION);
+			glLoadIdentity();
+			glBegin(GL_TRIANGLE_FAN);
+				glColor4f(1,1,1,0);
+				glVertex2i(position_[0]-3,position_[1]-3);
+				glVertex2i(position_[0]+size_[0]/2,position_[1]-10);
+				glVertex2i(position_[0]+3+size_[0],position_[1]-3);
+				glVertex2i(position_[0]+10+size_[0],position_[1]+size_[1]/2);
+				glColor4f(0.3,0.3,0.3,0);
+				glVertex2i(position_[0]+size_[0]+5,position_[1]+size_[1]+3);
+				glVertex2i(position_[0]+size_[0]/2,position_[1]+size_[1]+10);
+				glVertex2i(position_[0]-5,position_[1]+size_[1]+3);
+				glVertex2i(position_[0]-10,position_[1]+size_[1]/2);
+			glEnd();
+			glMatrixMode(GL_PROJECTION);
 		glPopMatrix();
 		glMatrixMode(GL_MODELVIEW);
-		glPopMatrix();
+	glPopMatrix();
 	glPopMatrix();
 }
 
@@ -42,7 +49,7 @@ void Button::mouseClick(int button, int state, cml::vector2i position)
 	//Check if button was realed
 	if(button==GLUT_LEFT_BUTTON && state==GLUT_UP){
 		//check if button is in right position
-		if(position[0]>position_[0] && position[1]<600-position_[1] && position[0]<position_[0]+size_[0] && position[1]>600-position_[1]-size_[1]){
+		if(position[0]>position_[0] && position[1]<glutGet(GLUT_WINDOW_HEIGHT) -position_[1] && position[0]<position_[0]+size_[0] && position[1]>glutGet(GLUT_WINDOW_HEIGHT)-position_[1]-size_[1]){
 			(*funktion_)();
 		}
 	}
