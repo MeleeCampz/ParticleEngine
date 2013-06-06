@@ -14,6 +14,19 @@ Particle::Particle(cml::vector3f position, GLfloat mass, GLint lifetime, cml::ve
 }
 
 
+Particle::Particle(cml::vector3f position, ParticleSpecification particleSpecification):
+	position_(position),
+	velocity_(0.0, 0.0, 0.0),
+	force_(0.0, 0.0, 0.0),
+	mass_(particleSpecification.mass),
+	isAlive_(true),
+	lifetime_(particleSpecification.lifetime),
+	color_(particleSpecification.color),
+	size_(particleSpecification.size)
+{
+}
+
+
 Particle::~Particle(void)
 {
 }

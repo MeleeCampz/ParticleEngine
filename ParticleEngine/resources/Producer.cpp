@@ -1,12 +1,35 @@
 #include "..\include\Producer.h"
 
 
-Producer::Producer(GLfloat spawnTime, cml::vector3f initialForce, GLfloat spreadStrength):
+Producer::Producer(cml::vector3f position, GLfloat spawnTime, cml::vector3f initialForce, GLfloat spreadStrength, Particle::ParticleSpecification particleSpecification):
+	position_(position),
 	spawnTime_(spawnTime),
 	elapsedTime_(0),
 	initialForce_(initialForce),
-	spreadStrength_(spreadStrength)
+	particleSpecification_(particleSpecification)
 {
+	if(initialForce_.length_squared() > 0){
+		spreadStrength_ = initialForce_.length() * spreadStrength;
+	}
+	else{
+		spreadStrength_ = spreadStrength;
+	}
+}
+
+
+Producer::Producer(cml::vector3f position, ProducerSpecification producerSpecification, Particle::ParticleSpecification particleSpecification):
+	position_(position),
+	spawnTime_(producerSpecification.spawnTime),
+	elapsedTime_(0),
+	initialForce_(producerSpecification.initialForce),
+	particleSpecification_(particleSpecification)
+{
+	if(initialForce_.length_squared() > 0){
+		spreadStrength_ = initialForce_.length() * producerSpecification.spreadStrength;
+	}
+	else{
+		spreadStrength_ = producerSpecification.spreadStrength;
+	}
 }
 
 
@@ -25,7 +48,7 @@ void Producer::update()
 	elapsedTime_ += 1;
 	while(elapsedTime_ >= spawnTime_){
 		elapsedTime_ -= spawnTime_;
-		Particle* particle = new Particle( cml::vector3f(0.0, 0.0, 0.0), 1.0, 1000, cml::vector4f(1.0, 0.0, 0.0, 0.50), 0.1 );
+		Particle* particle = new Particle( position_, particleSpecification_);
 
 		cml::vector3f randomForce;
 		cml::random_unit(randomForce);

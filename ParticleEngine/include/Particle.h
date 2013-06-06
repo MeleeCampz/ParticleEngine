@@ -6,7 +6,20 @@
 class Particle
 {
 public:
+
+	struct ParticleSpecification
+	{
+		GLfloat			mass;
+	
+		GLint			lifetime;
+	
+		cml::vector4f	color;
+		GLfloat			size;
+	};
+
+
 	Particle(cml::vector3f position, GLfloat mass, GLint lifetime, cml::vector4f color, GLfloat size);
+	Particle(cml::vector3f position, ParticleSpecification particleSpecification);
 	~Particle(void);
 
 	void draw();

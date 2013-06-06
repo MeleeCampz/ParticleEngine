@@ -7,14 +7,26 @@ Engine::Engine(void):
 	producers_()
 {
 	/*test
-	Particle* testParticle = new Particle( cml::vector3f(0.0, 0.0, 0.0), 1.0, 1000, cml::vector4f(1.0, 0.0, 0.0, 0.50), 0.1 );
+	//										position						mass	lifetime	color									size
+	Particle* testParticle = new Particle(	cml::vector3f(0.0, 0.0, 0.0),	1.0,	1000,		cml::vector4f(1.0, 0.0, 0.0, 0.50),		0.1 );
 	testParticle->addForce(cml::vector3f(0.01, 0.0, 0.0));
 	particles_.push_back( testParticle );
 	*/
-	/*test
-	Producer* testProducer = new Producer(0.3, cml::vector3f(0.1, 0.0, 0.0), 0.01);
+	/*test*/
+	Particle::ParticleSpecification particleSpecification;
+	particleSpecification.mass = 1.0;
+	particleSpecification.lifetime = 100;
+	particleSpecification.color = cml::vector4f(1.0, 1.0, 0.0, 0.00);
+	particleSpecification.size = 0.1;
+
+	Producer::ProducerSpecification producerSpecification;
+	producerSpecification.spawnTime = 1.3;
+	producerSpecification.initialForce = cml::vector3f(0.1, 0.0, 0.0);
+	producerSpecification.spreadStrength = 0.1;
+
+	Producer* testProducer = new Producer( cml::vector3f(0.0, 0.0, 0.0), producerSpecification, particleSpecification);
 	producers_.push_back(testProducer);
-	*/
+	/**/
 
 }
 
