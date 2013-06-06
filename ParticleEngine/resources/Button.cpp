@@ -34,11 +34,13 @@ void Button::draw()
 
 void Button::mouseClick(int button, int state, cml::vector2i position)
 {
-	//Check if button was realed
+	//Check if mouse button was realeased
 	if(button==GLUT_LEFT_BUTTON && state==GLUT_UP){
-		//check if button is in right position
-		if(position[0]>position_[0]*windowSize_[0] && position[1]<windowSize_[1] -position_[1]*windowSize_[1] && position[0]<position_[0]*windowSize_[0]+size_[0]*windowSize_[0] && position[1]>windowSize_[1]-position_[1]*windowSize_[1]-size_[1]*windowSize_[1]){
-			(*funktion_)();
+		//check if mouse pos is inside the button
+		if(position[0]>position_[0]*windowSize_[0] && position[1]>position_[1]*windowSize_[1] && position[0]<(position_[0]+size_[0])*windowSize_[0] && position[1]<(position_[1]+size_[1])*windowSize_[1]){
+			if(funktion_!=nullptr){
+				(*funktion_)();
+			}
 		}
 	}
 }

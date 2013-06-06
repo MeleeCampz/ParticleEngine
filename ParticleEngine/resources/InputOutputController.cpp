@@ -5,9 +5,6 @@
 //wieder löschen:
 #include "HudElement.h"
 #include"Button.h"
-void test(){std::cout<<"button pressed!"<<std::endl;}
-void (*test_ptr)()(&test);
-Button b=Button(test_ptr,cml::vector2f(0.3,0.1),cml::vector2f(0.4,0.1),cml::vector4f(1,1,1,0));
 
 
 
@@ -20,12 +17,15 @@ InputOutputController::InputOutputController(void)
 	angleX=0;
 	angleY=0;
 
-	buttonlist.push_back(new Button(test_ptr,cml::vector2f(0.0,0.1),cml::vector2f(0.2,0.1),cml::vector4f(1,0,0,0)));
-	buttonlist.push_back(new Button(test_ptr,cml::vector2f(0.0,0.3),cml::vector2f(0.2,0.1),cml::vector4f(0,1,0,0)));
-	buttonlist.push_back(new Button(test_ptr,cml::vector2f(0.0,0.5),cml::vector2f(0.2,0.1),cml::vector4f(0,0,1,0)));
-	hud=HudElement(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(0,0.8,0,1),buttonlist);
+	buttonlist.push_back(new Button(nullptr,cml::vector2f(0.0,0.1),cml::vector2f(0.2,0.1),cml::vector4f(1,0,0,0)));
+	buttonlist.push_back(new Button(nullptr,cml::vector2f(0.0,0.3),cml::vector2f(0.2,0.1),cml::vector4f(0,1,0,0)));
+	buttonlist.push_back(new Button(nullptr,cml::vector2f(0.0,0.5),cml::vector2f(0.2,0.1),cml::vector4f(0,0,1,0)));
+	hud=HudElement(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(0,0.8,0,0.6),buttonlist);
 	hudElementRight_=&hud;
-	hudElementBottom_=&b;
+	hudElementBottom_=0;
+
+	initSzeneLight();
+	initSzeneMaterial();
 }
 
 
@@ -54,7 +54,7 @@ void InputOutputController::draw()
 			gluLookAt(	cameraPosition_[0],	cameraPosition_[1],	cameraPosition_[2],			
 						0,					0,					0,
 						0,					1,					0					);
-			glutSolidTeapot(1);
+			//glutSolidTeapot(1);
 			engine_->draw();
 		glPopMatrix();
 		glMatrixMode(GL_PROJECTION);
@@ -62,10 +62,14 @@ void InputOutputController::draw()
 		glOrtho(0,glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT),0,-10,10);
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
+		//GLfloat positionLight1[4]= {0,0,0,1};
+		//glLightfv(GL_LIGHT1, GL_POSITION,positionLight1);
 		if(hudElementBottom_!=0){
 			hudElementBottom_->draw();
 		}
-		hudElementRight_->draw();
+		if(hudElementRight_!=0){
+			hudElementRight_->draw();
+		}
 	glPopMatrix();;
 }
 
@@ -98,10 +102,10 @@ void InputOutputController::keyboard(unsigned char key,int x, int y)
 				angleX+=2;
 			break;
 		case 'q':
-			distanceToCenter_--;
+			distanceToCenter_++;
 			break;
 		case 'e':
-			distanceToCenter_++;
+			distanceToCenter_--;
 			break;
 	}
 	//Calculation the Coordinates of the camera on a sphera around the center of coor-system with the radius=distanceToCenter
@@ -112,5 +116,46 @@ void InputOutputController::keyboard(unsigned char key,int x, int y)
 
 void InputOutputController::mouseClick(int button, int state ,int x, int y)
 {
-	b.mouseClick(button,state ,cml::vector2i(x,y));
+	if(hudElementBottom_!=0){
+		hudElementBottom_->mouseClick(button,state,cml::vector2i(x,y));
+	}
+	if(hudElementRight_!=0){
+		hudElementRight_->mouseClick(button,state,cml::vector2i(x,y));
+	}
+}
+
+void InputOutputController::initSzeneLight()
+{
+    // Beleuchtung global einschalten
+    glEnable(GL_LIGHTING);
+
+    // Farben der Lichtquelle setzen (r,g,b,a)
+    GLfloat ambient[4]  = { 0.1f, 0.1f, 0.1f, 0.1f };
+    GLfloat diffuse[4]  = { 1.0f, 1.0f, 1.0f, 1.0f };
+    GLfloat specular[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+    glEnable(GL_LIGHT0);
+    glLightfv(GL_LIGHT0, GL_AMBIENT,  ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE,  diffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
+
+	GLfloat positionLight0[4]= {0,0,0,1};
+	glLightfv(GL_LIGHT0, GL_POSITION,positionLight0);
+}
+
+void InputOutputController::initSzeneMaterial()
+{
+	// Materialfarben setzen (r,g,b,a)
+    GLfloat globalAmbient[4] = {0.0, 0.0, 0.0, 1.0};
+    GLfloat ambient[4]       = {1.0, 1.0, 1.0, 1.0};
+    GLfloat diffuse[4]       = {1.0, 1.0, 1.0, 1.0};
+    GLfloat specular[4]      = {1.0, 1.0, 1.0, 1.0};
+
+
+    // Materialparameter setzen
+    glMaterialfv(GL_FRONT_AND_BACK,GL_AMBIENT,ambient);
+    glMaterialfv(GL_FRONT_AND_BACK,GL_DIFFUSE,diffuse);
+    glMaterialfv(GL_FRONT_AND_BACK,GL_SPECULAR,specular);
+    glMaterialf (GL_FRONT_AND_BACK,GL_SHININESS,16.0f);
+
 }
