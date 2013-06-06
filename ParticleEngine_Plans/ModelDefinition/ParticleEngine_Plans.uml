@@ -1102,6 +1102,30 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="f967de69-14b5-4380-b420-eab41720b7e2"
+            name="getIsAlive"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="20d74b2d-1184-4fba-99fc-4dadfed3fff5"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8e24b162-242d-421c-9419-2a4f645ce4df"
+                      LastKnownName="GLboolean"
+                      LastKnownLocation="ParticleEngine_Plans.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1378,6 +1402,7 @@
           <property
             Id="deef0d59-9b87-4c51-9ee0-6cebb35d9865"
             name="isHudElementUsed_"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1572,7 +1597,7 @@
           <property
             Id="11f65cc2-52ac-433b-a217-4162369bcb87"
             name="subElements_"
-            visibility="Private"
+            visibility="Protected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1603,7 +1628,7 @@
           <property
             Id="cf9a66f6-8e43-47f1-bac0-78a4011f2ccc"
             name="size_"
-            visibility="Private"
+            visibility="Protected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1622,7 +1647,7 @@
           <property
             Id="f65d0f9a-bbdd-4367-8894-3b623e088434"
             name="backgroundColor_"
-            visibility="Private"
+            visibility="Protected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1641,7 +1666,7 @@
           <property
             Id="d7d14dcb-d02f-44b0-8539-60329fe37544"
             name="position_"
-            visibility="Private"
+            visibility="Protected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"

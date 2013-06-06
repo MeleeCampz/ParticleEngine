@@ -11,15 +11,16 @@ public:
 	InputOutputController(void);
 	~InputOutputController(void);
 
+	void update();
 	void draw();
 	void keyboard(unsigned char key,int x, int y);
 	void mouseClick(int button, int state, int x, int y);
 private:
 	cml::vector3f		cameraPosition_;
-	Engine				engine_;
-	HudElement			hudElementBottom_;
-	HudElement			hudElementRight_;
-	SelectableObject	selectedObject_;
+	Engine*				engine_;
+	HudElement*			hudElementBottom_;
+	HudElement*			hudElementRight_;
+	SelectableObject*	selectedObject_;
 	//Noch nicht im KlassenDiagramm:
 	GLfloat			distanceToCenter_;
 	GLfloat			angleX;	//Rotation around the Y-Axe

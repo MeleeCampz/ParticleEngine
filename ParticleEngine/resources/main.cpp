@@ -58,7 +58,7 @@ void mouseEvent(int button, int state, int x, int y);
  */
 void cleanup();
 
-InputOutputController inputOutController_;
+InputOutputController* inputOutController_;
 
 
 int main(int argc, char** argv) 
@@ -78,6 +78,7 @@ int main(int argc, char** argv)
 void update(int value)
 {
 
+	inputOutController_->update();
 
 	//calls the next update in 25 ms
 	glutTimerFunc(25, update, 0);
@@ -87,7 +88,7 @@ void update(int value)
 void draw()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	inputOutController_.draw();
+	inputOutController_->draw();
 	glutSwapBuffers();
 }
 
@@ -143,22 +144,26 @@ void init()
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 
+	glShadeModel(GL_SMOOTH);
+
+	inputOutController_ = new InputOutputController();
 
 	std::cout << "Everything else is succesfully initialised." << std::endl;
 }
 
 void keyboardEvent(unsigned char i, int x, int y)
 {
-	inputOutController_.keyboard(i,x,y);
+	inputOutController_->keyboard(i,x,y);
 }
 
 void mouseEvent(int button, int state, int x, int y)
 {
-	inputOutController_.mouseClick(button,state,x,y);
+	inputOutController_->mouseClick(button,state,x,y);
 }
 
 void cleanup()
 {
+	delete inputOutController_;
 	std::cout << "Everything is cleaned up. Have a nice day!" << std::endl;
 }
 

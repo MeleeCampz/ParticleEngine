@@ -14,6 +14,7 @@ public:
 	void addForce(cml::vector3f force);
 	cml::vector3f getPosition();
 	cml::vector3f getVelocity();
+	GLboolean getIsAlive();
 private:
 	cml::vector3f	position_;
 	cml::vector3f	velocity_;

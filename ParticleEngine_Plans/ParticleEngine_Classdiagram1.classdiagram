@@ -467,6 +467,19 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="d6a487e9-2f57-41f5-afa1-8268a35fa40f" name="getIsAlive" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f967de69-14b5-4380-b420-eab41720b7e2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cb347178-4e60-4c8a-b615-f292c2a33006" direction="Return" isUnique="false">
+                  <elementDefinition Id="20d74b2d-1184-4fba-99fc-4dadfed3fff5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="65803c75-8d0b-4a61-9926-619069d2cda0" LastKnownName="GLboolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -591,10 +604,10 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="9a26c4d8-1495-4c32-b707-a0fc7941522e" name="isHudElementUsed_" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="9a26c4d8-1495-4c32-b707-a0fc7941522e" name="isHudElementUsed_" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="deef0d59-9b87-4c51-9ee0-6cebb35d9865" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="49996051-5ee4-40d4-878e-08f5f5ebe996" LastKnownName="GLboolean" />
+              <referencedTypeMoniker Id="c77be75a-cab6-404d-affd-e6403162c0c5" LastKnownName="GLboolean" />
             </type_NamedElement>
           </property>
           <property Id="5252a554-b1e0-44ed-b1c8-a6905f5d9470" name="hudElement_" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -658,11 +671,6 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="49996051-5ee4-40d4-878e-08f5f5ebe996" name="GLboolean" isAbstract="false" isLeaf="false" cachedFullName="GLboolean">
-        <elementDefinition Id="8e24b162-242d-421c-9419-2a4f645ce4df" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
       <class Id="c7c8d1d8-123f-4dbf-8846-b90708bfb513" name="HudElement" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="83f8b734-5e4a-473f-87db-41067cf2c699" />
@@ -695,7 +703,7 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="3a1452d9-05bd-48a9-8cf0-42b312405fc7" name="subElements_" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="3a1452d9-05bd-48a9-8cf0-42b312405fc7" name="subElements_" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <lowerValueInternal>
               <literalString Id="f6e2e12f-bb6e-4df2-9bf5-89126aba33d7" name="Lower" value="0">
                 <elementDefinition Id="051e2c43-2c3d-40a4-a55f-92475d2017d9" />
@@ -708,25 +716,25 @@
             </upperValueInternal>
             <elementDefinition Id="11f65cc2-52ac-433b-a217-4162369bcb87" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="8fe688d0-564b-408b-a0f6-75f0de341d4a" LastKnownName="HudElements" />
+              <referencedTypeMoniker Id="e92b5f00-7f6f-4dc5-843f-3ff117f13511" LastKnownName="HudElements" />
             </type_NamedElement>
           </property>
-          <property Id="5b17d400-516a-4a10-9847-2c0928c03614" name="size_" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="5b17d400-516a-4a10-9847-2c0928c03614" name="size_" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="cf9a66f6-8e43-47f1-bac0-78a4011f2ccc" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="cb247033-bb55-4b23-83cf-c1a0ee1e93dc" LastKnownName="cml::vector2i" />
+              <referencedTypeMoniker Id="7fe439cc-338d-4d27-a713-02a08e96556d" LastKnownName="cml::vector2i" />
             </type_NamedElement>
           </property>
-          <property Id="258d6a5d-c070-4e2a-a1f5-5fbc24c3219f" name="backgroundColor_" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="258d6a5d-c070-4e2a-a1f5-5fbc24c3219f" name="backgroundColor_" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f65d0f9a-bbdd-4367-8894-3b623e088434" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="3c357743-897e-4f74-b722-31aca7e11c8a" LastKnownName="cml::vector4f" />
+              <referencedTypeMoniker Id="11f58655-8aac-4af3-8549-0f8afb62b497" LastKnownName="cml::vector4f" />
             </type_NamedElement>
           </property>
-          <property Id="1d154699-5d2f-4b2d-bfe4-9d8e30ebe10e" name="position_" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="1d154699-5d2f-4b2d-bfe4-9d8e30ebe10e" name="position_" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="d7d14dcb-d02f-44b0-8539-60329fe37544" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="9cb01cb6-1504-46f6-8c72-c2efda4fb22b" LastKnownName="cml::vector2i" />
+              <referencedTypeMoniker Id="5ee51b0b-43ff-4e71-a0d7-70578e35ab83" LastKnownName="cml::vector2i" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -784,11 +792,6 @@
         <elementDefinition Id="50e6bc21-e6a8-4396-a338-178f0ce7434d" />
       </referencedType>
     </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="8fe688d0-564b-408b-a0f6-75f0de341d4a" name="HudElements" isAbstract="false" isLeaf="false" cachedFullName="HudElements">
-        <elementDefinition Id="58a892d9-47cf-4c0e-8f03-ab8a3d176c33" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
       <class Id="9c9cf993-0fd7-44bc-88b8-284bbe574cd9" name="Button" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="2e78ac9d-c6b8-41a3-8d80-03590d93351a" />
@@ -830,16 +833,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="cb247033-bb55-4b23-83cf-c1a0ee1e93dc" name="cml::vector2i" isAbstract="false" isLeaf="false" cachedFullName="cml::vector2i">
-        <elementDefinition Id="50e6bc21-e6a8-4396-a338-178f0ce7434d" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="9cb01cb6-1504-46f6-8c72-c2efda4fb22b" name="cml::vector2i" isAbstract="false" isLeaf="false" cachedFullName="cml::vector2i">
-        <elementDefinition Id="50e6bc21-e6a8-4396-a338-178f0ce7434d" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="b3ef8412-75ea-408b-8313-fd37f6ed71e5" name="HudElement" isAbstract="false" isLeaf="false" cachedFullName="ParticleEngine_Plans::HudElement">
         <elementDefinition Id="83f8b734-5e4a-473f-87db-41067cf2c699" />
       </referencedType>
@@ -867,6 +860,31 @@
         </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="c77be75a-cab6-404d-affd-e6403162c0c5" name="GLboolean" isAbstract="false" isLeaf="false" cachedFullName="GLboolean">
+        <elementDefinition Id="8e24b162-242d-421c-9419-2a4f645ce4df" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="11f58655-8aac-4af3-8549-0f8afb62b497" name="cml::vector4f" isAbstract="false" isLeaf="false" cachedFullName="cml::vector4f">
+        <elementDefinition Id="db7dded4-0733-442a-a785-56b4218de9a5" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e92b5f00-7f6f-4dc5-843f-3ff117f13511" name="HudElements" isAbstract="false" isLeaf="false" cachedFullName="HudElements">
+        <elementDefinition Id="58a892d9-47cf-4c0e-8f03-ab8a3d176c33" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7fe439cc-338d-4d27-a713-02a08e96556d" name="cml::vector2i" isAbstract="false" isLeaf="false" cachedFullName="cml::vector2i">
+        <elementDefinition Id="50e6bc21-e6a8-4396-a338-178f0ce7434d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5ee51b0b-43ff-4e71-a0d7-70578e35ab83" name="cml::vector2i" isAbstract="false" isLeaf="false" cachedFullName="cml::vector2i">
+        <elementDefinition Id="50e6bc21-e6a8-4396-a338-178f0ce7434d" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="b80f057e-ee59-421c-ae39-dd342ec29b5a" name="ParticleEngine_Plans">
     <elementDefinition Id="8963136b-bda4-475b-93e0-cd19f9e28c85" />

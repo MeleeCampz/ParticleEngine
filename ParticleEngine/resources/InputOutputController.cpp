@@ -11,15 +11,26 @@ Button b=Button(test_ptr,cml::vector2i(200,0),cml::vector2i(400,120),cml::vector
 
 InputOutputController::InputOutputController(void)
 {
+	engine_ = new Engine();
+
 	distanceToCenter_= 10;
 	cameraPosition_=cml::vector3f(0,0,distanceToCenter_);
 	angleX=0;
 	angleY=0;
+
+	hudElementBottom_=&b;
 }
 
 
 InputOutputController::~InputOutputController(void)
 {
+	delete engine_;
+}
+
+
+void InputOutputController::update()
+{
+	engine_->update();
 }
 
 
@@ -33,12 +44,12 @@ void InputOutputController::draw()
 			gluLookAt(	cameraPosition_[0],	cameraPosition_[1],	cameraPosition_[2],			
 						0,					0,					0,
 						0,					1,					0					);
-			glutSolidTeapot(1);
-			engine_.draw();
+			//glutSolidTeapot(1);
+			engine_->draw();
 		glPopMatrix();
 		//hudElementRight_.draw();
-		//hudElementBottom_.draw();
-		b.draw();
+		hudElementBottom_->draw();
+		//b.draw();
 	glPopMatrix();
 }
 
