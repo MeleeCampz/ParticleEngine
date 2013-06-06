@@ -16,7 +16,7 @@ public:
 	GLboolean	isHudElementUsed;
 
 	void freeHudElement();
-	virtual HudElement getHudElement(cml::vector2i size);
+	virtual HudElement getHudElement(cml::vector2f size);
 private:
 	HudElement hudElement_;
 };

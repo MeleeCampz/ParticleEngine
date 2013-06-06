@@ -7,7 +7,7 @@
 #include"Button.h"
 void test(){std::cout<<"button pressed!"<<std::endl;}
 void (*test_ptr)()(&test);
-Button b=Button(test_ptr,cml::vector2i(200,100),cml::vector2i(400,120),cml::vector4f(1,0.2,0.2,0));
+Button b=Button(test_ptr,cml::vector2f(0.3,0.1),cml::vector2f(0.4,0.1),cml::vector4f(1,1,1,0));
 
 
 
@@ -20,13 +20,12 @@ InputOutputController::InputOutputController(void)
 	angleX=0;
 	angleY=0;
 
-	/*buttonlist.push_back(new Button(test_ptr,cml::vector2i(10,10),cml::vector2i(50,50),cml::vector4f(1,0.2,0.2,0)));
-	buttonlist.push_back(new Button(test_ptr,cml::vector2i(110,10),cml::vector2i(50,50),cml::vector4f(1,0.2,0.2,0)));
-	buttonlist.push_back(new Button(test_ptr,cml::vector2i(210,10),cml::vector2i(50,50),cml::vector4f(1,0.2,0.2,0)));
-	hud=HudElement(cml::vector2i(500,100),cml::vector2i(200,400),cml::vector4f(0,0.8,0,0.8),buttonlist);
-
-	hudElementRight_=&hud;*/
-	hudElementBottom_=0;
+	buttonlist.push_back(new Button(test_ptr,cml::vector2f(0.0,0.1),cml::vector2f(0.2,0.1),cml::vector4f(1,0,0,0)));
+	buttonlist.push_back(new Button(test_ptr,cml::vector2f(0.0,0.3),cml::vector2f(0.2,0.1),cml::vector4f(0,1,0,0)));
+	buttonlist.push_back(new Button(test_ptr,cml::vector2f(0.0,0.5),cml::vector2f(0.2,0.1),cml::vector4f(0,0,1,0)));
+	hud=HudElement(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(0,0.8,0,1),buttonlist);
+	hudElementRight_=&hud;
+	hudElementBottom_=&b;
 }
 
 
@@ -44,6 +43,9 @@ void InputOutputController::update()
 
 void InputOutputController::draw()
 {
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(45, ((float)800)/600,0.1f, 100);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glPushMatrix();
@@ -52,14 +54,19 @@ void InputOutputController::draw()
 			gluLookAt(	cameraPosition_[0],	cameraPosition_[1],	cameraPosition_[2],			
 						0,					0,					0,
 						0,					1,					0					);
-			//glutSolidTeapot(1);
+			glutSolidTeapot(1);
 			engine_->draw();
 		glPopMatrix();
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		glOrtho(0,glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT),0,-10,10);
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
 		if(hudElementBottom_!=0){
 			hudElementBottom_->draw();
 		}
-		//hudElementRight_->draw();
-	glPopMatrix();
+		hudElementRight_->draw();
+	glPopMatrix();;
 }
 
 void InputOutputController::keyboard(unsigned char key,int x, int y)
