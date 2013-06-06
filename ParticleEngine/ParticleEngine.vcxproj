@@ -69,6 +69,7 @@
     <ClCompile Include="resources\Affector.cpp" />
     <ClCompile Include="resources\Button.cpp" />
     <ClCompile Include="resources\Engine.cpp" />
+    <ClCompile Include="resources\Gravitation.cpp" />
     <ClCompile Include="resources\HudElement.cpp" />
     <ClCompile Include="resources\Image.cpp" />
     <ClCompile Include="resources\InputOutputController.cpp" />
@@ -82,6 +83,7 @@
     <ClInclude Include="include\Button.h" />
     <ClInclude Include="include\Engine.h" />
     <ClInclude Include="include\GL\glut.h" />
+    <ClInclude Include="include\Gravitation.h" />
     <ClInclude Include="include\HudElement.h" />
     <ClInclude Include="include\Image.h" />
     <ClInclude Include="include\InputOutputController.h" />

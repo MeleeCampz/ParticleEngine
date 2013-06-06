@@ -6,13 +6,12 @@ Engine::Engine(void):
 	particles_(),
 	producers_()
 {
-	/*test
-	//										position						mass	lifetime	color									size
-	Particle* testParticle = new Particle(	cml::vector3f(0.0, 0.0, 0.0),	1.0,	1000,		cml::vector4f(1.0, 0.0, 0.0, 0.50),		0.1 );
-	testParticle->addForce(cml::vector3f(0.01, 0.0, 0.0));
-	particles_.push_back( testParticle );
-	*/
-	/*test
+	/*test*/
+	Affector* testAffector = new Gravitation(cml::vector3f(0.0, 0.0, 0.0), cml::vector3f(0.0, -0.01, 0.0));
+	addAffector(testAffector);
+	/**/
+
+	/*test*/
 	Particle::ParticleSpecification particleSpecification;
 	particleSpecification.mass = 1.0;
 	particleSpecification.lifetime = 100;
@@ -20,13 +19,15 @@ Engine::Engine(void):
 	particleSpecification.size = 0.1;
 
 	Producer::ProducerSpecification producerSpecification;
-	producerSpecification.spawnTime = 1.3;
+	producerSpecification.spawnTime = 0.3;
 	producerSpecification.initialForce = cml::vector3f(0.1, 0.0, 0.0);
-	producerSpecification.spreadStrength = 0.1;
+	producerSpecification.spreadStrength = 0.05;
 
 	Producer* testProducer = new Producer( cml::vector3f(0.0, 0.0, 0.0), producerSpecification, particleSpecification);
 	addProducer(testProducer);
-	*/
+	/**/
+
+
 
 }
 
@@ -60,22 +61,36 @@ Engine::~Engine(void)
 void Engine::update()
 {
 	{
+		//for each particle
 		std::list<Particle*>::iterator i = particles_.begin();
 		while(i != particles_.end()){
+			//if it is alive
 			if( (*i)->getIsAlive() == GL_TRUE){
+				//let each affector add his force to the particle
+				std::list<Affector*>::iterator j = affectors_.begin();
+				while(j != affectors_.end()){
+					(*j)->affect(*i);
+					j ++;
+				}
+				//and update it
 				(*i)->update();
 				i++;
 			}
+			//if its dead
 			else{
+				//delete it
 				delete (*i);
 				i = particles_.erase(i);
 			}
 		}
 	}
 	{
+		//for each producer
 		std::list<Producer*>::iterator i = producers_.begin();
 		while(i != producers_.end()){
+			//update it
 			(*i)->update();
+			//and add his produced particles to the set
 			std::list<Particle*> particles = (*i)->extractParticles();
 			particles_.insert(particles_.end(), particles.begin(), particles.end());
 			i++;

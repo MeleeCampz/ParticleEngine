@@ -3,6 +3,8 @@
 #include "Affector.h"
 #include "Particle.h"
 #include "Producer.h"
+//test
+#include "Gravitation.h"
 
 #include <list>
 

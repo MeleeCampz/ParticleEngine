@@ -1,7 +1,8 @@
 #include "..\include\Affector.h"
 
 
-Affector::Affector(void)
+Affector::Affector(cml::vector3f position):
+	position_(position)
 {
 }
 
