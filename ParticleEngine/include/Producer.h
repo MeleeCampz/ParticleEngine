@@ -2,10 +2,12 @@
 
 
 #include "Particle.h"
+#include "SelectableObject.h"
 
 #include <list>
 
-class Producer
+class Producer:
+	public SelectableObject
 {
 public:
 

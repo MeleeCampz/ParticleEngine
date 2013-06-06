@@ -20,6 +20,8 @@ public:
 	void addAffector(Affector* toAddAffector);
 	void addProducer(Producer* toAddProducer);
 
+	std::list <SelectableObject*> getSelectableObjects();
+
 private:
 	std::list <Affector*> affectors_;
 	std::list <Particle*> particles_;

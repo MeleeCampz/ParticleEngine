@@ -2,9 +2,11 @@
 
 
 #include "Particle.h"
+#include "SelectableObject.h"
 
 
-class Affector
+class Affector:
+	public SelectableObject
 {
 public:
 	Affector(cml::vector3f position);

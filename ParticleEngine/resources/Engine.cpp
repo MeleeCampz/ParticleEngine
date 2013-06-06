@@ -26,7 +26,6 @@ Engine::Engine(void):
 	Producer* testProducer = new Producer( cml::vector3f(0.0, 0.0, 0.0), producerSpecification, particleSpecification);
 	addProducer(testProducer);
 	/**/
-
 }
 
 
@@ -114,7 +113,18 @@ void Engine::addAffector(Affector* toAddAffector)
 	affectors_.push_back(toAddAffector);
 }
 
+
 void Engine::addProducer(Producer* toAddProducer)
 {
 	producers_.push_back(toAddProducer);
+}
+
+
+std::list <SelectableObject*> Engine::getSelectableObjects()
+{
+	std::list <SelectableObject*> selectableObjects;
+	selectableObjects.insert(selectableObjects.end(), affectors_.begin(), affectors_.end());
+	selectableObjects.insert(selectableObjects.end(), producers_.begin(), producers_.end());
+
+	return selectableObjects;
 }
