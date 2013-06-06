@@ -12,7 +12,7 @@ Engine::Engine(void):
 	testParticle->addForce(cml::vector3f(0.01, 0.0, 0.0));
 	particles_.push_back( testParticle );
 	*/
-	/*test*/
+	/*test
 	Particle::ParticleSpecification particleSpecification;
 	particleSpecification.mass = 1.0;
 	particleSpecification.lifetime = 100;
@@ -25,8 +25,8 @@ Engine::Engine(void):
 	producerSpecification.spreadStrength = 0.1;
 
 	Producer* testProducer = new Producer( cml::vector3f(0.0, 0.0, 0.0), producerSpecification, particleSpecification);
-	producers_.push_back(testProducer);
-	/**/
+	addProducer(testProducer);
+	*/
 
 }
 
