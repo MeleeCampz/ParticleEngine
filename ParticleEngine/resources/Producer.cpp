@@ -81,5 +81,6 @@ std::list<Particle*> Producer::extractParticles()
 
 HudElement* Producer::getHudElement(cml::vector2f size)
 {
-	HudElement* hudElement = new HudElement(size);
+	 HudElement* hudElement = new HudElement(size);
+	 return hudElement;
 }

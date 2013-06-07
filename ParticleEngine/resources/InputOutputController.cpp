@@ -17,11 +17,8 @@ InputOutputController::InputOutputController(void)
 	angleX=0;
 	angleY=0;
 
-	buttonlist.push_back(new Button(nullptr,cml::vector2f(0.0,0.1),cml::vector2f(0.2,0.1),cml::vector4f(1,0,0,0)));
-	buttonlist.push_back(new Button(nullptr,cml::vector2f(0.0,0.3),cml::vector2f(0.2,0.1),cml::vector4f(0,1,0,0)));
-	buttonlist.push_back(new Button(nullptr,cml::vector2f(0.0,0.5),cml::vector2f(0.2,0.1),cml::vector4f(0,0,1,0)));
-	hud=HudElement(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(0,0.8,0,0.6),buttonlist);
-	hudElementRight_=&hud;
+	hud=new HudElement(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(0,0.8,0,0.6));
+	hudElementRight_=hud;
 	hudElementBottom_=0;
 
 	initSzeneLight();

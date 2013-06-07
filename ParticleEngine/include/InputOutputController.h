@@ -34,6 +34,5 @@ private:
 	GLboolean clicked;
 	GLint currentMousePosX_,currentMousePosY_;
 	//zum wieder löschen
-	std::list<HudElement*> buttonlist;
-	HudElement	hud;
+	HudElement*	hud;
 };

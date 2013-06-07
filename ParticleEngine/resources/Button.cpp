@@ -2,10 +2,10 @@
 
 
 Button::Button(void(*funktion)(),cml::vector2f position,cml::vector2f size,cml::vector4f backgroundColor):
-	funktion_(funktion)
+	funktion_(funktion),
+	HudElement(size)
 {
 	position_=position;
-	size_=size;
 	backgroundColor_=backgroundColor;
 }
 

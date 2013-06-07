@@ -1,27 +1,33 @@
 #include "..\include\HudElement.h"
 
 
-HudElement::HudElement(cml::vector2f position,cml::vector2f size,cml::vector4f backgroundColor,std::list<HudElement*> subElements):
+HudElement::HudElement(cml::vector2f position,cml::vector2f size,cml::vector4f backgroundColor):
 	position_(position),
 	size_(size),
-	backgroundColor_(backgroundColor),
-	subElements_(subElements)
+	backgroundColor_(backgroundColor)
 {
 }
 
 HudElement::HudElement(cml::vector2f size):
 	position_(cml::vector2f(0.0, 0.0)),
 	size_(size),
-	backgroundColor_(cml::vector4f( 1.0, 1.0, 1.0, 0.0)),
-	subElements_()
+	backgroundColor_(cml::vector4f( 1.0, 1.0, 1.0, 0.0))
 {
 }
 
 HudElement::~HudElement(void)
 {
 	for(std::list<HudElement*>::iterator itr = subElements_.begin();itr!=subElements_.end();itr++){
-		//(*itr)->~HudElement();
+	//	(*itr)->~HudElement();
 	}	
+}
+void HudElement::addSubElement(HudElement* subElement)
+{
+	subElements_.push_back(subElement);
+}
+void HudElement::addSubElement(std::list<HudElement*> subElements)
+{
+	subElements_.merge(subElements);
 }
 
 void HudElement::setPosition(cml::vector2i position)

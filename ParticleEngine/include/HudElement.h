@@ -7,10 +7,12 @@
 class HudElement
 {
 public:
-	HudElement(cml::vector2f position,cml::vector2f size,cml::vector4f backgroundColor,std::list<HudElement*> subElements);
+	HudElement(cml::vector2f position,cml::vector2f size,cml::vector4f backgroundColor);
 	HudElement(cml::vector2f size);
 	~HudElement(void);
 
+	void addSubElement(HudElement* subElement);
+	void addSubElement(std::list<HudElement*> subElements);
 	void setPosition(cml::vector2i position);
 	virtual void draw();
 	virtual GLboolean mouseClick(int button, int state, cml::vector2i position);

@@ -119,7 +119,7 @@ int setupGLUT(int argc, char** argv)
 	glutInit(&argc, argv);
 	// glutInitContextVersion(3, 0);
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH);
-	glutInitWindowSize(800, 600);
+	glutInitWindowSize(1600, 900);
 	glutInitWindowPosition(100, 100);
 
 	int windowId = glutCreateWindow("ParticleEngine");
