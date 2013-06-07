@@ -51,6 +51,9 @@
     <ClCompile Include="resources\AttractorLocal.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="resources\Friction.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\GL\glut.h">
@@ -87,6 +90,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="include\AttractorLocal.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Friction.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

@@ -40,3 +40,28 @@ void AttractorLocal::affect(Particle* particle)
 
 	particle->addForce(force);
 }
+
+
+HudElement* AttractorLocal::getHudElement(cml::vector2f size)
+{
+	HudElement* hudElement = new HudElement(size);
+	Button* buttonIncreaseStrength = new Button(&increaseStrength, cml::vector2f(0.1, 0.1), size / 3, cml::vector4f(0.0, 1.0, 0.0, 0.0));
+	Button* buttonDecreaseStrength = new Button(&(this->decreaseStrength), cml::vector2f(0.6, 0.1), size / 3, cml::vector4f(0.0, 1.0, 0.0, 0.0));
+
+	hudElement->addSubElement(buttonIncreaseStrength);
+	hudElement->addSubElement(buttonDecreaseStrength);
+
+	return hudElement;
+}
+
+
+void AttractorLocal::increaseStrength()
+{
+	strength_ += 0.01;
+}
+
+
+void AttractorLocal::decreaseStrength()
+{
+	strength_ -= 0.01;
+}
