@@ -28,3 +28,10 @@ void Gravitation::affect(Particle* particle)
 {
 	particle->addForce(force_);
 }
+
+
+HudElement* Gravitation::getHudElement(cml::vector2f size)
+{
+	HudElement* hudElement = new HudElement(size);
+	return hudElement;
+}

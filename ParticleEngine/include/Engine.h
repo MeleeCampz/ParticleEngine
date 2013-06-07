@@ -6,6 +6,7 @@
 //test
 #include "Gravitation.h"
 #include "AttractorLocal.h"
+#include "Friction.h"
 
 #include <list>
 

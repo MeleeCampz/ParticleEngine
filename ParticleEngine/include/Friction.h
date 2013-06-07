@@ -2,13 +2,12 @@
 
 #include "Affector.h"
 
-class Gravitation:
+class Friction:
 	public Affector
 {
 public:
-
-	Gravitation(cml::vector3f position, cml::vector3f force);
-	~Gravitation(void);
+	Friction(cml::vector3f position, GLfloat strength);
+	~Friction(void);
 
 	//overrides Affector::draw()
 	void draw();
@@ -21,6 +20,9 @@ public:
 
 private:
 
-	cml::vector3f force_;
+	GLfloat strength_;
+
+	void increaseStrength();
+	void decreaseStrength();
 };
 

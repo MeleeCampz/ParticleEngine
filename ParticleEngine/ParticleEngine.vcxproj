@@ -70,6 +70,7 @@
     <ClCompile Include="resources\AttractorLocal.cpp" />
     <ClCompile Include="resources\Button.cpp" />
     <ClCompile Include="resources\Engine.cpp" />
+    <ClCompile Include="resources\Friction.cpp" />
     <ClCompile Include="resources\Gravitation.cpp" />
     <ClCompile Include="resources\HudElement.cpp" />
     <ClCompile Include="resources\Image.cpp" />
@@ -84,6 +85,7 @@
     <ClInclude Include="include\AttractorLocal.h" />
     <ClInclude Include="include\Button.h" />
     <ClInclude Include="include\Engine.h" />
+    <ClInclude Include="include\Friction.h" />
     <ClInclude Include="include\GL\glut.h" />
     <ClInclude Include="include\Gravitation.h" />
     <ClInclude Include="include\HudElement.h" />

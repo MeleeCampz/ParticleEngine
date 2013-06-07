@@ -14,8 +14,14 @@ public:
 
 	//overrides Affector::affect(..)
 	virtual void affect(Particle* particle);
+
+	//overrides SelectableObject::getHudElement(..)
+	HudElement* getHudElement(cml::vector2f size);
 private:
 
 	GLfloat strength_;
+
+	void increaseStrength();
+	void decreaseStrength();
 };
 
