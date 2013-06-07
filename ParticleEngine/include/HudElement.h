@@ -8,7 +8,7 @@ class HudElement
 {
 public:
 	HudElement(cml::vector2f position,cml::vector2f size,cml::vector4f backgroundColor,std::list<HudElement*> subElements);
-	HudElement();
+	HudElement(cml::vector2f size);
 	~HudElement(void);
 
 	void setPosition(cml::vector2i position);

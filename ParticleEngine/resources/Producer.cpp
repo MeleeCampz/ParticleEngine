@@ -77,3 +77,9 @@ std::list<Particle*> Producer::extractParticles()
 	storedParticles_.clear();
 	return particles;
 }
+
+
+HudElement* Producer::getHudElement(cml::vector2f size)
+{
+	HudElement* hudElement = new HudElement(size);
+}

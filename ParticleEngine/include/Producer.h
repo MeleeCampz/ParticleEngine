@@ -27,6 +27,9 @@ public:
 
 	std::list<Particle*> extractParticles();
 
+	//overrides SelectableObject::getHudElement(..)
+	HudElement* getHudElement(cml::vector2f size);
+
 private:
 
 	GLfloat								spawnTime_;

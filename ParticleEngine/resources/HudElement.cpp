@@ -9,7 +9,11 @@ HudElement::HudElement(cml::vector2f position,cml::vector2f size,cml::vector4f b
 {
 }
 
-HudElement::HudElement()
+HudElement::HudElement(cml::vector2f size):
+	position_(cml::vector2f(0.0, 0.0)),
+	size_(size),
+	backgroundColor_(cml::vector4f( 1.0, 1.0, 1.0, 0.0)),
+	subElements_()
 {
 }
 
