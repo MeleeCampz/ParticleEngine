@@ -30,7 +30,7 @@ void HudElement::addSubElement(std::list<HudElement*> subElements)
 	subElements_.merge(subElements);
 }
 
-void HudElement::setPosition(cml::vector2i position)
+void HudElement::setPosition(cml::vector2f position)
 {
 	position_=position;
 }

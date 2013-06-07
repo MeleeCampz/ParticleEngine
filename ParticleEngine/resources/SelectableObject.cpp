@@ -27,6 +27,5 @@ GLfloat SelectableObject::getSize()
 
 HudElement* SelectableObject::getHudElement(cml::vector2f size)
 {
-	//test
-	return new Button(nullptr,cml::vector2f(0.0,0.0),size,cml::vector4f(0.5,0.5,0.5,0));
+	return 0;
 }

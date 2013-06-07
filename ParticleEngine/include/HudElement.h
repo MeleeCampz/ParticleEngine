@@ -13,7 +13,7 @@ public:
 
 	void addSubElement(HudElement* subElement);
 	void addSubElement(std::list<HudElement*> subElements);
-	void setPosition(cml::vector2i position);
+	void setPosition(cml::vector2f position);
 	virtual void draw();
 	virtual GLboolean mouseClick(int button, int state, cml::vector2i position);
 protected:

@@ -45,11 +45,13 @@ void AttractorLocal::affect(Particle* particle)
 HudElement* AttractorLocal::getHudElement(cml::vector2f size)
 {
 	HudElement* hudElement = new HudElement(size);
-	Button* buttonIncreaseStrength = new Button(&increaseStrength, cml::vector2f(0.1, 0.1), size / 3, cml::vector4f(0.0, 1.0, 0.0, 0.0));
-	Button* buttonDecreaseStrength = new Button(&(this->decreaseStrength), cml::vector2f(0.6, 0.1), size / 3, cml::vector4f(0.0, 1.0, 0.0, 0.0));
+	Button<AttractorLocal>* buttonIncreaseStrength = new Button<AttractorLocal>(this, &AttractorLocal::increaseStrength, cml::vector2f(0.1, 0.1), size / 3, cml::vector4f(0.0, 1.0, 0.0, 0.0));
+	//Button<AttractorLocal>* buttonDecreaseStrength = new Button<AttractorLocal>(this, &AttractorLocal::decreaseStrength, cml::vector2f(0.6, 0.1), size / 3, cml::vector4f(0.0, 1.0, 0.0, 0.0));
 
 	hudElement->addSubElement(buttonIncreaseStrength);
-	hudElement->addSubElement(buttonDecreaseStrength);
+	//hudElement->addSubElement(buttonDecreaseStrength);
+
+	hudElement->setPosition(cml::vector2f(0.5, 0.5));
 
 	return hudElement;
 }

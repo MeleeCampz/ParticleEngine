@@ -1,19 +1,23 @@
 #include "..\include\Button.h"
 
-
-Button::Button(void(*funktion)(),cml::vector2f position,cml::vector2f size,cml::vector4f backgroundColor):
-	funktion_(funktion),
-	HudElement(size)
-{
-	position_=position;
-	backgroundColor_=backgroundColor;
-}
-
-Button::~Button(void)
+/*
+template <class T>
+Button<T>::Button(T* thisObject, void(T::*funktion)(),cml::vector2f position,cml::vector2f size,cml::vector4f backgroundColor):
+	HudElement(position, size, backgroundColor)
+	thisObject_(thisObject),
+	funktion_(funktion)
 {
 }
 
-void Button::draw()
+
+template <class T>
+Button<T>::~Button(void)
+{
+}
+
+
+template <class T>
+void Button<T>::draw()
 {
 	windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
 	//Draw an octangon around the button:
@@ -32,12 +36,14 @@ void Button::draw()
 	glEnd();
 }
 
-GLboolean Button::mouseClick(int button, int state, cml::vector2i position)
+
+template <class T>
+GLboolean Button<T>::mouseClick(int button, int state, cml::vector2i position)
 {
 		//check if mouse pos is inside the button
 	if(position[0]>position_[0]*windowSize_[0] && position[1]>position_[1]*windowSize_[1] && position[0]<(position_[0]+size_[0])*windowSize_[0] && position[1]<(position_[1]+size_[1])*windowSize_[1]){
 		if(funktion_!=nullptr){
-			(*funktion_)();
+			thisObject_->funktion_();
 			return true;
 		}
 		return true;
@@ -47,5 +53,6 @@ GLboolean Button::mouseClick(int button, int state, cml::vector2i position)
 	}
 }
 
+*/
 //TODO:
 // Numbers 800 and 600 have to be changed to const/vars
