@@ -5,6 +5,7 @@
 //wieder löschen:
 #include "HudElement.h"
 #include"Button.h"
+#include "Image.h"
 
 
 
@@ -18,7 +19,9 @@ InputOutputController::InputOutputController(void)
 	angleY=0;
 
 	hud=new HudElement(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(0,0.8,0,0.6));
-	hudElementRight_=hud;
+	Image* img=new Image(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(0,0.8,0,0.6));
+	img->setImage("test.png");
+	hudElementRight_=img;
 	hudElementBottom_=0;
 
 	initSzeneLight();
