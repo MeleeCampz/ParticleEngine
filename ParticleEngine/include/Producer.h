@@ -28,8 +28,6 @@ public:
 
 private:
 
-	cml::vector3f						position_;
-
 	GLfloat								spawnTime_;
 
 	GLfloat								elapsedTime_;

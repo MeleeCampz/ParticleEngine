@@ -15,6 +15,7 @@ public:
 	void draw();
 	void keyboard(unsigned char key,int x, int y);
 	void mouseClick(int button, int state, int x, int y);
+	void mousePos(int x, int y);
 private:
 	cml::vector3f		cameraPosition_;
 	Engine*				engine_;
@@ -28,6 +29,10 @@ private:
 
 	void initSzeneLight();
 	void initSzeneMaterial();
+	void select3dObject(int x, int y);
+
+	GLboolean clicked;
+	GLint currentMousePosX_,currentMousePosY_;
 	//zum wieder löschen
 	std::list<HudElement*> buttonlist;
 	HudElement	hud;

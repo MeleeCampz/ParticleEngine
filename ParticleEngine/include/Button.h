@@ -9,7 +9,7 @@ public:
 	~Button(void);
 
 	void draw();
-	void mouseClick(int button, int state, cml::vector2i position);
+	GLboolean mouseClick(int button, int state, cml::vector2i position);
 private:
 	void(*funktion_)();
 };

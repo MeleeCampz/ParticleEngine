@@ -43,14 +43,16 @@ void HudElement::draw()
 	glPopMatrix();
 }
 
-void HudElement::mouseClick(int button, int state, cml::vector2i position)
+GLboolean HudElement::mouseClick(int button, int state, cml::vector2i position)
 {
-	if(button==GLUT_LEFT_BUTTON && state==GLUT_UP){
-		if(position[0]>position_[0]*windowSize_[0] && position[1]>position_[1]*windowSize_[1] && position[0]<(position_[0]+size_[0])*windowSize_[0] && position[1]<(position_[1]+size_[1])*windowSize_[1]){
-			for(std::list<HudElement*>::iterator itr = subElements_.begin();itr!=subElements_.end();itr++){
-													//calculate the mousecoordinates realative to the HudElement
-				(*itr)->mouseClick(button,state,cml::vector2i(position[0]-position_[0]*windowSize_[0],position[1]-position_[1]*windowSize_[1]));
-			}
+	if(position[0]>position_[0]*windowSize_[0] && position[1]>position_[1]*windowSize_[1] && position[0]<(position_[0]+size_[0])*windowSize_[0] && position[1]<(position_[1]+size_[1])*windowSize_[1]){
+		for(std::list<HudElement*>::iterator itr = subElements_.begin();itr!=subElements_.end();itr++){
+			//calculate the mousecoordinates realative to the HudElement
+			(*itr)->mouseClick(button,state,cml::vector2i(position[0]-position_[0]*windowSize_[0],position[1]-position_[1]*windowSize_[1]));
 		}
+		return true;
+	}
+	else{
+		return false;
 	}
 }

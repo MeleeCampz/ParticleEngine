@@ -13,7 +13,7 @@ public:
 
 	void setPosition(cml::vector2i position);
 	virtual void draw();
-	virtual void mouseClick(int button, int state, cml::vector2i position);
+	virtual GLboolean mouseClick(int button, int state, cml::vector2i position);
 protected:
 	cml::vector4f backgroundColor_;
 	cml::vector2f position_;

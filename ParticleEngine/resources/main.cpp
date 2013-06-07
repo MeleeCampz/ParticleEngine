@@ -52,7 +52,10 @@ void keyboardEvent(unsigned char i, int x, int y);
 * used fot handling mouse input
 */
 void mouseEvent(int button, int state, int x, int y);
-
+/**
+* used to keep track of the moause coords
+*/
+void mousepos(int x, int y);
 /**
  * frees all memory
  */
@@ -126,6 +129,7 @@ int setupGLUT(int argc, char** argv)
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboardEvent);
 	glutMouseFunc(mouseEvent);
+	glutPassiveMotionFunc(mousepos);
 
 	glutTimerFunc(25, update, 0);
 
@@ -160,6 +164,10 @@ void keyboardEvent(unsigned char i, int x, int y)
 void mouseEvent(int button, int state, int x, int y)
 {
 	inputOutController_->mouseClick(button,state,x,y);
+}
+
+void mousepos(int x, int y){
+	inputOutController_->mousePos(x,y);
 }
 
 void cleanup()

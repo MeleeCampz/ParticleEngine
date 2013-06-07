@@ -32,16 +32,18 @@ void Button::draw()
 	glEnd();
 }
 
-void Button::mouseClick(int button, int state, cml::vector2i position)
+GLboolean Button::mouseClick(int button, int state, cml::vector2i position)
 {
-	//Check if mouse button was realeased
-	if(button==GLUT_LEFT_BUTTON && state==GLUT_UP){
 		//check if mouse pos is inside the button
-		if(position[0]>position_[0]*windowSize_[0] && position[1]>position_[1]*windowSize_[1] && position[0]<(position_[0]+size_[0])*windowSize_[0] && position[1]<(position_[1]+size_[1])*windowSize_[1]){
-			if(funktion_!=nullptr){
-				(*funktion_)();
-			}
+	if(position[0]>position_[0]*windowSize_[0] && position[1]>position_[1]*windowSize_[1] && position[0]<(position_[0]+size_[0])*windowSize_[0] && position[1]<(position_[1]+size_[1])*windowSize_[1]){
+		if(funktion_!=nullptr){
+			(*funktion_)();
+			return true;
 		}
+		return true;
+	}
+	else{
+		return false;
 	}
 }
 

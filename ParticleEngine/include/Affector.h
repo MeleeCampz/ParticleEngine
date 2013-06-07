@@ -14,6 +14,4 @@ public:
 
 	virtual void affect(Particle* particle) = 0;
 
-private:
-	cml::vector3f position_;
 };

@@ -2,12 +2,12 @@
 
 
 Producer::Producer(cml::vector3f position, GLfloat spawnTime, cml::vector3f initialForce, GLfloat spreadStrength, Particle::ParticleSpecification particleSpecification):
-	position_(position),
 	spawnTime_(spawnTime),
 	elapsedTime_(0),
 	initialForce_(initialForce),
 	particleSpecification_(particleSpecification)
 {
+	position_=position;
 	if(initialForce_.length_squared() > 0){
 		spreadStrength_ = initialForce_.length() * spreadStrength;
 	}
@@ -18,12 +18,12 @@ Producer::Producer(cml::vector3f position, GLfloat spawnTime, cml::vector3f init
 
 
 Producer::Producer(cml::vector3f position, ProducerSpecification producerSpecification, Particle::ParticleSpecification particleSpecification):
-	position_(position),
 	spawnTime_(producerSpecification.spawnTime),
 	elapsedTime_(0),
 	initialForce_(producerSpecification.initialForce),
 	particleSpecification_(particleSpecification)
 {
+	position_=position;
 	if(initialForce_.length_squared() > 0){
 		spreadStrength_ = initialForce_.length() * producerSpecification.spreadStrength;
 	}
