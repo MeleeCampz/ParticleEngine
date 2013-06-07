@@ -67,6 +67,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="resources\Affector.cpp" />
+    <ClCompile Include="resources\AttractorLocal.cpp" />
     <ClCompile Include="resources\Button.cpp" />
     <ClCompile Include="resources\Engine.cpp" />
     <ClCompile Include="resources\Gravitation.cpp" />
@@ -80,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Affector.h" />
+    <ClInclude Include="include\AttractorLocal.h" />
     <ClInclude Include="include\Button.h" />
     <ClInclude Include="include\Engine.h" />
     <ClInclude Include="include\GL\glut.h" />

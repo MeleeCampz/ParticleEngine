@@ -1,10 +1,11 @@
 #include "..\include\SelectableObject.h"
 
 
-SelectableObject::SelectableObject(void)
+SelectableObject::SelectableObject(cml::vector3f position):
+	position_(position),
+	isHudElementUsed(false),
+	size_(0.5)
 {
-	isHudElementUsed=true;
-	size_=5;
 }
 
 
@@ -12,15 +13,19 @@ SelectableObject::~SelectableObject(void)
 {
 }
 
+
 void SelectableObject::freeHudElement()
 {
 }
+
 
 cml::vector3i SelectableObject::getPos()
 {
 	return position_;
 }
-GLint SelectableObject::getSize()
+
+
+GLfloat SelectableObject::getSize()
 {
 	return size_;
 }
@@ -28,11 +33,12 @@ GLint SelectableObject::getSize()
 //test:
 void test_func()
 {
-std::cout<<"Button wurde gedrückt"<<std::endl;
+std::cout<<"Button wurde gedrückt "<<std::endl;
 }
+
 
 HudElement* SelectableObject::getHudElement(cml::vector2f size)
 {
 	//test
-	return new Button(nullptr,cml::vector2f(0.0,0.0),size,cml::vector4f(0.5,0.5,0.5,0));
+	return new Button(test_func,cml::vector2f(0.0,0.0),size,cml::vector4f(0.5,0.5,0.5,0));
 }

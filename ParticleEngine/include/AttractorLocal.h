@@ -2,22 +2,20 @@
 
 #include "Affector.h"
 
-class Gravitation:
+class AttractorLocal:
 	public Affector
 {
 public:
-
-	Gravitation(cml::vector3f position, cml::vector3f force);
-	~Gravitation(void);
+	AttractorLocal(cml::vector3f position, GLfloat strength);
+	~AttractorLocal(void);
 
 	//overrides Affector::draw()
 	void draw();
 
 	//overrides Affector::affect(..)
 	virtual void affect(Particle* particle);
-
 private:
 
-	cml::vector3f force_;
+	GLfloat strength_;
 };
 

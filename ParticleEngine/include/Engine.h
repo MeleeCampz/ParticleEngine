@@ -5,6 +5,7 @@
 #include "Producer.h"
 //test
 #include "Gravitation.h"
+#include "AttractorLocal.h"
 
 #include <list>
 

@@ -2,12 +2,12 @@
 
 
 Producer::Producer(cml::vector3f position, GLfloat spawnTime, cml::vector3f initialForce, GLfloat spreadStrength, Particle::ParticleSpecification particleSpecification):
+	SelectableObject(position),
 	spawnTime_(spawnTime),
 	elapsedTime_(0),
 	initialForce_(initialForce),
 	particleSpecification_(particleSpecification)
 {
-	position_=position;
 	if(initialForce_.length_squared() > 0){
 		spreadStrength_ = initialForce_.length() * spreadStrength;
 	}
@@ -18,12 +18,12 @@ Producer::Producer(cml::vector3f position, GLfloat spawnTime, cml::vector3f init
 
 
 Producer::Producer(cml::vector3f position, ProducerSpecification producerSpecification, Particle::ParticleSpecification particleSpecification):
+	SelectableObject(position),
 	spawnTime_(producerSpecification.spawnTime),
 	elapsedTime_(0),
 	initialForce_(producerSpecification.initialForce),
 	particleSpecification_(particleSpecification)
 {
-	position_=position;
 	if(initialForce_.length_squared() > 0){
 		spreadStrength_ = initialForce_.length() * producerSpecification.spreadStrength;
 	}
@@ -57,6 +57,17 @@ void Producer::update()
 		particle->addForce(initialForce_ + randomForce);
 		storedParticles_.push_back(particle);
 	}
+}
+
+
+void Producer::draw()
+{
+	glPushMatrix();
+		glTranslatef(position_[0], position_[1], position_[2]);
+		glColor4f(0.0, 1.0, 0.0, 0.0);
+		glutSolidSphere(size_, 10, 10);
+
+	glPopMatrix();
 }
 
 

@@ -22,7 +22,8 @@ public:
 	Producer(cml::vector3f position, ProducerSpecification producerSpecification, Particle::ParticleSpecification particleSpecification);
 	~Producer(void);
 
-	virtual void update();
+	void update();
+	void draw();
 
 	std::list<Particle*> extractParticles();
 

@@ -7,20 +7,31 @@ Engine::Engine(void):
 	producers_()
 {
 
-	/*test*/
-	Affector* testAffector = new Gravitation(cml::vector3f(0.0, 0.0, 0.0), cml::vector3f(0.0, -0.01, 0.0));
+	/*test
+	Affector* testAffector = new Gravitation(cml::vector3f(-5.0, 0.0, 0.0), cml::vector3f(0.0, -0.01, 0.0));
 	addAffector(testAffector);
-	/**/
+	*/
+
+	/*test
+	Affector* testAffector2 = new AttractorLocal(cml::vector3f(-5.0, 3.0, 0.0), 0.2);
+	addAffector(testAffector2);
+	*/
+
+	/*test
+	Affector* testAffector3 = new AttractorLocal(cml::vector3f(5.0, 0.0, 0.0), -0.01);
+	addAffector(testAffector3);
+	*/
+
 	/*test*/
 	Particle::ParticleSpecification particleSpecification;
 	particleSpecification.mass = 1.0;
-	particleSpecification.lifetime = 100;
+	particleSpecification.lifetime = 1000;
 	particleSpecification.color = cml::vector4f(1.0, 1.0, 0.0, 0.00);
-	particleSpecification.size = 0.1;
+	particleSpecification.size = 0.05;
 
 	Producer::ProducerSpecification producerSpecification;
 	producerSpecification.spawnTime = 0.3;
-	producerSpecification.initialForce = cml::vector3f(0.0, 0.0, 0.0);
+	producerSpecification.initialForce = cml::vector3f(0.1, 0.0, 0.0);
 	producerSpecification.spreadStrength = 0.1;
 
 	Producer* testProducer = new Producer( cml::vector3f(0.0, 0.0, 0.0), producerSpecification, particleSpecification);
@@ -98,12 +109,26 @@ void Engine::update()
 
 void Engine::draw()
 {
-	std::list<Particle*>::iterator i = particles_.begin();
-	while(i != particles_.end()){
-
-		(*i)->draw();
-
-		i++;
+	{
+		std::list<Particle*>::iterator i = particles_.begin();
+		while(i != particles_.end()){
+			(*i)->draw();
+			i++;
+		}
+	}
+	{
+		std::list<Producer*>::iterator i = producers_.begin();
+		while(i != producers_.end()){
+			(*i)->draw();
+			i++;
+		}
+	}
+	{
+		std::list<Affector*>::iterator i = affectors_.begin();
+		while(i != affectors_.end()){
+			(*i)->draw();
+			i++;
+		}
 	}
 }
 
