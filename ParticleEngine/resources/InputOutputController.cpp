@@ -19,13 +19,12 @@ InputOutputController::InputOutputController(void)
 	angleY=0;
 
 	hud=new HudElement(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(0,0.8,0,0.6));
-	Image* img=new Image(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(0,0.8,0,0.6));
+	Image* img=new Image(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(1,1,1,1));
 	img->setImage("test.png");
 	hudElementRight_=img;
 	hudElementBottom_=0;
 
 	initSzeneLight();
-	initSzeneMaterial();
 
 	clicked=false;
 }
@@ -45,6 +44,7 @@ void InputOutputController::update()
 
 void InputOutputController::draw()
 {
+	initSzeneMaterial();
 	glPushMatrix();
 		glColor3f(1,1,1);
 		glPushMatrix();
@@ -58,6 +58,7 @@ void InputOutputController::draw()
 				clicked=false;
 			}
 		glPopMatrix();
+		initHudMaterial();
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 		glOrtho(0,glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT),0,-10,10);
@@ -144,7 +145,7 @@ void InputOutputController::initSzeneLight()
     glEnable(GL_LIGHTING);
 
     // set color of the light
-    GLfloat ambient[4]  = { 0.1f, 0.1f, 0.1f, 0.1f };
+    GLfloat ambient[4]  = { 1.0f, 1.0f, 1.0f, 1.0f };
     GLfloat diffuse[4]  = { 1.0f, 1.0f, 1.0f, 1.0f };
     GLfloat specular[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	//settings for Light0
@@ -160,7 +161,7 @@ void InputOutputController::initSzeneLight()
 void InputOutputController::initSzeneMaterial()
 {
 	// set material colors
-    GLfloat globalAmbient[4] = {0.0, 0.0, 0.0, 1.0};
+    GLfloat globalAmbient[4] = {0.0, 0.0, 0.0, 0.0};
     GLfloat ambient[4]       = {1.0, 1.0, 1.0, 1.0};
     GLfloat diffuse[4]       = {1.0, 1.0, 1.0, 1.0};
     GLfloat specular[4]      = {1.0, 1.0, 1.0, 1.0};
@@ -172,6 +173,22 @@ void InputOutputController::initSzeneMaterial()
     glMaterialfv(GL_FRONT_AND_BACK,GL_SPECULAR,specular);
     glMaterialf (GL_FRONT_AND_BACK,GL_SHININESS,16.0f);
 
+}
+
+void InputOutputController::initHudMaterial()
+{
+	// set material colors
+    GLfloat globalAmbient[4] = {1.0, 1.0, 1.0, 1.0};
+    GLfloat ambient[4]       = {1.0, 1.0, 1.0, 1.0};
+    GLfloat diffuse[4]       = {1.0, 1.0, 1.0, 1.0};
+    GLfloat specular[4]      = {1.0, 1.0, 1.0, 1.0};
+
+
+    // settings for material
+    glMaterialfv(GL_FRONT_AND_BACK,GL_AMBIENT,ambient);
+    glMaterialfv(GL_FRONT_AND_BACK,GL_DIFFUSE,diffuse);
+    glMaterialfv(GL_FRONT_AND_BACK,GL_SPECULAR,specular);
+    glMaterialf (GL_FRONT_AND_BACK,GL_SHININESS,16.0f);
 }
 
 void InputOutputController::select3dObject(int x, int y)

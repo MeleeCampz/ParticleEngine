@@ -14,5 +14,5 @@ public:
 	void draw();
 private:
 	std::string path_;
-	GL::Texture* image_;
+	GL::Image* image_;
 };

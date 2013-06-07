@@ -29,6 +29,7 @@ private:
 
 	void initSzeneLight();
 	void initSzeneMaterial();
+	void initHudMaterial();
 	void select3dObject(int x, int y);
 
 	GLboolean clicked;
