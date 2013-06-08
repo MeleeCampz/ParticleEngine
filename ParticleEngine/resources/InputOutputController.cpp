@@ -6,8 +6,21 @@
 #include "HudElement.h"
 #include"Button.h"
 #include "Image.h"
-
-
+void InputOutputController::addAffector(){
+	//AttractorLocal:
+	AttractorLocal* att= new AttractorLocal(cml::vector3i(0,0,-5),-0.003);	
+	engine_->addAffector(att);
+}
+void InputOutputController::addProducer(){
+	Particle::ParticleSpecification particleSpecification;
+	particleSpecification.mass = 1.0;
+	particleSpecification.lifetime = 1000;
+	particleSpecification.color = cml::vector4f(0.0, 1.0, 1.0, 0.00);
+	particleSpecification.size = 0.1;
+	Producer* prod= new Producer(cml::vector3i(-10,0,5),0.5,cml::vector3f(0.1,0,0),0.1,particleSpecification);
+	engine_->addProducer(prod);
+}
+//Ende wieder löschen
 
 InputOutputController::InputOutputController(void)
 {
@@ -17,16 +30,32 @@ InputOutputController::InputOutputController(void)
 	cameraPosition_=cml::vector3f(0,0,distanceToCenter_);
 	angleX=0;
 	angleY=0;
+	clicked=false;
 
+	//wieder löschen:
+	//button1:
+		//Images::
+		Image* img=new Image(cml::vector2f(0.0,0.0),cml::vector2f(0.15,0.1),cml::vector4f(1,1,1,1));
+		img->setImage("test.png");
+		//Button:
+		Button<InputOutputController>* newAtr = new Button<InputOutputController>(this, &InputOutputController::addAffector, cml::vector2f(0.025, 0.1),cml::vector2f(0.15,0.1), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+		newAtr->addSubElement(img);
+	//button2:
+		//Images::
+		Image* img2=new Image(cml::vector2f(0.0,0.0),cml::vector2f(0.15,0.1),cml::vector4f(1,1,1,1));
+		img2->setImage("floor.jpg");
+		//Button:
+		Button<InputOutputController>* newProd = new Button<InputOutputController>(this, &InputOutputController::addProducer, cml::vector2f(0.025, 0.3),cml::vector2f(0.15,0.1), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+		newProd->addSubElement(img2);
+	//right hudElement
 	hud=new HudElement(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(0,0.8,0,0.6));
-	Image* img=new Image(cml::vector2f(0.8,0.0),cml::vector2f(0.2,1),cml::vector4f(1,1,1,1));
-	img->setImage("test.png");
-	hudElementRight_=img;
+	hud->addSubElement(newAtr);
+	hud->addSubElement(newProd);
+	//ende wieder löschen
+	
+	hudElementRight_=hud;
 	hudElementBottom_=0;
 
-	initSzeneLight();
-
-	clicked=false;
 }
 
 
@@ -44,7 +73,6 @@ void InputOutputController::update()
 
 void InputOutputController::draw()
 {
-	initSzeneMaterial();
 	glPushMatrix();
 		glColor3f(1,1,1);
 		glPushMatrix();
@@ -52,18 +80,21 @@ void InputOutputController::draw()
 						0,					0,					0,
 						0,					1,					0					);
 			//glutSolidTeapot(1);
+			initSzeneLight();
+			initSzeneMaterial();
 			engine_->draw();
 			if(clicked){
 				select3dObject(currentMousePosX_,currentMousePosY_);
 				clicked=false;
 			}
 		glPopMatrix();
-		initHudMaterial();
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 		glOrtho(0,glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT),0,-10,10);
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
+		initHudLight();
+		initSzeneMaterial();
 		if(hudElementBottom_!=0){
 			hudElementBottom_->draw();
 		}
@@ -145,24 +176,24 @@ void InputOutputController::initSzeneLight()
     glEnable(GL_LIGHTING);
 
     // set color of the light
-    GLfloat ambient[4]  = { 1.0f, 1.0f, 1.0f, 1.0f };
-    GLfloat diffuse[4]  = { 1.0f, 1.0f, 1.0f, 1.0f };
-    GLfloat specular[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+    GLfloat ambient[4]  = { 0.2f, 0.2f, 0.2f, 1.0f };
+    GLfloat diffuse[4]  = { 0.6f, 0.6f, 0.6f, 1.0f };
+    GLfloat specular[4] = { 0.6f, 0.6f, 0.6f, 1.0f };
 	//settings for Light0
     glEnable(GL_LIGHT0);
     glLightfv(GL_LIGHT0, GL_AMBIENT,  ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE,  diffuse);
     glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
 	//Set Light0 at 0,0,0
-	GLfloat positionLight0[4]= {0,0,0,1};
+	GLfloat positionLight0[4]= {0,20,0,0};
 	glLightfv(GL_LIGHT0, GL_POSITION,positionLight0);
 }
 
 void InputOutputController::initSzeneMaterial()
 {
-	// set material colors
-    GLfloat globalAmbient[4] = {0.0, 0.0, 0.0, 0.0};
-    GLfloat ambient[4]       = {1.0, 1.0, 1.0, 1.0};
+	// set material values
+	GLfloat globalAmbient[4] = {0.0, 0.0, 0.0, 1.0};
+    GLfloat ambient[4]       = {0.0, 0.0, 0.0, 1.0};
     GLfloat diffuse[4]       = {1.0, 1.0, 1.0, 1.0};
     GLfloat specular[4]      = {1.0, 1.0, 1.0, 1.0};
 
@@ -175,13 +206,31 @@ void InputOutputController::initSzeneMaterial()
 
 }
 
+void InputOutputController::initHudLight()
+{
+	glEnable(GL_LIGHTING);
+
+    // set color of the light
+    GLfloat ambient[4]  = { 1.0f, 1.0f, 1.0f, 1.0f };
+    GLfloat diffuse[4]  = { 0.0f, 0.0f, 0.0f, 1.0f };
+    GLfloat specular[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
+	//settings for Light0
+    glEnable(GL_LIGHT0);
+    glLightfv(GL_LIGHT0, GL_AMBIENT,  ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE,  diffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
+	//Set Light0 at 0,0,0
+	GLfloat positionLight0[4]= {0,0,0,1};
+	glLightfv(GL_LIGHT0, GL_POSITION,positionLight0);
+}
+
 void InputOutputController::initHudMaterial()
 {
-	// set material colors
-    GLfloat globalAmbient[4] = {1.0, 1.0, 1.0, 1.0};
+	// set material values
+	GLfloat globalAmbient[4] = {0.0, 0.0, 0.0, 0.0};
     GLfloat ambient[4]       = {1.0, 1.0, 1.0, 1.0};
-    GLfloat diffuse[4]       = {1.0, 1.0, 1.0, 1.0};
-    GLfloat specular[4]      = {1.0, 1.0, 1.0, 1.0};
+    GLfloat diffuse[4]       = {0.0, 0.0, 0.0, 1.0};
+    GLfloat specular[4]      = {0.0, 0.0, 0.0, 0.0};
 
 
     // settings for material
@@ -193,6 +242,9 @@ void InputOutputController::initHudMaterial()
 
 void InputOutputController::select3dObject(int x, int y)
 {
+	if(hudElementBottom_!=0){
+		delete hudElementBottom_;
+	}
 	//the selected Object
 	SelectableObject* selected=0;
 	//varibales to save the results
@@ -223,7 +275,7 @@ void InputOutputController::select3dObject(int x, int y)
 		}
 	}
 	if(selected!=0){
-		hudElementBottom_=selected->getHudElement(cml::vector2f(0.3,0.3));
+		hudElementBottom_=selected->getHudElement(cml::vector2f(0.6,0.2));
 	}
 	else{
 		hudElementBottom_=0;

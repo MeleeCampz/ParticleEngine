@@ -12,23 +12,17 @@ Image::Image(cml::vector2f position,cml::vector2f size,cml::vector4f backgroundC
 
 Image::~Image(void)
 {
+	glDeleteTextures(1,&textureID);
 }
 
 void Image::setImage(std::string path)
 {
 	path_.append(path);
 	image_=new GL::Image( path_);
-
-}
-void Image::draw()
-{
-	windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
-
+	
 	glEnable(GL_TEXTURE_2D);
 	
-	GLuint textureID;
 	glGenTextures(1, &textureID);
-
 
 	glBindTexture(GL_TEXTURE_2D, textureID);
 
@@ -40,6 +34,12 @@ void Image::draw()
 	
 	gluBuild2DMipmaps(GL_TEXTURE_2D, 4, image_->GetWidth(), image_->GetHeight(), GL_RGBA, GL_UNSIGNED_BYTE, image_->GetPixels());
 
+}
+void Image::draw()
+{
+	windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
+
+	glBindTexture(GL_TEXTURE_2D, textureID);
 	
 	glColor3d(1,1,1);
 	glBegin(GL_QUADS);	
@@ -52,5 +52,8 @@ void Image::draw()
 		glTexCoord2d(0,1); 
 		glVertex2d(position_[0]*windowSize_[0],(position_[1]+size_[1])*windowSize_[1]);
 	glEnd();
+
+	//"unbind" durty way to get rid of texture without deleting it
+	glBindTexture(GL_TEXTURE_2D,0);
 
 }

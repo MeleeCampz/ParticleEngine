@@ -29,6 +29,7 @@ private:
 
 	void initSzeneLight();
 	void initSzeneMaterial();
+	void initHudLight();
 	void initHudMaterial();
 	void select3dObject(int x, int y);
 
@@ -36,4 +37,6 @@ private:
 	GLint currentMousePosX_,currentMousePosY_;
 	//zum wieder löschen
 	HudElement*	hud;
+	void addAffector();
+	void addProducer();
 };

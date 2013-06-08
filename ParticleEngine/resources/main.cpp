@@ -146,6 +146,10 @@ void init()
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_COLOR_MATERIAL);
 	glEnable(GL_LIGHTING);
+
+	glHint(GL_POINT_SMOOTH, GL_FASTEST);
+	glHint(GL_LINE_SMOOTH, GL_FASTEST);
+	glHint(GL_POLYGON_SMOOTH, GL_FASTEST);
 	
 	glEnable(GL_BLEND);
 

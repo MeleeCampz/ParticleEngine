@@ -15,4 +15,5 @@ public:
 private:
 	std::string path_;
 	GL::Image* image_;
+	GLuint textureID;
 };
