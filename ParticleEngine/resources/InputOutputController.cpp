@@ -6,12 +6,15 @@
 #include "HudElement.h"
 #include"Button.h"
 #include "Image.h"
-void InputOutputController::addAffector(){
+void InputOutputController::addAffector()
+{
 	//AttractorLocal:
 	AttractorLocal* att= new AttractorLocal(cml::vector3i(0,0,-5),-0.003);	
 	engine_->addAffector(att);
 }
-void InputOutputController::addProducer(){
+
+void InputOutputController::addProducer()
+{
 	Particle::ParticleSpecification particleSpecification;
 	particleSpecification.mass = 1.0;
 	particleSpecification.lifetime = 1000;
@@ -21,7 +24,6 @@ void InputOutputController::addProducer(){
 	engine_->addProducer(prod);
 }
 //Ende wieder löschen
-
 InputOutputController::InputOutputController(void)
 {
 	engine_ = new Engine();
@@ -30,6 +32,7 @@ InputOutputController::InputOutputController(void)
 	cameraPosition_=cml::vector3f(0,0,distanceToCenter_);
 	angleX=0;
 	angleY=0;
+	gridRange_=30;
 	clicked=false;
 
 	//wieder löschen:
@@ -83,6 +86,7 @@ void InputOutputController::draw()
 			initSzeneLight();
 			initSzeneMaterial();
 			engine_->draw();
+			drawGrid();
 			if(clicked){
 				select3dObject(currentMousePosX_,currentMousePosY_);
 				clicked=false;
@@ -280,5 +284,29 @@ void InputOutputController::select3dObject(int x, int y)
 	else{
 		hudElementBottom_=0;
 	}
+}
+
+void InputOutputController::drawGrid()
+{
+	glEnable(GL_BLEND);
+	for(GLint i= -gridRange_; i<=gridRange_;i++){
+		glColor4d(0.0,1.0,0.0,0.6);
+		glBegin(GL_LINES);
+			glVertex3i(i,0,gridRange_);
+			glVertex3i(i,0,-gridRange_);
+		glEnd();
+		glBegin(GL_LINES);
+			glVertex3i(gridRange_,0,i);
+			glVertex3i(-gridRange_,0,i);
+		glEnd();
+	}
+	glBegin(GL_QUADS);
+		glColor4d(0.3,0.3,0.3,0.6);	
+		glVertex3i(-gridRange_,0,-gridRange_);
+		glVertex3i(gridRange_,0,-gridRange_);
+		glVertex3i(gridRange_,0,gridRange_);
+		glVertex3i(-gridRange_,0,gridRange_);
+	glEnd();
+	glDisable(GL_BLEND);
 }
 

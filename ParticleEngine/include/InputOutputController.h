@@ -26,12 +26,14 @@ private:
 	GLfloat			distanceToCenter_;
 	GLfloat			angleX;	//Rotation around the Y-Axe
 	GLfloat			angleY; //Rotation around the X-Axe
+	GLint			gridRange_;
 
 	void initSzeneLight();
 	void initSzeneMaterial();
 	void initHudLight();
 	void initHudMaterial();
 	void select3dObject(int x, int y);
+	void drawGrid();
 
 	GLboolean clicked;
 	GLint currentMousePosX_,currentMousePosY_;
