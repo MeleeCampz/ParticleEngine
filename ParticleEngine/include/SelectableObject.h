@@ -4,8 +4,8 @@
 #include "cml\cml.h"
 #include "GL\glut.h"
 
-//wieder entfernen:
 #include "Button.h"
+#include "Image.h"
 
 class SelectableObject
 {

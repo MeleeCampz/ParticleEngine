@@ -9,7 +9,7 @@ class HudElement
 public:
 	HudElement(cml::vector2f position,cml::vector2f size,cml::vector4f backgroundColor);
 	HudElement(cml::vector2f size);
-	~HudElement(void);
+	virtual ~HudElement(void);
 
 	void addSubElement(HudElement* subElement);
 	void addSubElement(std::list<HudElement*> subElements);

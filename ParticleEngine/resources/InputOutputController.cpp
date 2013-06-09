@@ -248,6 +248,7 @@ void InputOutputController::select3dObject(int x, int y)
 {
 	if(hudElementBottom_!=0){
 		delete hudElementBottom_;
+		hudElementBottom_ = 0;
 	}
 	//the selected Object
 	SelectableObject* selected=0;
@@ -274,15 +275,12 @@ void InputOutputController::select3dObject(int x, int y)
 	//get the list of all selectable Objects and save the closet one that hit´s the ray
 	std::list<SelectableObject*> allSelectableObjects=engine_->getSelectableObjects();
 	for(std::list<SelectableObject*>::iterator itr=allSelectableObjects.begin();itr!=allSelectableObjects.end();itr++){
-		if(((*itr)->getPos()-mouseOnNearClippingPlane).length()<3){
+		if(((*itr)->getPos()-mouseOnNearClippingPlane).length()<(*itr)->getSize()){
 			selected=*itr;
 		}
 	}
 	if(selected!=0){
 		hudElementBottom_=selected->getHudElement(cml::vector2f(0.6,0.2));
-	}
-	else{
-		hudElementBottom_=0;
 	}
 }
 
