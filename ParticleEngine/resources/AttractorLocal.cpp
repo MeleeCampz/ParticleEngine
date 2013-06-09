@@ -46,8 +46,8 @@ HudElement* AttractorLocal::getHudElement(cml::vector2f size)
 {
 	HudElement* hudElement = new HudElement(size);
 	hudElement->setPosition(cml::vector2f(0.0,1.0-size[1]));
-	Button<AttractorLocal>* buttonIncreaseStrength = new Button<AttractorLocal>(this, &AttractorLocal::increaseStrength, cml::vector2f(0.1, 0.05), cml::vector2f(0.1,0.12), cml::vector4f(0.0, 1.0, 0.0, 0.0));
-	Button<AttractorLocal>* buttonDecreaseStrength = new Button<AttractorLocal>(this, &AttractorLocal::decreaseStrength, cml::vector2f(0.3, 0.05), cml::vector2f(0.1,0.12), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<AttractorLocal>* buttonIncreaseStrength = new Button<AttractorLocal>(this, &AttractorLocal::increaseStrength, cml::vector2f(0.1, 0.05), cml::vector2f(0.3,0.8), cml::vector4f(0.0, 1.0, 0.0, 0.0));
+	Button<AttractorLocal>* buttonDecreaseStrength = new Button<AttractorLocal>(this, &AttractorLocal::decreaseStrength, cml::vector2f(0.5, 0.05), cml::vector2f(0.3,0.8), cml::vector4f(1.0, 0.0, 0.0, 0.0));
 
 	hudElement->addSubElement(buttonIncreaseStrength);
 	hudElement->addSubElement(buttonDecreaseStrength);

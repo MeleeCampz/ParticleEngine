@@ -152,6 +152,7 @@ void init()
 	glHint(GL_POLYGON_SMOOTH, GL_FASTEST);
 	
 	glEnable(GL_BLEND);
+	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	glShadeModel(GL_SMOOTH);
 
