@@ -95,5 +95,8 @@
     <ClInclude Include="include\Friction.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="include\GL\OOGL.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

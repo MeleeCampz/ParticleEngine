@@ -89,6 +89,7 @@
     <ClInclude Include="include\Engine.h" />
     <ClInclude Include="include\Friction.h" />
     <ClInclude Include="include\GL\glut.h" />
+    <ClInclude Include="include\GL\OOGL.hpp" />
     <ClInclude Include="include\Gravitation.h" />
     <ClInclude Include="include\HudElement.h" />
     <ClInclude Include="include\Image.h" />

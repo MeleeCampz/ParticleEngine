@@ -3,6 +3,7 @@
 
 #include "Particle.h"
 #include "SelectableObject.h"
+#include "GL\OOGL.hpp"
 
 #include <list>
 
@@ -43,4 +44,7 @@ private:
 	Particle::ParticleSpecification		particleSpecification_;
 
 	std::list<Particle*>				storedParticles_;
+
+	
+
 };
