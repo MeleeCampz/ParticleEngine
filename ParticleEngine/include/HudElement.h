@@ -15,7 +15,7 @@ public:
 	void addSubElement(std::list<HudElement*> subElements);
 	void setPosition(cml::vector2f position);
 	virtual void draw();
-	virtual GLboolean mouseClick(int button, int state, cml::vector2i position);
+	virtual GLboolean mouseClick(int button, int state, cml::vector2f position);
 protected:
 	cml::vector4f backgroundColor_;
 	cml::vector2f position_;

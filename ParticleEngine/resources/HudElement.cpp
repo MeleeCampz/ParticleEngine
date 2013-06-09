@@ -48,19 +48,43 @@ void HudElement::draw()
 	glEnd();
 	glPushMatrix();
 		//translate the matrix towards the camera, so the subElemenst are always on top
+		//+ translate the subelements to the top left corner of this elemnt
 		glTranslated(position_[0]*windowSize_[0],position_[1]*windowSize_[1],0.001);
 		for(std::list<HudElement*>::iterator itr = subElements_.begin();itr!=subElements_.end();itr++){
+			//scale size relative to the HudElemnt that contains it
+			(*itr)->size_[0]*=size_[0];
+			(*itr)->size_[1]*=size_[1];
+			(*itr)->position_[0]*=size_[0];
+			(*itr)->position_[1]*=size_[1];
+			
 			(*itr)->draw();
+			//scale back to normal so it doesn´t shrink with every draw
+			(*itr)->size_[0]/=size_[0];
+			(*itr)->size_[1]/=size_[1];
+			(*itr)->position_[0]/=size_[0];
+			(*itr)->position_[1]/=size_[1];
 		}
 	glPopMatrix();
 }
 
-GLboolean HudElement::mouseClick(int button, int state, cml::vector2i position)
+GLboolean HudElement::mouseClick(int button, int state, cml::vector2f position)
 {
+	//check if click is inside of the HudElemnt
 	if(position[0]>position_[0]*windowSize_[0] && position[1]>position_[1]*windowSize_[1] && position[0]<(position_[0]+size_[0])*windowSize_[0] && position[1]<(position_[1]+size_[1])*windowSize_[1]){
+		//if yes, check if a subElemnt was clicked
 		for(std::list<HudElement*>::iterator itr = subElements_.begin();itr!=subElements_.end();itr++){
-			//calculate the mousecoordinates realative to the HudElement
+			//downscale(positions always realtiv)
+			(*itr)->position_[0]*=size_[0];
+			(*itr)->position_[1]*=size_[1];
+			(*itr)->size_[0]*=size_[0];
+			(*itr)->size_[1]*=size_[1];
+
 			(*itr)->mouseClick(button,state,cml::vector2i(position[0]-position_[0]*windowSize_[0],position[1]-position_[1]*windowSize_[1]));
+			//upscale
+			(*itr)->position_[0]/=size_[0];
+			(*itr)->position_[1]/=size_[1];
+			(*itr)->size_[0]/=size_[0];
+			(*itr)->size_[1]/=size_[1];
 		}
 		return true;
 	}

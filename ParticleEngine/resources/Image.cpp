@@ -37,8 +37,7 @@ void Image::setImage(std::string path)
 }
 void Image::draw()
 {
-	windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
-
+	//windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
 	glBindTexture(GL_TEXTURE_2D, textureID);
 	
 	glColor3d(1,1,1);
@@ -55,5 +54,6 @@ void Image::draw()
 
 	//"unbind" durty way to get rid of texture without deleting it
 	glBindTexture(GL_TEXTURE_2D,0);
+	HudElement::draw();
 
 }

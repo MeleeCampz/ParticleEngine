@@ -20,9 +20,9 @@ public:
 
 	void draw()
 	{
-		windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
-		//Draw an octangon around the button:
 		HudElement::draw();
+		//windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
+		//Draw an octangon around the button:
 		glBegin(GL_TRIANGLE_FAN);
 			glColor4f(1,1,1,0);
 			glVertex2i(position_[0]*windowSize_[0]-3,position_[1]*windowSize_[1]-3);
@@ -38,7 +38,7 @@ public:
 	}
 
 
-	GLboolean mouseClick(int button, int state, cml::vector2i position)
+	GLboolean mouseClick(int button, int state, cml::vector2f position)
 	{
 		//check if mouse pos is inside the button
 		if(position[0]>position_[0]*windowSize_[0] && position[1]>position_[1]*windowSize_[1] && position[0]<(position_[0]+size_[0])*windowSize_[0] && position[1]<(position_[1]+size_[1])*windowSize_[1]){
