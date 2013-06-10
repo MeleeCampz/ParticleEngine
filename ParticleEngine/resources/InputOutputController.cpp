@@ -280,7 +280,7 @@ void InputOutputController::select3dObject(int x, int y)
 		}
 	}
 	if(selected!=0){
-		hudElementBottom_=selected->getHudElement(cml::vector2f(0.6,0.2));
+		hudElementBottom_=selected->getHudElement(cml::vector2f(1,0.2));
 	}
 }
 
