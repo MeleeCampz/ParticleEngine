@@ -9,7 +9,7 @@
 
 #pragma once
 
-#include <lib3ds.h>
+#include "lib3ds/lib3ds.h"
 
 #include <oogl/Texture.h>
 #include <oogl/Model.h>

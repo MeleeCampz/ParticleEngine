@@ -4,12 +4,6 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="349fa534-a1f1-4b6a-a69a-f4503ba282bd" name="Engine" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="0dcbad96-f8ad-4f48-bfaf-0c298592666d" />
-        <generalsInternal>
-          <generalization Id="7789c7ee-266a-4efb-9f4d-3d7089462415" isSubstitutable="false">
-            <classMoniker Id="f238b2cb-3aaf-4afa-a7da-bfaf54cc238b" LastKnownName="SelectableObject" />
-            <elementDefinition Id="37766ad5-dac6-4379-9f9c-5bc38263fca0" />
-          </generalization>
-        </generalsInternal>
         <targetEnds>
           <association Id="d7b8c60f-a890-4612-9a74-612a4215226d" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
             <classMoniker Id="4293a15d-44d7-4a8d-b4db-6f577a1104a1" LastKnownName="Particle" />

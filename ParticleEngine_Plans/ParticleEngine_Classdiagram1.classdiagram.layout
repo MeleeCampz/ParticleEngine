@@ -77,14 +77,6 @@
         <classShapeMoniker Id="c37bd4bf-959d-489c-a8bb-91c4ec7f6d68" />
       </nodes>
     </associationConnector>
-    <generalizationConnector edgePoints="[(5.125 : 4.60512534477117); (10.8377757607327 : 4.60512534477117); (10.8377757607327 : 4.29296871523062)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
-      <generalizationMoniker Id="7789c7ee-266a-4efb-9f4d-3d7089462415" />
-      <relativeChildShapes />
-      <nodes>
-        <classShapeMoniker Id="3d63a026-a835-461b-bae5-668669367a43" />
-        <classShapeMoniker Id="c37bd4bf-959d-489c-a8bb-91c4ec7f6d68" />
-      </nodes>
-    </generalizationConnector>
     <classShape Id="e459e1fa-a2db-4177-b0c8-2982fae50c13" absoluteBounds="10.5, 6, 2.375, 1.0624999801317845" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
       <classMoniker Id="8908a66b-57ab-493d-909b-b8685cf9a0ae" LastKnownName="Affector" />
       <nestedChildShapes>

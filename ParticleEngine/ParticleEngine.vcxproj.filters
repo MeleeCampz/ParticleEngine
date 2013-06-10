@@ -96,6 +96,93 @@
     <ClCompile Include="include\oogl\model\ModelObj.cpp">
       <Filter>Ressourcendateien</Filter>
     </ClCompile>
+    <ClCompile Include="include\glm\glm.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\glm\glm_util.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\glm\glmimg.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\glm\glmimg_devil.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\glm\glmimg_jpg.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\glm\glmimg_png.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\glm\glmimg_sdl.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\glm\glmimg_sim.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_atmosphere.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_background.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_camera.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_chunk.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_chunktable.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_file.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_io.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_light.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_material.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_math.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_matrix.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_mesh.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_node.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_quat.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_shadow.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_track.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_util.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_vector.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lib3ds\lib3ds_viewport.c">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\GLee.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\utils\timer.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\GL\glut.h">
@@ -140,5 +227,852 @@
     <ClInclude Include="include\GL\OOGL.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="include\glm\ext.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\glm.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\glm.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\glm_ostream.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\glmint.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IL\config.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IL\devil_internal_exports.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IL\il.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IL\il_wrap.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IL\ilu.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IL\ilu_region.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IL\ilut.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IL\ilut_config.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\lib3ds\lib3ds.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\lib3ds\lib3ds_impl.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\DisplayList.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\FrameBufferObject.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\gl_error.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\GLee.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\glIncludes.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\GLSLProgram.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\GLSLShader.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\glutIncludes.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\Image.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\Model.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\Navigator.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\Texture.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\Texture2D.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\Texture3D.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\timer.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils\log.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils\loglevels.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils\timer.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\_detail.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\_fixes.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\_swizzle.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\_swizzle_func.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\_vectorize.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\func_common.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\func_exponential.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\func_geometric.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\func_integer.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\func_matrix.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\func_noise.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\func_packing.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\func_trigonometric.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\func_vector_relational.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\hint.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\intrinsic_common.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\intrinsic_exponential.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\intrinsic_geometric.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\intrinsic_matrix.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\intrinsic_trigonometric.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\intrinsic_vector_relational.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\setup.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_float.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_gentype.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_half.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_int.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_mat.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_mat2x2.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_mat2x3.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_mat2x4.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_mat3x2.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_mat3x3.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_mat3x4.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_mat4x2.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_mat4x3.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_mat4x4.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_size.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_vec.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_vec1.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_vec2.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_vec3.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\core\type_vec4.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\constants.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\epsilon.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\half_float.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\matrix_access.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\matrix_integer.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\matrix_inverse.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\matrix_transform.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\noise.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\quaternion.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\random.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\reciprocal.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\swizzle.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\type_precision.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\type_ptr.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtc\ulp.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\associated_min_max.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\bit.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\closest_point.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\color_cast.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\color_space.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\color_space_YCoCg.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\compatibility.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\component_wise.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\constants.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\epsilon.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\euler_angles.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\extend.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\extented_min_max.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\fast_exponential.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\fast_square_root.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\fast_trigonometry.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\gradient_paint.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\handed_coordinate_space.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\inertia.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\int_10_10_10_2.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\integer.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\intersect.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\log_base.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\matrix_cross_product.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\matrix_interpolation.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\matrix_major_storage.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\matrix_operation.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\matrix_query.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\mixed_product.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\multiple.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\noise.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\norm.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\normal.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\normalize_dot.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\number_precision.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\ocl_type.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\optimum_pow.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\orthonormalize.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\perpendicular.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\polar_coordinates.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\projection.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\quaternion.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\random.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\raw_data.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\reciprocal.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\rotate_vector.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\simd_mat4.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\simd_vec4.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\spline.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\std_based_type.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\string_cast.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\transform.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\transform2.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\ulp.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\unsigned_int.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\vec1.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\vector_access.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\vector_angle.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\vector_query.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\verbose_operator.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\gtx\wrap.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glm\virtrev\xstream.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\model\Model3ds.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oogl\model\ModelObj.h">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\GL\Context.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\GL\Extensions.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\GL\Framebuffer.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\GL\GC.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\GL\Program.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\GL\Renderbuffer.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\GL\Shader.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\GL\Texture.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\GL\VertexArray.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\GL\VertexBuffer.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Math\Mat3.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Math\Mat4.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Math\Util.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Math\Vec2.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Math\Vec3.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Math\Vec4.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Util\ByteBuffer.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Util\Color.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Util\Image.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Util\Mesh.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Window\Event.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Window\Window.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\Platform.hpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="include\glm\CMakeLists.txt">
+      <Filter>Ressourcendateien</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\IL\config.h.win">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\func_common.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\func_exponential.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\func_geometric.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\func_integer.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\func_matrix.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\func_noise.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\func_packing.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\func_trigonometric.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\func_vector_relational.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\intrinsic_common.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\intrinsic_exponential.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\intrinsic_geometric.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\intrinsic_matrix.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\intrinsic_trigonometric.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\intrinsic_vector_relational.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_gentype.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_half.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_mat.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_mat2x2.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_mat2x3.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_mat2x4.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_mat3x2.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_mat3x3.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_mat3x4.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_mat4x2.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_mat4x3.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_mat4x4.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_vec.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_vec1.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_vec2.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_vec3.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\core\type_vec4.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\constants.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\epsilon.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\half_float.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\matrix_access.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\matrix_inverse.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\matrix_transform.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\noise.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\quaternion.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\random.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\reciprocal.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\swizzle.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\type_precision.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\type_ptr.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtc\ulp.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\associated_min_max.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\bit.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\closest_point.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\color_cast.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\color_space.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\color_space_YCoCg.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\compatibility.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\component_wise.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\euler_angles.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\extend.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\extented_min_max.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\fast_exponential.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\fast_square_root.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\fast_trigonometry.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\gradient_paint.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\handed_coordinate_space.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\inertia.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\int_10_10_10_2.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\integer.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\intersect.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\log_base.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\matrix_cross_product.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\matrix_interpolation.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\matrix_major_storage.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\matrix_operation.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\matrix_query.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\mixed_product.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\multiple.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\norm.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\normal.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\normalize_dot.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\number_precision.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\ocl_type.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\optimum_pow.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\orthonormalize.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\perpendicular.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\polar_coordinates.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\projection.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\quaternion.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\raw_data.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\rotate_vector.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\simd_mat4.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\simd_vec4.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\spline.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\std_based_type.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\string_cast.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\transform.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\transform2.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\unsigned_int.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\vec1.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\vector_access.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\vector_angle.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\vector_query.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\verbose_operator.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="include\glm\gtx\wrap.inl">
+      <Filter>Ressourcendateien</Filter>
+    </None>
   </ItemGroup>
 </Project>

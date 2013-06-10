@@ -25,16 +25,6 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <generalsInternal>
-          <generalization
-            Id="37766ad5-dac6-4379-9f9c-5bc38263fca0"
-            isSubstitutable="false">
-            <classMoniker
-              Id="91a1da72-6210-4537-9e16-d97879de2d4a"
-              LastKnownName="SelectableObject"
-              LastKnownLocation="ParticleEngine_Plans.uml" />
-          </generalization>
-        </generalsInternal>
         <targetEnds>
           <association
             Id="39d35e2a-be03-4dd6-8e27-5d06a0cc71b3"
