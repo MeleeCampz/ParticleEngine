@@ -18,7 +18,7 @@ HudElement::HudElement(cml::vector2f size):
 HudElement::~HudElement(void)
 {
 	for(std::list<HudElement*>::iterator itr = subElements_.begin();itr!=subElements_.end();itr++){
-	//	(*itr)->~HudElement();
+		delete (*itr);
 	}	
 }
 void HudElement::addSubElement(HudElement* subElement)

@@ -23,5 +23,11 @@ private:
 
 	void increaseStrength();
 	void decreaseStrength();
+	void increasePosX();
+	void decreasePosX();
+	void increasePosY();
+	void decreasePosY();
+	void increasePosZ();
+	void decreasePosZ();
 };
 
