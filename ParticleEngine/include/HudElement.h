@@ -1,7 +1,8 @@
 #pragma once
 
-#include "cml\cml.h"
-#include "GL\glut.h"
+#include <cml\cml.h>
+#include <Glee/GLee.h>
+#include <GL/gl.h>
 #include <list>
 
 class HudElement

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParticleEngine", "ParticleEngine.vcxproj", "{5C02FBD3-FAFE-43BC-8A3F-1860529F9E71}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParticleEngine2", "ParticleEngine2.vcxproj", "{B9532D40-9029-491C-B1F8-DFA24B008D27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5C02FBD3-FAFE-43BC-8A3F-1860529F9E71}.Debug|Win32.ActiveCfg = Debug|Win32
-		{5C02FBD3-FAFE-43BC-8A3F-1860529F9E71}.Debug|Win32.Build.0 = Debug|Win32
-		{5C02FBD3-FAFE-43BC-8A3F-1860529F9E71}.Release|Win32.ActiveCfg = Release|Win32
-		{5C02FBD3-FAFE-43BC-8A3F-1860529F9E71}.Release|Win32.Build.0 = Release|Win32
+		{B9532D40-9029-491C-B1F8-DFA24B008D27}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B9532D40-9029-491C-B1F8-DFA24B008D27}.Debug|Win32.Build.0 = Debug|Win32
+		{B9532D40-9029-491C-B1F8-DFA24B008D27}.Release|Win32.ActiveCfg = Release|Win32
+		{B9532D40-9029-491C-B1F8-DFA24B008D27}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

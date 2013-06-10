@@ -1,6 +1,8 @@
 #pragma once
 
-#include "GL\glut.h"
+#include <cml\cml.h>
+#include <Glee/GLee.h>
+#include <GL/glut.h>	
 
 #include "Particle.h"
 #include "SelectableObject.h"
@@ -34,25 +36,6 @@ public:
 	HudElement* getHudElement(cml::vector2f size);
 
 private:
-
-	void increaseSpreadStrength();
-	void decreaseSpreadStrength();
-	void increasePosX();
-	void decreasePosX();
-	void increasePosY();
-	void decreasePosY();
-	void increasePosZ();
-	void decreasePosZ();
-	void increaseDirecX();
-	void increaseDirecY();
-	void decreaseDirecX();
-	void decreaseDirecY();
-	void increaseStrength();
-	void decreaseStrength();
-
-	GLfloat								alpha_;
-		
-	GLfloat								beta_;
 
 	GLfloat								spawnTime_;
 

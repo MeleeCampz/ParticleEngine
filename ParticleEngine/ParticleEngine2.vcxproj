@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Affector.cpp" />
+    <ClCompile Include="source\AttractorLocal.cpp" />
+    <ClCompile Include="source\Button.cpp" />
+    <ClCompile Include="source\Engine.cpp" />
+    <ClCompile Include="source\extern\GLee\GLee.cpp" />
+    <ClCompile Include="source\extern\glm\glm.cpp" />
+    <ClCompile Include="source\extern\glm\glmimg.cpp" />
+    <ClCompile Include="source\extern\glm\glmimg_devil.cpp" />
+    <ClCompile Include="source\extern\glm\glmimg_jpg.cpp" />
+    <ClCompile Include="source\extern\glm\glmimg_png.cpp" />
+    <ClCompile Include="source\extern\glm\glmimg_sdl.cpp" />
+    <ClCompile Include="source\extern\glm\glmimg_sim.cpp" />
+    <ClCompile Include="source\extern\glm\glm_util.cpp" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_atmosphere.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_background.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_camera.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_chunk.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_chunktable.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_file.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_io.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_light.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_material.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_math.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_matrix.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_mesh.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_node.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_quat.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_shadow.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_track.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_util.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_vector.c" />
+    <ClCompile Include="source\extern\lib3ds\lib3ds_viewport.c" />
+    <ClCompile Include="source\extern\oogl\DisplayList.cpp" />
+    <ClCompile Include="source\extern\oogl\FrameBufferObject.cpp" />
+    <ClCompile Include="source\extern\oogl\GLSLProgram.cpp" />
+    <ClCompile Include="source\extern\oogl\GLSLShader.cpp" />
+    <ClCompile Include="source\extern\oogl\gl_error.cpp" />
+    <ClCompile Include="source\extern\oogl\Image.cpp" />
+    <ClCompile Include="source\extern\oogl\Model.cpp" />
+    <ClCompile Include="source\extern\oogl\model\Model3ds.cpp" />
+    <ClCompile Include="source\extern\oogl\model\ModelObj.cpp" />
+    <ClCompile Include="source\extern\oogl\Navigator.cpp" />
+    <ClCompile Include="source\extern\oogl\Texture.cpp" />
+    <ClCompile Include="source\extern\oogl\Texture2D.cpp" />
+    <ClCompile Include="source\extern\oogl\Texture3D.cpp" />
+    <ClCompile Include="source\extern\oogl\timer.cpp" />
+    <ClCompile Include="source\extern\utils\timer.cpp" />
+    <ClCompile Include="source\Friction.cpp" />
+    <ClCompile Include="source\Gravitation.cpp" />
+    <ClCompile Include="source\HudElement.cpp" />
+    <ClCompile Include="source\ImageElement.cpp" />
+    <ClCompile Include="source\InputOutputController.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\Particle.cpp" />
+    <ClCompile Include="source\Producer.cpp" />
+    <ClCompile Include="source\SelectableObject.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Affector.h" />
+    <ClInclude Include="include\AttractorLocal.h" />
+    <ClInclude Include="include\Button.h" />
+    <ClInclude Include="include\Engine.h" />
+    <ClInclude Include="include\Friction.h" />
+    <ClInclude Include="include\Gravitation.h" />
+    <ClInclude Include="include\HudElement.h" />
+    <ClInclude Include="include\ImageElement.h" />
+    <ClInclude Include="include\InputOutputController.h" />
+    <ClInclude Include="include\Particle.h" />
+    <ClInclude Include="include\Producer.h" />
+    <ClInclude Include="include\SelectableObject.h" />
+    <ClInclude Include="source\extern\IL\devil_cpp_wrapper.hpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B9532D40-9029-491C-B1F8-DFA24B008D27}</ProjectGuid>
+    <RootNamespace>ParticleEngine2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>"include/";"include/extern/";</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);WIN32</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>"lib/";</AdditionalLibraryDirectories>
+      <AdditionalDependencies>"GL/freeglut.lib";"IL/ilut.lib";"IL/ilu.lib";"IL/DevIL.lib";kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>"include/";"include/extern/";</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>"GL/freeglut.lib";"IL/ilut.lib";"IL/ilu.lib";"IL/DevIL.lib";kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>"lib/";</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

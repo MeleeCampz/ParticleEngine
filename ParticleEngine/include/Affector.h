@@ -3,7 +3,9 @@
 #include "Particle.h"
 #include "SelectableObject.h"
 
-#include "GL\glut.h"
+#include <cml\cml.h>
+#include <Glee/GLee.h>
+#include <GL/gl.h>	
 
 
 class Affector:

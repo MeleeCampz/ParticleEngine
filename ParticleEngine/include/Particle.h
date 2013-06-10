@@ -1,7 +1,8 @@
 #pragma once
 
 #include "cml\cml.h"
-#include "GL\glut.h"
+#include <Glee/GLee.h>
+#include <GL/glut.h>	
 
 class Particle
 {

@@ -1,6 +1,8 @@
 #pragma once
 
-#include "cml\cml.h"
+#include <cml\cml.h>
+#include <Glee/GLee.h>
+#include <GL/glut.h>
 #include "Engine.h"
 #include "HudElement.h"
 #include "SelectableObject.h"
