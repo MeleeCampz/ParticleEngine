@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Affector.h"
+#include "GL\glut.h"
+
 
 class Friction:
 	public Affector

@@ -54,6 +54,48 @@
     <ClCompile Include="resources\Friction.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="include\oogl\DisplayList.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\FrameBufferObject.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\gl_error.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\GLSLProgram.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\GLSLShader.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\Image.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\Model.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\Navigator.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\Texture.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\Texture2D.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\Texture3D.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\timer.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\model\Model3ds.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
+    <ClCompile Include="include\oogl\model\ModelObj.cpp">
+      <Filter>Ressourcendateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\GL\glut.h">

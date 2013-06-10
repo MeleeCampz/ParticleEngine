@@ -1,8 +1,9 @@
 #pragma once
 
-
 #include "Particle.h"
 #include "SelectableObject.h"
+
+#include "GL\glut.h"
 
 
 class Affector:

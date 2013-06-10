@@ -44,6 +44,9 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>"include\"</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);GLUT_BUILDING_LIB;WIN32</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -68,6 +71,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="include\oogl\DisplayList.cpp" />
+    <ClCompile Include="include\oogl\FrameBufferObject.cpp" />
+    <ClCompile Include="include\oogl\GLSLProgram.cpp" />
+    <ClCompile Include="include\oogl\GLSLShader.cpp" />
+    <ClCompile Include="include\oogl\gl_error.cpp" />
+    <ClCompile Include="include\oogl\Image.cpp" />
+    <ClCompile Include="include\oogl\Model.cpp" />
+    <ClCompile Include="include\oogl\model\Model3ds.cpp" />
+    <ClCompile Include="include\oogl\model\ModelObj.cpp" />
+    <ClCompile Include="include\oogl\Navigator.cpp" />
+    <ClCompile Include="include\oogl\Texture.cpp" />
+    <ClCompile Include="include\oogl\Texture2D.cpp" />
+    <ClCompile Include="include\oogl\Texture3D.cpp" />
+    <ClCompile Include="include\oogl\timer.cpp" />
     <ClCompile Include="resources\Affector.cpp" />
     <ClCompile Include="resources\AttractorLocal.cpp" />
     <ClCompile Include="resources\Button.cpp" />

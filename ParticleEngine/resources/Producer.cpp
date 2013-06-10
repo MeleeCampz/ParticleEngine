@@ -14,6 +14,8 @@ Producer::Producer(cml::vector3f position, GLfloat spawnTime, cml::vector3f init
 	else{
 		spreadStrength_ = spreadStrength;
 	}
+
+	model_ = oogl::loadModel("assets/NabooFighter/NabooFighter.3ds", oogl::Model::LOAD_NORMALIZE_TWO);
 }
 
 
@@ -30,6 +32,8 @@ Producer::Producer(cml::vector3f position, ProducerSpecification producerSpecifi
 	else{
 		spreadStrength_ = producerSpecification.spreadStrength;
 	}
+
+	model_ = oogl::loadModel("assets/NabooFighter/NabooFighter.3ds", oogl::Model::LOAD_NORMALIZE_TWO);
 }
 
 

@@ -1,9 +1,11 @@
 #pragma once
 
+#include "GL\glut.h"
 
 #include "Particle.h"
 #include "SelectableObject.h"
-#include "GL\OOGL.hpp"
+
+#include "oogl\Model.h"
 
 #include <list>
 
@@ -45,6 +47,6 @@ private:
 
 	std::list<Particle*>				storedParticles_;
 
-	
+	oogl::Model*						model_;
 
 };

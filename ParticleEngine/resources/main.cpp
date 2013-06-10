@@ -1,6 +1,11 @@
+
+
 #include <cstdlib>
 #include <iostream>
 
+#include <Windows.h>
+
+#include <GL/gl.h>
 #include "GL\glut.h"
 #include "cml\cml.h"
 
