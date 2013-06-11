@@ -4,7 +4,7 @@
 #include <cml\cml.h>
 #include <Glee/GLee.h>
 #include <GL/gl.h>	
-
+#include "oogl\Model.h"
 
 class Friction:
 	public Affector
@@ -28,5 +28,7 @@ private:
 
 	void increaseStrength();
 	void decreaseStrength();
+
+	oogl::Model*	model_;
 };
 

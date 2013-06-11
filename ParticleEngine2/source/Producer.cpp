@@ -18,7 +18,7 @@ Producer::Producer(cml::vector3f position, GLfloat spawnTime, cml::vector3f init
 	beta_=std::asin(initialForce_[1]/initialForce_.length())*(2*M_PI/360);
 	alpha_=std::acos(initialForce_[0]/initialForce_.length())*(2*M_PI/360);
 
-	model_ = oogl::loadModel("assets/NabooFighter/NabooFighter.3ds", oogl::Model::LOAD_NORMALIZE_TWO);
+	model_ = oogl::loadModel("assets/stardestroyer/stardestroyer.3ds", oogl::Model::LOAD_NORMALIZE_TWO);
 }
 
 
@@ -38,7 +38,7 @@ Producer::Producer(cml::vector3f position, ProducerSpecification producerSpecifi
 	alpha_=std::asin(initialForce_[0]/initialForce_.length())*(2*M_PI/360);
 	beta_=std::acos(initialForce_[2]/initialForce_.length())*(2*M_PI/360);
 
-	model_ = oogl::loadModel("assets/NabooFighter/NabooFighter.3ds", oogl::Model::LOAD_NORMALIZE_TWO);
+	model_ = oogl::loadModel("assets/stardestroyer/stardestroyer.3ds", oogl::Model::LOAD_NORMALIZE_TWO);
 }
 
 
@@ -74,7 +74,10 @@ void Producer::draw()
 	glPushMatrix();
 		glTranslatef(position_[0], position_[1], position_[2]);
 		glRotated(alpha_,0,1,0);	
-		glRotated(-beta_,1,0,0);	
+		glRotated(-beta_,1,0,0);
+		glRotated(-90,0,1,0);
+		glRotated(-90,1,0,0);
+		glScalef(size_*0.5,size_*0.5,size_*0.5);
 		glColor4f(1.0, 1.0, 1.0, 0.0);
 		//glutSolidSphere(size_, 10, 10);
 		model_->render();

@@ -22,12 +22,12 @@ Engine::Engine(void):
 	addAffector(testAffector3);
 	*/
 
-	/*test
+	/*test*/
 	Affector* testAffector3 = new Friction(cml::vector3f(5.0, 5.0, 0.0), 0.01);
 	addAffector(testAffector3);
-	*/
+	/**/
 
-	/*test*
+	/*test*/
 	Particle::ParticleSpecification particleSpecification;
 	particleSpecification.mass = 1.0;
 	particleSpecification.lifetime = 1000;
