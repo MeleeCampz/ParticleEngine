@@ -4,6 +4,7 @@
 #include <cml\cml.h>
 #include <Glee/GLee.h>
 #include <GL/gl.h>	
+#include "oogl\Model.h"
 
 class Gravitation:
 	public Affector
@@ -25,5 +26,7 @@ public:
 private:
 
 	cml::vector3f force_;
+
+	oogl::Model*	model_;
 };
 

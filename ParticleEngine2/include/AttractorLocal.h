@@ -4,6 +4,7 @@
 #include <cml\cml.h>
 #include <Glee/GLee.h>
 #include <GL/glut.h>	
+#include "oogl\Model.h"
 
 
 class AttractorLocal:
@@ -33,5 +34,7 @@ private:
 	void decreasePosY();
 	void increasePosZ();
 	void decreasePosZ();
+
+	oogl::Model*	model_;
 };
 

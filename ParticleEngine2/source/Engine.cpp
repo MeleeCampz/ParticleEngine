@@ -7,10 +7,10 @@ Engine::Engine(void):
 	producers_()
 {
 
-	/*test
+	/*test*/
 	Affector* testAffector = new Gravitation(cml::vector3f(-5.0, 0.0, 0.0), cml::vector3f(0.0, -0.01, 0.0));
 	addAffector(testAffector);
-	*/
+	/**/
 
 	/*test*/
 	Affector* testAffector2 = new AttractorLocal(cml::vector3f(-5.0, 3.0, 0.0), 0.01);
@@ -27,7 +27,7 @@ Engine::Engine(void):
 	addAffector(testAffector3);
 	*/
 
-	/*test*/
+	/*test*
 	Particle::ParticleSpecification particleSpecification;
 	particleSpecification.mass = 1.0;
 	particleSpecification.lifetime = 1000;
