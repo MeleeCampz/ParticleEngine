@@ -136,11 +136,22 @@ HudElement* Producer::getHudElement(cml::vector2f size)
 	imageincreaseS->setImage("assets/buttonMinus.png");
 	ImageElement* imagedecreaseS = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
 	imagedecreaseS->setImage("assets/buttonPlus.png");
-
 	Button<Producer>* buttonIncreaseStrength = new Button<Producer>(this, &Producer::increaseSpreadStrength, cml::vector2f(0.285, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonIncreaseStrength->addSubElement(imagedecreaseS);
 	Button<Producer>* buttonDecreaseStrength = new Button<Producer>(this, &Producer::decreaseSpreadStrength, cml::vector2f(0.285, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonDecreaseStrength->addSubElement(imageincreaseS);
+	
+	//Particle
+	//Mass
+	ImageElement* imageIncMass = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
+	imageIncMass->setImage("assets/buttonPlus.png");
+	ImageElement* imageDecMass = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
+	imageDecMass->setImage("assets/buttonMinus.png");
+	Button<Producer>* buttonincreaseMass= new Button<Producer>(this, &Producer::increaseMass, cml::vector2f(0.5255, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	buttonincreaseMass->addSubElement(imageIncMass);
+	Button<Producer>* buttondecreaseMass= new Button<Producer>(this, &Producer::decreaseMass, cml::vector2f(0.5255, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	buttondecreaseMass->addSubElement(imageDecMass);
+	
 	//Pos
 	Button<Producer>* buttonincreaseX= new Button<Producer>(this, &Producer::decreasePosX, cml::vector2f(0.05, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseX->addSubElement(imageincreaseX);
@@ -189,6 +200,10 @@ HudElement* Producer::getHudElement(cml::vector2f size)
 	//STRENGTH
 	hudElement->addSubElement(buttondecreaseStrength);
 	hudElement->addSubElement(buttonincreaseStrength);
+	//Particle
+	//MASS
+	hudElement->addSubElement(buttonincreaseMass);
+	hudElement->addSubElement(buttondecreaseMass);
 	//BG
 	hudElement->addSubElement(hudBG);
 	 
@@ -205,6 +220,9 @@ void Producer::decreaseSpreadStrength()
 {
 	if(spreadStrength_>0.005){
 		spreadStrength_ -= 0.005;
+	}
+	else{
+		spreadStrength_=0;
 	}
 }
 
@@ -276,4 +294,39 @@ void Producer::increaseStrength()
 void Producer::decreaseStrength()
 {
 	initialForce_-=cml::normalize(initialForce_)/125;
+}
+//Particle
+
+void Producer::increaseMass()
+{
+	particleSpecification_.mass+=0.5;
+}
+void Producer::decreaseMass()
+{
+	if(particleSpecification_.mass>0.5)	{
+		particleSpecification_.mass-=0.5;
+	}
+}
+void Producer::increaseSize()
+{
+	particleSpecification_.size+=0.5;
+}
+void Producer::decreaseSize()
+{
+	if(particleSpecification_.size>0.5){	
+		particleSpecification_.size-=0.5;
+	}
+}
+void Producer::increaseLifeTime()
+{
+}
+void Producer::decreaseLifeTime()
+{
+	particleSpecification_.lifetime+=100;
+}
+void Producer::changeColor()
+{
+	if(particleSpecification_.lifetime >100){
+		particleSpecification_.lifetime-=100;
+	}
 }
