@@ -281,6 +281,10 @@ void InputOutputController::select3dObject(int x, int y)
 	}
 	if(selected!=0){
 		hudElementBottom_=selected->getHudElement(cml::vector2f(1,0.2));
+		HudElement* container= new HudElement(cml::vector2f(0.5,0.5),cml::vector2f(0.05,0.2),cml::vector4f(0,0,0,0));
+		Button<InputOutputController>* but=new Button<InputOutputController>(this,&InputOutputController::addAffector, cml::vector2f(1,1), cml::vector2f(1,1), cml::vector4f(0.4,0.4,0.4,0));
+		container->addSubElement(but);
+		hudElementBottom_->addSubElement(container);
 	}
 }
 
@@ -299,7 +303,7 @@ void InputOutputController::drawGrid()
 		glEnd();
 	}
 	glBegin(GL_QUADS);
-		glColor4d(0.3,0.3,0.3,0.6);	
+		glColor4d(0.3,0.3,0.3,0.8);	
 		glVertex3i(-gridRange_,0,-gridRange_);
 		glVertex3i(gridRange_,0,-gridRange_);
 		glVertex3i(gridRange_,0,gridRange_);
