@@ -37,7 +37,7 @@ Engine::Engine(void):
 	Producer::ProducerSpecification producerSpecification;
 	producerSpecification.spawnTime = 0.3;
 	producerSpecification.initialForce = cml::vector3f(0.1, 0.0, 0.0);
-	producerSpecification.spreadStrength = 0.1;
+	producerSpecification.spreadStrength = 0;
 
 	Producer* testProducer = new Producer( cml::vector3f(0.0, 0.0, 0.0), producerSpecification, particleSpecification);
 	addProducer(testProducer);

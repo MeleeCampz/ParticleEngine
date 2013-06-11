@@ -37,6 +37,7 @@ public:
 
 private:
 
+	//Producer
 	void increaseSpreadStrength();
 	void decreaseSpreadStrength();
 	void increasePosX();
@@ -51,6 +52,14 @@ private:
 	void decreaseDirecY();
 	void increaseStrength();
 	void decreaseStrength();
+	//Particle
+	void increaseMass();
+	void decreaseMass();
+	void increaseSize();
+	void decreaseSize();
+	void increaseLifeTime();
+	void decreaseLifeTime();
+	void changeColor();
 
 	GLfloat								alpha_;
 		
