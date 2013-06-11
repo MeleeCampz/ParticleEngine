@@ -73,6 +73,8 @@ void Producer::draw()
 {
 	glPushMatrix();
 		glTranslatef(position_[0], position_[1], position_[2]);
+		glRotated(alpha_,0,1,0);	
+		glRotated(-beta_,1,0,0);	
 		glColor4f(1.0, 1.0, 1.0, 0.0);
 		//glutSolidSphere(size_, 10, 10);
 		model_->render();
@@ -131,40 +133,40 @@ HudElement* Producer::getHudElement(cml::vector2f size)
 	imageincreaseS->setImage("assets/buttonMinus.png");
 	ImageElement* imagedecreaseS = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
 	imagedecreaseS->setImage("assets/buttonPlus.png");
-	
-	Button<Producer>* buttonIncreaseStrength = new Button<Producer>(this, &Producer::increaseSpreadStrength, cml::vector2f(0.285, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.0, 1.0, 0.0, 0.0));
+
+	Button<Producer>* buttonIncreaseStrength = new Button<Producer>(this, &Producer::increaseSpreadStrength, cml::vector2f(0.285, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonIncreaseStrength->addSubElement(imagedecreaseS);
-	Button<Producer>* buttonDecreaseStrength = new Button<Producer>(this, &Producer::decreaseSpreadStrength, cml::vector2f(0.285, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<Producer>* buttonDecreaseStrength = new Button<Producer>(this, &Producer::decreaseSpreadStrength, cml::vector2f(0.285, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonDecreaseStrength->addSubElement(imageincreaseS);
 	//Pos
-	Button<Producer>* buttonincreaseX= new Button<Producer>(this, &Producer::decreasePosX, cml::vector2f(0.05, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.0, 1.0, 0.0, 0.0));
+	Button<Producer>* buttonincreaseX= new Button<Producer>(this, &Producer::decreasePosX, cml::vector2f(0.05, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseX->addSubElement(imageincreaseX);
-	Button<Producer>* buttondecreaseX= new Button<Producer>(this, &Producer::increasePosX, cml::vector2f(0.01, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<Producer>* buttondecreaseX= new Button<Producer>(this, &Producer::increasePosX, cml::vector2f(0.01, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseX->addSubElement(imagedecreaseX);
 
-	Button<Producer>* buttonincreaseY= new Button<Producer>(this, &Producer::decreasePosY, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<Producer>* buttonincreaseY= new Button<Producer>(this, &Producer::decreasePosY, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseY->addSubElement(imageincreaseY);
-	Button<Producer>* buttondecreaseY= new Button<Producer>(this, &Producer::increasePosY, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<Producer>* buttondecreaseY= new Button<Producer>(this, &Producer::increasePosY, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseY->addSubElement(imagedecreaseY);
 
-	Button<Producer>* buttonincreaseZ= new Button<Producer>(this, &Producer::increasePosZ, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<Producer>* buttonincreaseZ= new Button<Producer>(this, &Producer::increasePosZ, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseZ->addSubElement(imageincreaseZ);
-	Button<Producer>* buttondecreaseZ= new Button<Producer>(this, &Producer::decreasePosZ, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.0, 1.0, 0.0, 0.0));
+	Button<Producer>* buttondecreaseZ= new Button<Producer>(this, &Producer::decreasePosZ, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseZ->addSubElement(imagedecreaseZ);
 	//DIRECT
-	Button<Producer>* buttonincreaseDirecX= new Button<Producer>(this, &Producer::decreaseDirecX, cml::vector2f(0.1, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.0, 1.0, 0.0, 0.0));
+	Button<Producer>* buttonincreaseDirecX= new Button<Producer>(this, &Producer::decreaseDirecX, cml::vector2f(0.1, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseDirecX->addSubElement(imageincreaseX2);
-	Button<Producer>* buttondecreaseDirecX= new Button<Producer>(this, &Producer::increaseDirecX, cml::vector2f(0.14, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<Producer>* buttondecreaseDirecX= new Button<Producer>(this, &Producer::increaseDirecX, cml::vector2f(0.14, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseDirecX->addSubElement(imagedecreaseX2);
 
-	Button<Producer>* buttonincreaseDirecY= new Button<Producer>(this, &Producer::decreaseDirecY, cml::vector2f(0.1, 0.5), cml::vector2f(0.03,0.15), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<Producer>* buttonincreaseDirecY= new Button<Producer>(this, &Producer::decreaseDirecY, cml::vector2f(0.1, 0.5), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseDirecY->addSubElement(imageincreaseY2);
-	Button<Producer>* buttondecreaseDirecY= new Button<Producer>(this, &Producer::increaseDirecY, cml::vector2f(0.14, 0.5), cml::vector2f(0.03,0.15), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<Producer>* buttondecreaseDirecY= new Button<Producer>(this, &Producer::increaseDirecY, cml::vector2f(0.14, 0.5), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseDirecY->addSubElement(imagedecreaseY2);
 	//Strengh
-	Button<Producer>* buttonincreaseStrength= new Button<Producer>(this, &Producer::increaseStrength, cml::vector2f(0.4, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<Producer>* buttonincreaseStrength= new Button<Producer>(this, &Producer::increaseStrength, cml::vector2f(0.4, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseStrength->addSubElement(imageincreaseStrength);
-	Button<Producer>* buttondecreaseStrength= new Button<Producer>(this, &Producer::decreaseStrength, cml::vector2f(0.4, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<Producer>* buttondecreaseStrength= new Button<Producer>(this, &Producer::decreaseStrength, cml::vector2f(0.4, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseStrength->addSubElement(imagedecreaseStrength);
 
 	hudElement->addSubElement(buttonIncreaseStrength);

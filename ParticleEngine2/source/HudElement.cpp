@@ -37,8 +37,8 @@ void HudElement::setPosition(cml::vector2f position)
 
 void HudElement::draw()
 {
-	//windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
-	windowSize_ = cml::vector2i(1600, 900);
+	windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
+	//windowSize_ = cml::vector2i(1600, 900);
 	//draw a rectangle in the backgroundcolor
 	glBegin(GL_QUADS);
 		glColor4f(backgroundColor_[0],backgroundColor_[1],backgroundColor_[2],backgroundColor_[3]);

@@ -2,7 +2,7 @@
 
 #include <cml\cml.h>
 #include <Glee/GLee.h>
-#include <GL/gl.h>	
+#include <GL/glut.h>	
 
 #include <oogl/image.h>
 #include "HudElement.h"

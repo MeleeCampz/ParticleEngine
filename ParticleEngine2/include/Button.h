@@ -25,7 +25,6 @@ public:
 	void draw()
 	{
 		HudElement::draw();
-		//windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
 		//Draw an octangon around the button:
 		glBegin(GL_TRIANGLE_FAN);
 			glColor4f(0.4,0.4,0.4,0);

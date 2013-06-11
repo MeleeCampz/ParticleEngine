@@ -47,8 +47,8 @@ void ImageElement::setImage(std::string path)
 void ImageElement::draw()
 {
 	//HudElement::draw();
-	//windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
-	windowSize_ = cml::vector2i(1600, 900);
+	windowSize_=cml::vector2i(glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT));
+	//windowSize_ = cml::vector2i(1600, 900);
 	
 	glBindTexture(GL_TEXTURE_2D, textureID_);
 	
