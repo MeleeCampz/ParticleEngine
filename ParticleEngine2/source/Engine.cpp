@@ -7,7 +7,7 @@ Engine::Engine(void):
 	producers_()
 {
 
-	/*test*/
+	/*test*
 	Affector* testAffector = new Gravitation(cml::vector3f(-5.0, 0.0, 0.0), cml::vector3f(0.0, -0.01, 0.0));
 	addAffector(testAffector);
 	/**/
@@ -22,7 +22,7 @@ Engine::Engine(void):
 	addAffector(testAffector3);
 	*/
 
-	/*test*
+	/*test*/
 	Affector* testAffector3 = new Friction(cml::vector3f(5.0, 5.0, 0.0), 0.01);
 	addAffector(testAffector3);
 	/**/
