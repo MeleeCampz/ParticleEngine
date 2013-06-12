@@ -160,9 +160,9 @@ HudElement* Producer::getHudElement(cml::vector2f size)
 	imageIncSize->setImage("assets/buttonPlus.png");
 	ImageElement* imageDecSize = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
 	imageDecSize->setImage("assets/buttonMinus.png");
-	Button<Producer>* buttonincreaseSize= new Button<Producer>(this, &Producer::increaseSize, cml::vector2f(0.64, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Producer>* buttonincreaseSize= new Button<Producer>(this, &Producer::increaseSize, cml::vector2f(0.588, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseSize->addSubElement(imageIncSize);
-	Button<Producer>* buttondecreaseSize= new Button<Producer>(this, &Producer::decreaseSize, cml::vector2f(0.64, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Producer>* buttondecreaseSize= new Button<Producer>(this, &Producer::decreaseSize, cml::vector2f(0.588, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseSize->addSubElement(imageDecSize);
 	//Lifetime
 	ImageElement* imageIncLife = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
@@ -173,6 +173,15 @@ HudElement* Producer::getHudElement(cml::vector2f size)
 	buttonincreaseLife->addSubElement(imageIncLife);
 	Button<Producer>* buttondecreaseLife= new Button<Producer>(this, &Producer::decreaseLifeTime, cml::vector2f(0.815, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseLife->addSubElement(imageDecLife);
+	//Frequency
+	ImageElement* imageIncFreq = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
+	imageIncFreq->setImage("assets/buttonPlus.png");
+	ImageElement* imageDecFreq = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
+	imageDecFreq->setImage("assets/buttonMinus.png");
+	Button<Producer>* buttonincreaseFreq= new Button<Producer>(this, &Producer::decreaseSpawnTime, cml::vector2f(0.66, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	buttonincreaseFreq->addSubElement(imageIncFreq);
+	Button<Producer>* buttondecreaseFreq= new Button<Producer>(this, &Producer::increaseSpawnTime, cml::vector2f(0.66, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	buttondecreaseFreq->addSubElement(imageDecFreq);
 	//Color
 	ImageElement* imageColor = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
 	imageColor->setImage("assets/buttonMinus.png");
@@ -237,6 +246,9 @@ HudElement* Producer::getHudElement(cml::vector2f size)
 	//Life
 	hudElement->addSubElement(buttonincreaseLife);
 	hudElement->addSubElement(buttondecreaseLife);
+	//Freq
+	hudElement->addSubElement(buttonincreaseFreq);
+	hudElement->addSubElement(buttondecreaseFreq);
 	//Color
 	hudElement->addSubElement(buttonColor);
 	//BG
@@ -380,4 +392,16 @@ void Producer::changeColor()
 	color.random(0,1);
 	color[3]=0;
 	particleSpecification_.color=color;
+}
+
+void Producer::increaseSpawnTime()
+{
+	spawnTime_+=0.05;
+}
+
+void Producer::decreaseSpawnTime()
+{
+	if(spawnTime_>=0.05){
+		spawnTime_-=0.05;
+	}
 }

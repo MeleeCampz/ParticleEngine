@@ -60,6 +60,9 @@ private:
 	void increaseLifeTime();
 	void decreaseLifeTime();
 	void changeColor();
+	void increaseSpawnTime();
+	void decreaseSpawnTime();
+
 
 	GLfloat								alpha_;
 		
