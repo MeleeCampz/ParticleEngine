@@ -39,7 +39,9 @@ private:
 
 	GLboolean clicked;
 	GLint currentMousePosX_,currentMousePosY_;
-	void addAffector();
 	void addProducer();
+	void addAttractor();
+	void addGravitation();
+	void addFriction();
 	void deleteSelectedObj();
 };

@@ -401,7 +401,7 @@ void Producer::increaseSpawnTime()
 
 void Producer::decreaseSpawnTime()
 {
-	if(spawnTime_>=0.05){
+	if(spawnTime_>0.06){
 		spawnTime_-=0.05;
 	}
 }

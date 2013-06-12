@@ -2,28 +2,10 @@
 
 #include <math.h>
 
-//wieder löschen:
 #include "HudElement.h"
 #include"Button.h"
 #include "ImageElement.h"
-void InputOutputController::addAffector()
-{
-	//AttractorLocal:
-	AttractorLocal* att= new AttractorLocal(cml::vector3i(0,0,-5),-0.003);	
-	engine_->addAffector(att);
-}
 
-void InputOutputController::addProducer()
-{
-	Particle::ParticleSpecification particleSpecification;
-	particleSpecification.mass = 1.0;
-	particleSpecification.lifetime = 1000;
-	particleSpecification.color = cml::vector4f(0.0, 1.0, 1.0, 0.00);
-	particleSpecification.size = 0.1;
-	Producer* prod= new Producer(cml::vector3i(-10,0,5),0.5,cml::vector3f(0.1,0,0),0.1,particleSpecification);
-	engine_->addProducer(prod);
-}
-//Ende wieder löschen
 InputOutputController::InputOutputController(void)
 {
 	engine_ = new Engine();
@@ -72,6 +54,27 @@ InputOutputController::InputOutputController(void)
 	producerAddImg->setImage("assets/ButtonPlus.png");
 	producerAdd->addSubElement(producerAddImg);
 	hudElementRight_->addSubElement(producerAdd);
+
+	//Attractor
+	Button<InputOutputController>* attractorAdd = new Button<InputOutputController>(this, &InputOutputController::addAttractor, cml::vector2f(0.1, 0.3), cml::vector2f(0.8, 0.08), cml::vector4f(0.4,0.4,0.4,0));
+	ImageElement* attractorAddImg = new ImageElement(cml::vector2f(0.0,0.0),cml::vector2f(1.0,1.0),cml::vector4f(1,1,1,1));
+	attractorAddImg->setImage("assets/ButtonPlus.png");
+	attractorAdd->addSubElement(attractorAddImg);
+	hudElementRight_->addSubElement(attractorAdd);
+
+	//Gravitation
+	Button<InputOutputController>* gravitationAdd = new Button<InputOutputController>(this, &InputOutputController::addGravitation, cml::vector2f(0.1, 0.5), cml::vector2f(0.8, 0.08), cml::vector4f(0.4,0.4,0.4,0));
+	ImageElement* gravitationAddImg = new ImageElement(cml::vector2f(0.0,0.0),cml::vector2f(1.0,1.0),cml::vector4f(1,1,1,1));
+	gravitationAddImg->setImage("assets/ButtonPlus.png");
+	gravitationAdd->addSubElement(gravitationAddImg);
+	hudElementRight_->addSubElement(gravitationAdd);
+
+	//Friction
+	Button<InputOutputController>* frictionAdd = new Button<InputOutputController>(this, &InputOutputController::addFriction, cml::vector2f(0.1, 0.7), cml::vector2f(0.8, 0.08), cml::vector4f(0.4,0.4,0.4,0));
+	ImageElement* frictionAddImg = new ImageElement(cml::vector2f(0.0,0.0),cml::vector2f(1.0,1.0),cml::vector4f(1,1,1,1));
+	frictionAddImg->setImage("assets/ButtonPlus.png");
+	frictionAdd->addSubElement(frictionAddImg);
+	hudElementRight_->addSubElement(frictionAdd);
 
 	//BG
 	ImageElement* background = new ImageElement(cml::vector2f(0.0,0.0),cml::vector2f(1.0,1.0),cml::vector4f(1,1,1,1));
@@ -333,4 +336,35 @@ void InputOutputController::deleteSelectedObj()
 	engine_->deleteSelectableObject(selectedObject_);
 	initSzeneLight();
 	selectedObject_=0;
+}
+
+
+void InputOutputController::addProducer()
+{
+	Particle::ParticleSpecification particleSpecification;
+	particleSpecification.mass = 1.0;
+	particleSpecification.lifetime = 1000;
+	particleSpecification.color = cml::vector4f(0.0, 1.0, 1.0, 0.00);
+	particleSpecification.size = 0.1;
+	Producer* prod= new Producer(cml::vector3i(-10,0,5),0.5,cml::vector3f(0.1,0,0),0.1,particleSpecification);
+	engine_->addProducer(prod);
+}
+
+
+void InputOutputController::addAttractor()
+{
+	//AttractorLocal:
+	AttractorLocal* att= new AttractorLocal(cml::vector3i(0,0,-5),-0.003);	
+	engine_->addAffector(att);
+}
+
+
+void InputOutputController::addGravitation()
+{
+
+}
+
+void InputOutputController::addFriction()
+{
+
 }
