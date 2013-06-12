@@ -149,6 +149,23 @@ void Engine::addProducer(Producer* toAddProducer)
 	producers_.push_back(toAddProducer);
 }
 
+void Engine::deleteSelectableObject(SelectableObject* toDelete)
+{
+	for(std::list<Affector*>::iterator itr= affectors_.begin(); itr!=affectors_.end();){
+		if((*itr)==toDelete){
+			delete toDelete;
+			itr=affectors_.erase(itr);
+		}
+		else itr++;
+	}
+	for(std::list<Producer*>::iterator itr= producers_.begin(); itr!=producers_.end();){
+		if((*itr)==toDelete){
+			delete toDelete;
+			itr=producers_.erase(itr);
+		}
+		else itr++;
+	}
+}
 
 std::list <SelectableObject*> Engine::getSelectableObjects()
 {

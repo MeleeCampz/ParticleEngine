@@ -43,4 +43,5 @@ private:
 	HudElement*	hud;
 	void addAffector();
 	void addProducer();
+	void deleteSelectedObj();
 };

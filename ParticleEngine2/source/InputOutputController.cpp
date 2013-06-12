@@ -160,6 +160,10 @@ void InputOutputController::mouseClick(int button, int state ,int x, int y)
 	if(button==GLUT_LEFT_BUTTON && state==GLUT_UP){
 		if(hudElementBottom_ != 0){
 			wasclicked=hudElementBottom_->mouseClick(button,state,cml::vector2i(x,y));
+			if(selectedObject_ == 0){
+				delete hudElementBottom_;
+				hudElementBottom_=0;
+			}
 		}
 		if(hudElementRight_ != 0 && !wasclicked){
 			wasclicked=hudElementRight_->mouseClick(button,state,cml::vector2i(x,y));
@@ -251,7 +255,7 @@ void InputOutputController::select3dObject(int x, int y)
 		hudElementBottom_ = 0;
 	}
 	//the selected Object
-	SelectableObject* selected=0;
+	selectedObject_=0;
 	//varibales to save the results
 	GLint viewport[4];
     GLdouble modelview[16];
@@ -276,15 +280,16 @@ void InputOutputController::select3dObject(int x, int y)
 	std::list<SelectableObject*> allSelectableObjects=engine_->getSelectableObjects();
 	for(std::list<SelectableObject*>::iterator itr=allSelectableObjects.begin();itr!=allSelectableObjects.end();itr++){
 		if(((*itr)->getPos()-mouseOnNearClippingPlane).length()<(*itr)->getSize()){
-			selected=*itr;
+			selectedObject_=*itr;
 		}
 	}
-	if(selected!=0){
-		hudElementBottom_=selected->getHudElement(cml::vector2f(1,0.2));
-		HudElement* container= new HudElement(cml::vector2f(0.5,0.5),cml::vector2f(0.05,0.2),cml::vector4f(0,0,0,0));
-		Button<InputOutputController>* but=new Button<InputOutputController>(this,&InputOutputController::addAffector, cml::vector2f(1,1), cml::vector2f(1,1), cml::vector4f(0.4,0.4,0.4,0));
-		container->addSubElement(but);
-		hudElementBottom_->addSubElement(container);
+	if(selectedObject_!=0){
+		HudElement* deleteObj = new HudElement(cml::vector2f(0,0),cml::vector2f(1,1),cml::vector4d(1,1,1,1));
+		Button<InputOutputController>* butDelete = new Button<InputOutputController>(this,&InputOutputController::deleteSelectedObj,cml::vector2d(0.483,0.3),cml::vector2d(0.03,0.5),cml::vector4d(0.4,0.4,0.4,0));
+		deleteObj->addSubElement(butDelete);
+
+		hudElementBottom_=selectedObject_->getHudElement(cml::vector2f(1,0.2));
+		hudElementBottom_->addSubElement(deleteObj);
 	}
 }
 
@@ -312,3 +317,8 @@ void InputOutputController::drawGrid()
 	glDisable(GL_BLEND);
 }
 
+void InputOutputController::deleteSelectedObj()
+{
+	engine_->deleteSelectableObject(selectedObject_);
+	selectedObject_=0;
+}

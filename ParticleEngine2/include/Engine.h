@@ -22,6 +22,8 @@ public:
 	void addAffector(Affector* toAddAffector);
 	void addProducer(Producer* toAddProducer);
 
+	void deleteSelectableObject (SelectableObject* toDelete);
+
 	std::list <SelectableObject*> getSelectableObjects();
 
 private:
