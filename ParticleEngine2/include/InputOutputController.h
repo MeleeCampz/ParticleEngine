@@ -24,7 +24,6 @@ private:
 	HudElement*			hudElementBottom_;
 	HudElement*			hudElementRight_;
 	SelectableObject*	selectedObject_;
-	//Noch nicht im KlassenDiagramm:
 	GLfloat			distanceToCenter_;
 	GLfloat			angleX;	//Rotation around the Y-Axe
 	GLfloat			angleY; //Rotation around the X-Axe

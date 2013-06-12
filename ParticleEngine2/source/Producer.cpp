@@ -83,7 +83,6 @@ void Producer::draw()
 
 		glScalef(size_*0.5,size_*0.5,size_*0.5);
 		glColor4f(1.0, 1.0, 1.0, 1.0);
-		//glutSolidSphere(size_, 10, 10);
 		model_->render();
 	glPopMatrix();
 }

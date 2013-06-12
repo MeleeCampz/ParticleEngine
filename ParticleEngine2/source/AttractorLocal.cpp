@@ -20,7 +20,6 @@ void AttractorLocal::draw()
 		glTranslatef(position_[0], position_[1], position_[2]);
 		glScalef(size_*0.5,size_*0.5,size_*0.5);
 		glColor4f(1.0, 1.0, 1.0, 1.0);
-		//glutSolidSphere(size_, 10, 10);
 		model_->render();
 	glPopMatrix();
 }

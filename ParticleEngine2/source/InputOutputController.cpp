@@ -11,39 +11,18 @@ InputOutputController::InputOutputController(void)
 	engine_ = new Engine();
 
 	distanceToCenter_= 50;
-	cameraPosition_=cml::vector3f(0,0,distanceToCenter_);
 	angleX=0;
-	angleY=0;
+	angleY=45;
+	//Calculation the Coordinates of the camera on a sphera around the center of coor-system with the radius=distanceToCenter
+	cameraPosition_[1]=(std::sin(angleY*(2*M_PI/360))*distanceToCenter_);
+	cameraPosition_[2]=std::cos(angleY*(2*M_PI/360))*cos(angleX*(2*M_PI/360))*distanceToCenter_;
+	cameraPosition_[0]=std::cos(angleY*(2*M_PI/360))*sin(angleX*(2*M_PI/360))*distanceToCenter_;
+	
 	gridRange_=30;
 	clicked=false;
 
 	initHudLight();
 	initSzeneLight();
-/*
-	//wieder löschen:
-	//button1:
-		//Images::
-		ImageElement* img=new ImageElement(cml::vector2f(0.0,0.0),cml::vector2f(1.0,1.0),cml::vector4f(1,1,1,1));
-		img->setImage("assets/test.png");
-		//Button:
-		Button<InputOutputController>* newAtr = new Button<InputOutputController>(this, &InputOutputController::addAffector, cml::vector2f(0.025, 0.1),cml::vector2f(0.95,0.3), cml::vector4f(0.4,0.4,0.4,0));
-		newAtr->addSubElement(img);
-	//button2:
-		//Images::
-		ImageElement* img2=new ImageElement(cml::vector2f(0.0,0.0),cml::vector2f(1.0,1.0),cml::vector4f(1,1,1,1));
-		img2->setImage("assets/floor.jpg");
-		//Button:
-		Button<InputOutputController>* newProd = new Button<InputOutputController>(this, &InputOutputController::addProducer, cml::vector2f(0.025, 0.5),cml::vector2f(0.95,0.3), cml::vector4f(0.4,0.4,0.4,0));
-		newProd->addSubElement(img2);
-	//right hudElement
-	hud=new HudElement(cml::vector2f(0.9,0.1),cml::vector2f(0.1,0.8),cml::vector4f(0,0.8,0,0.6));
-	hud->addSubElement(newAtr);
-	hud->addSubElement(newProd);
-	//ende wieder löschen
-	
-	hudElementRight_=hud;
-	hudElementBottom_=0;
-*/
 
 	hudElementBottom_=0;
 	hudElementRight_ = new HudElement(cml::vector2f(0.9,0.0),cml::vector2f(0.1,0.8),cml::vector4f(1,1,1,0));
@@ -111,7 +90,6 @@ void InputOutputController::draw()
 						0,					1,					0					);
 			initSzeneLight();
 			initSzeneMaterial();
-			//glutSolidTeapot(1);	
 			engine_->draw();
 			drawGrid();
 			if(clicked){
@@ -144,9 +122,10 @@ void InputOutputController::keyboard(unsigned char key,int x, int y)
 	switch (key)
 	{
 		case 'r':
-			angleX=0;
-			angleY=0;
-			distanceToCenter_=10;
+			delete engine_;
+			engine_ = new Engine;
+			delete hudElementBottom_;
+			hudElementBottom_=0;
 			break;
 		case 'w':
 			if(angleY<89){
