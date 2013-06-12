@@ -27,7 +27,7 @@ Engine::Engine(void):
 	addAffector(testAffector3);
 	*/
 
-	/*test
+	/*test*/
 	Particle::ParticleSpecification particleSpecification;
 	particleSpecification.mass = 1.0;
 	particleSpecification.lifetime = 100;
@@ -41,7 +41,7 @@ Engine::Engine(void):
 
 	Producer* testProducer = new Producer( cml::vector3f(0.0, 0.0, 0.0), producerSpecification, particleSpecification);
 	addProducer(testProducer);
-	*/
+	/**/
 }
 
 

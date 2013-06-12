@@ -64,7 +64,19 @@ InputOutputController::InputOutputController(void)
 */
 
 	hudElementBottom_=0;
-	hudElementRight_ = new HudElement(cml::vector2f(0.9,0.0),cml::vector2f(0.1,0.8),cml::vector4f(0,0.8,0,0.6));
+	hudElementRight_ = new HudElement(cml::vector2f(0.9,0.0),cml::vector2f(0.1,0.8),cml::vector4f(1,1,1,0));
+
+	//producer
+	Button<InputOutputController>* producerAdd = new Button<InputOutputController>(this, &InputOutputController::addProducer, cml::vector2f(0.1, 0.1), cml::vector2f(0.8, 0.08), cml::vector4f(0.4,0.4,0.4,0));
+	ImageElement* producerAddImg = new ImageElement(cml::vector2f(0.0,0.0),cml::vector2f(1.0,1.0),cml::vector4f(1,1,1,1));
+	producerAddImg->setImage("assets/ButtonPlus.png");
+	producerAdd->addSubElement(producerAddImg);
+	hudElementRight_->addSubElement(producerAdd);
+
+	//BG
+	ImageElement* background = new ImageElement(cml::vector2f(0.0,0.0),cml::vector2f(1.0,1.0),cml::vector4f(1,1,1,1));
+	background->setImage("assets/RightHudBG.png");
+	hudElementRight_->addSubElement(background);
 
 }
 
