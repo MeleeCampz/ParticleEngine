@@ -14,7 +14,7 @@ Producer::Producer(cml::vector3f position, GLfloat spawnTime, cml::vector3f init
 	else{
 		spreadStrength_ = spreadStrength;
 	}
-	//caluculate die direction the Producer is shooting at with to angles;
+	//caluculate die direction the Producer is shooting at with to angles
 	beta_=std::asin(initialForce_[1]/initialForce_.length())*(2*M_PI/360);
 	alpha_=std::acos(initialForce_[0]/initialForce_.length())*(2*M_PI/360);
 

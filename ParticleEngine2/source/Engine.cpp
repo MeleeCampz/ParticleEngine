@@ -12,7 +12,7 @@ Engine::Engine(void):
 	addAffector(testAffector);
 	/**/
 
-	/*test*/
+	/*test*
 	Affector* testAffector2 = new AttractorLocal(cml::vector3f(-5.0, 3.0, 0.0), 0.01);
 	addAffector(testAffector2);
 	/**/
@@ -22,7 +22,7 @@ Engine::Engine(void):
 	addAffector(testAffector3);
 	*/
 
-	/*test*/
+	/*test*
 	Affector* testAffector3 = new Friction(cml::vector3f(5.0, 5.0, 0.0), 0.01);
 	addAffector(testAffector3);
 	/**/
