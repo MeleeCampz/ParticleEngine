@@ -39,9 +39,9 @@ private:
 
 	GLboolean clicked;
 	GLint currentMousePosX_,currentMousePosY_;
-	//zum wieder löschen
-	HudElement*	hud;
-	void addAffector();
 	void addProducer();
+	void addAttractor();
+	void addGravitation();
+	void addFriction();
 	void deleteSelectedObj();
 };

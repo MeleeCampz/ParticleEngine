@@ -81,14 +81,14 @@ HudElement* AttractorLocal::getHudElement(cml::vector2f size)
 	Button<AttractorLocal>* buttondecreaseX= new Button<AttractorLocal>(this, &AttractorLocal::increasePosX, cml::vector2f(0.01, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseX->addSubElement(imagedecreaseX);
 
-	Button<AttractorLocal>* buttonincreaseY= new Button<AttractorLocal>(this, &AttractorLocal::decreasePosY, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<AttractorLocal>* buttonincreaseY= new Button<AttractorLocal>(this, &AttractorLocal::decreasePosY, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseY->addSubElement(imageincreaseY);
-	Button<AttractorLocal>* buttondecreaseY= new Button<AttractorLocal>(this, &AttractorLocal::increasePosY, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<AttractorLocal>* buttondecreaseY= new Button<AttractorLocal>(this, &AttractorLocal::increasePosY, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseY->addSubElement(imagedecreaseY);
 
-	Button<AttractorLocal>* buttonincreaseZ= new Button<AttractorLocal>(this, &AttractorLocal::increasePosZ, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<AttractorLocal>* buttonincreaseZ= new Button<AttractorLocal>(this, &AttractorLocal::increasePosZ, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseZ->addSubElement(imageincreaseZ);
-	Button<AttractorLocal>* buttondecreaseZ= new Button<AttractorLocal>(this, &AttractorLocal::decreasePosZ, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<AttractorLocal>* buttondecreaseZ= new Button<AttractorLocal>(this, &AttractorLocal::decreasePosZ, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseZ->addSubElement(imagedecreaseZ);
 
 	//Strengh

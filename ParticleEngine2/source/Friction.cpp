@@ -73,14 +73,14 @@ HudElement* Friction::getHudElement(cml::vector2f size)
 	Button<Friction>* buttondecreaseX= new Button<Friction>(this, &Friction::increasePosX, cml::vector2f(0.01, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseX->addSubElement(imagedecreaseX);
 
-	Button<Friction>* buttonincreaseY= new Button<Friction>(this, &Friction::decreasePosY, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Friction>* buttonincreaseY= new Button<Friction>(this, &Friction::decreasePosY, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseY->addSubElement(imageincreaseY);
-	Button<Friction>* buttondecreaseY= new Button<Friction>(this, &Friction::increasePosY, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Friction>* buttondecreaseY= new Button<Friction>(this, &Friction::increasePosY, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseY->addSubElement(imagedecreaseY);
 
-	Button<Friction>* buttonincreaseZ= new Button<Friction>(this, &Friction::increasePosZ, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Friction>* buttonincreaseZ= new Button<Friction>(this, &Friction::increasePosZ, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseZ->addSubElement(imageincreaseZ);
-	Button<Friction>* buttondecreaseZ= new Button<Friction>(this, &Friction::decreasePosZ, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Friction>* buttondecreaseZ= new Button<Friction>(this, &Friction::decreasePosZ, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseZ->addSubElement(imagedecreaseZ);
 
 	//Strengh

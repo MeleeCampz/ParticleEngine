@@ -91,14 +91,14 @@ HudElement* Gravitation::getHudElement(cml::vector2f size)
 	Button<Gravitation>* buttondecreaseX= new Button<Gravitation>(this, &Gravitation::increasePosX, cml::vector2f(0.01, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseX->addSubElement(imagedecreaseX);
 
-	Button<Gravitation>* buttonincreaseY= new Button<Gravitation>(this, &Gravitation::decreasePosY, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Gravitation>* buttonincreaseY= new Button<Gravitation>(this, &Gravitation::decreasePosY, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseY->addSubElement(imageincreaseY);
-	Button<Gravitation>* buttondecreaseY= new Button<Gravitation>(this, &Gravitation::increasePosY, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Gravitation>* buttondecreaseY= new Button<Gravitation>(this, &Gravitation::increasePosY, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseY->addSubElement(imagedecreaseY);
 
-	Button<Gravitation>* buttonincreaseZ= new Button<Gravitation>(this, &Gravitation::increasePosZ, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Gravitation>* buttonincreaseZ= new Button<Gravitation>(this, &Gravitation::increasePosZ, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseZ->addSubElement(imageincreaseZ);
-	Button<Gravitation>* buttondecreaseZ= new Button<Gravitation>(this, &Gravitation::decreasePosZ, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Gravitation>* buttondecreaseZ= new Button<Gravitation>(this, &Gravitation::decreasePosZ, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseZ->addSubElement(imagedecreaseZ);
 	//DIRECT
 	Button<Gravitation>* buttonincreaseDirecX= new Button<Gravitation>(this, &Gravitation::decreaseDirecX, cml::vector2f(0.1, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));

@@ -194,14 +194,14 @@ HudElement* Producer::getHudElement(cml::vector2f size)
 	Button<Producer>* buttondecreaseX= new Button<Producer>(this, &Producer::increasePosX, cml::vector2f(0.01, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseX->addSubElement(imagedecreaseX);
 
-	Button<Producer>* buttonincreaseY= new Button<Producer>(this, &Producer::decreasePosY, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Producer>* buttonincreaseY= new Button<Producer>(this, &Producer::decreasePosY, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseY->addSubElement(imageincreaseY);
-	Button<Producer>* buttondecreaseY= new Button<Producer>(this, &Producer::increasePosY, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Producer>* buttondecreaseY= new Button<Producer>(this, &Producer::increasePosY, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseY->addSubElement(imagedecreaseY);
 
-	Button<Producer>* buttonincreaseZ= new Button<Producer>(this, &Producer::increasePosZ, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Producer>* buttonincreaseZ= new Button<Producer>(this, &Producer::increasePosZ, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseZ->addSubElement(imageincreaseZ);
-	Button<Producer>* buttondecreaseZ= new Button<Producer>(this, &Producer::decreasePosZ, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Producer>* buttondecreaseZ= new Button<Producer>(this, &Producer::decreasePosZ, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseZ->addSubElement(imagedecreaseZ);
 	//DIRECT
 	Button<Producer>* buttonincreaseDirecX= new Button<Producer>(this, &Producer::decreaseDirecX, cml::vector2f(0.1, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
@@ -362,7 +362,7 @@ void Producer::increaseMass()
 }
 void Producer::decreaseMass()
 {
-	if(particleSpecification_.mass>0.2)	{
+	if(particleSpecification_.mass>0.4)	{
 		particleSpecification_.mass-=0.2;
 	}
 }
@@ -401,7 +401,7 @@ void Producer::increaseSpawnTime()
 
 void Producer::decreaseSpawnTime()
 {
-	if(spawnTime_>=0.05){
+	if(spawnTime_>0.06){
 		spawnTime_-=0.05;
 	}
 }
