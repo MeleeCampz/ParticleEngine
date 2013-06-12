@@ -35,6 +35,9 @@ InputOutputController::InputOutputController(void)
 	gridRange_=30;
 	clicked=false;
 
+	initHudLight();
+	initSzeneLight();
+
 	//wieder löschen:
 	//button1:
 		//Images::
@@ -76,6 +79,11 @@ void InputOutputController::update()
 
 void InputOutputController::draw()
 {
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(45, ((float)800)/600,1, 300);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
 	glPushMatrix();
 		glColor3f(1,1,1);
 		glPushMatrix();
@@ -83,10 +91,11 @@ void InputOutputController::draw()
 						0,					0,					0,
 						0,					1,					0					);
 			//glutSolidTeapot(1);
-			initSzeneLight();
+			glEnable(GL_LIGHT2);	
 			initSzeneMaterial();
-			engine_->draw();
 			drawGrid();
+			engine_->draw();
+			glDisable(GL_LIGHT2);
 			if(clicked){
 				select3dObject(currentMousePosX_,currentMousePosY_);
 				clicked=false;
@@ -97,7 +106,7 @@ void InputOutputController::draw()
 		glOrtho(0,glutGet(GLUT_WINDOW_WIDTH),glutGet(GLUT_WINDOW_HEIGHT),0,-10,10);
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
-		initHudLight();
+		glEnable(GL_LIGHT1);
 		initSzeneMaterial();
 		if(hudElementBottom_!=0){
 			hudElementBottom_->draw();
@@ -105,12 +114,8 @@ void InputOutputController::draw()
 		if(hudElementRight_!=0){
 			hudElementRight_->draw();
 		}
+		glDisable(GL_LIGHT1);
 	glPopMatrix();
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluPerspective(45, ((float)800)/600,1, 300);
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
 }
 
 void InputOutputController::keyboard(unsigned char key,int x, int y)
@@ -181,20 +186,18 @@ void InputOutputController::mousePos(int x, int y){
 
 void InputOutputController::initSzeneLight()
 {
-    glEnable(GL_LIGHTING);
-
     // set color of the light
     GLfloat ambient[4]  = { 0.2f, 0.2f, 0.2f, 1.0f };
     GLfloat diffuse[4]  = { 0.6f, 0.6f, 0.6f, 1.0f };
     GLfloat specular[4] = { 0.6f, 0.6f, 0.6f, 1.0f };
 	//settings for Light0
-    glEnable(GL_LIGHT0);
-    glLightfv(GL_LIGHT0, GL_AMBIENT,  ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE,  diffuse);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
+    glEnable(GL_LIGHT2);
+    glLightfv(GL_LIGHT2, GL_AMBIENT,  ambient);
+    glLightfv(GL_LIGHT2, GL_DIFFUSE,  diffuse);
+    glLightfv(GL_LIGHT2, GL_SPECULAR, specular);
 	//Set Light0 at 0,0,0
 	GLfloat positionLight0[4]= {0,20,0,0};
-	glLightfv(GL_LIGHT0, GL_POSITION,positionLight0);
+	glLightfv(GL_LIGHT2, GL_POSITION,positionLight0);
 }
 
 void InputOutputController::initSzeneMaterial()
@@ -204,8 +207,6 @@ void InputOutputController::initSzeneMaterial()
     GLfloat ambient[4]       = {0.0, 0.0, 0.0, 1.0};
     GLfloat diffuse[4]       = {1.0, 1.0, 1.0, 1.0};
     GLfloat specular[4]      = {1.0, 1.0, 1.0, 1.0};
-
-
     // settings for material
     glMaterialfv(GL_FRONT_AND_BACK,GL_AMBIENT,ambient);
     glMaterialfv(GL_FRONT_AND_BACK,GL_DIFFUSE,diffuse);
@@ -216,20 +217,18 @@ void InputOutputController::initSzeneMaterial()
 
 void InputOutputController::initHudLight()
 {
-	glEnable(GL_LIGHTING);
-
     // set color of the light
     GLfloat ambient[4]  = { 1.0f, 1.0f, 1.0f, 1.0f };
     GLfloat diffuse[4]  = { 0.0f, 0.0f, 0.0f, 1.0f };
     GLfloat specular[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
 	//settings for Light0
-    glEnable(GL_LIGHT0);
-    glLightfv(GL_LIGHT0, GL_AMBIENT,  ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE,  diffuse);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
+    glEnable(GL_LIGHT1);
+    glLightfv(GL_LIGHT1, GL_AMBIENT,  ambient);
+    glLightfv(GL_LIGHT1, GL_DIFFUSE,  diffuse);
+    glLightfv(GL_LIGHT1, GL_SPECULAR, specular);
 	//Set Light0 at 0,0,0
 	GLfloat positionLight0[4]= {0,0,0,1};
-	glLightfv(GL_LIGHT0, GL_POSITION,positionLight0);
+	glLightfv(GL_LIGHT1, GL_POSITION,positionLight0);
 }
 
 void InputOutputController::initHudMaterial()
@@ -239,8 +238,6 @@ void InputOutputController::initHudMaterial()
     GLfloat ambient[4]       = {1.0, 1.0, 1.0, 1.0};
     GLfloat diffuse[4]       = {0.0, 0.0, 0.0, 1.0};
     GLfloat specular[4]      = {0.0, 0.0, 0.0, 0.0};
-
-
     // settings for material
     glMaterialfv(GL_FRONT_AND_BACK,GL_AMBIENT,ambient);
     glMaterialfv(GL_FRONT_AND_BACK,GL_DIFFUSE,diffuse);
