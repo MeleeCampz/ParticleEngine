@@ -90,12 +90,12 @@ void InputOutputController::draw()
 			gluLookAt(	cameraPosition_[0],	cameraPosition_[1],	cameraPosition_[2],			
 						0,					0,					0,
 						0,					1,					0					);
-			//glutSolidTeapot(1);
-			glEnable(GL_LIGHT2);	
+			initSzeneLight();
 			initSzeneMaterial();
-			drawGrid();
+			//glutSolidTeapot(1);	
 			engine_->draw();
-			glDisable(GL_LIGHT2);
+			drawGrid();
+			glDisable(GL_LIGHT0);
 			if(clicked){
 				select3dObject(currentMousePosX_,currentMousePosY_);
 				clicked=false;
@@ -191,13 +191,13 @@ void InputOutputController::initSzeneLight()
     GLfloat diffuse[4]  = { 0.6f, 0.6f, 0.6f, 1.0f };
     GLfloat specular[4] = { 0.6f, 0.6f, 0.6f, 1.0f };
 	//settings for Light0
-    glEnable(GL_LIGHT2);
-    glLightfv(GL_LIGHT2, GL_AMBIENT,  ambient);
-    glLightfv(GL_LIGHT2, GL_DIFFUSE,  diffuse);
-    glLightfv(GL_LIGHT2, GL_SPECULAR, specular);
+    glEnable(GL_LIGHT0);
+    glLightfv(GL_LIGHT0, GL_AMBIENT,  ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE,  diffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
 	//Set Light0 at 0,0,0
 	GLfloat positionLight0[4]= {0,20,0,0};
-	glLightfv(GL_LIGHT2, GL_POSITION,positionLight0);
+	glLightfv(GL_LIGHT0, GL_POSITION,positionLight0);
 }
 
 void InputOutputController::initSzeneMaterial()
@@ -212,7 +212,6 @@ void InputOutputController::initSzeneMaterial()
     glMaterialfv(GL_FRONT_AND_BACK,GL_DIFFUSE,diffuse);
     glMaterialfv(GL_FRONT_AND_BACK,GL_SPECULAR,specular);
     glMaterialf (GL_FRONT_AND_BACK,GL_SHININESS,16.0f);
-
 }
 
 void InputOutputController::initHudLight()
@@ -305,7 +304,7 @@ void InputOutputController::drawGrid()
 		glEnd();
 	}
 	glBegin(GL_QUADS);
-		glColor4d(0.3,0.3,0.3,0.8);	
+		glColor4d(0.5,0.5,0.5,0.5);	
 		glVertex3i(-gridRange_,0,-gridRange_);
 		glVertex3i(gridRange_,0,-gridRange_);
 		glVertex3i(gridRange_,0,gridRange_);
@@ -317,5 +316,6 @@ void InputOutputController::drawGrid()
 void InputOutputController::deleteSelectedObj()
 {
 	engine_->deleteSelectableObject(selectedObject_);
+	initSzeneLight();
 	selectedObject_=0;
 }

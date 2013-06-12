@@ -36,7 +36,7 @@ void Particle::draw()
 {
 	glPushMatrix();
 		glTranslatef(position_[0], position_[1], position_[2]);
-		glColor4f(color_[0], color_[1], color_[2], color_[3]);
+		glColor4f(color_[0], color_[1], color_[2],0);
 		glutSolidSphere(size_, 10, 10);
 
 	glPopMatrix();
