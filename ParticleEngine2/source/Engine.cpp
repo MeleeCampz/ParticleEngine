@@ -27,7 +27,7 @@ Engine::Engine(void):
 	addAffector(testAffector3);
 	*/
 
-	/*test*/
+	/*test*
 	Particle::ParticleSpecification particleSpecification;
 	particleSpecification.mass = 1.0;
 	particleSpecification.lifetime = 100;
