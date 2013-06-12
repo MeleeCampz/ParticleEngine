@@ -280,11 +280,12 @@ void InputOutputController::select3dObject(int x, int y)
 		}
 	}
 	if(selected!=0){
+		HudElement* deleteObj = new HudElement(cml::vector2f(0,0),cml::vector2f(1,1),cml::vector4d(1,1,1,1));
+		Button<InputOutputController>* butDelete = new Button<InputOutputController>(this,&InputOutputController::deleteSelectedObj,cml::vector2d(0.483,0.3),cml::vector2d(0.03,0.5),cml::vector4d(0.4,0.4,0.4,0));
+		deleteObj->addSubElement(butDelete);
+
 		hudElementBottom_=selected->getHudElement(cml::vector2f(1,0.2));
-		HudElement* container= new HudElement(cml::vector2f(0.5,0.5),cml::vector2f(0.05,0.2),cml::vector4f(0,0,0,0));
-		Button<InputOutputController>* but=new Button<InputOutputController>(this,&InputOutputController::addAffector, cml::vector2f(1,1), cml::vector2f(1,1), cml::vector4f(0.4,0.4,0.4,0));
-		container->addSubElement(but);
-		hudElementBottom_->addSubElement(container);
+		hudElementBottom_->addSubElement(deleteObj);
 	}
 }
 
@@ -312,3 +313,8 @@ void InputOutputController::drawGrid()
 	glDisable(GL_BLEND);
 }
 
+void InputOutputController::deleteSelectedObj()
+{
+	std::cout<<"Löschen!"<<std::endl;
+	engine_->deleteSelectableObject(selectedObject_);
+}
