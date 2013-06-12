@@ -19,31 +19,6 @@ InputOutputController::InputOutputController(void)
 
 	initHudLight();
 	initSzeneLight();
-/*
-	//wieder löschen:
-	//button1:
-		//Images::
-		ImageElement* img=new ImageElement(cml::vector2f(0.0,0.0),cml::vector2f(1.0,1.0),cml::vector4f(1,1,1,1));
-		img->setImage("assets/test.png");
-		//Button:
-		Button<InputOutputController>* newAtr = new Button<InputOutputController>(this, &InputOutputController::addAffector, cml::vector2f(0.025, 0.1),cml::vector2f(0.95,0.3), cml::vector4f(0.4,0.4,0.4,0));
-		newAtr->addSubElement(img);
-	//button2:
-		//Images::
-		ImageElement* img2=new ImageElement(cml::vector2f(0.0,0.0),cml::vector2f(1.0,1.0),cml::vector4f(1,1,1,1));
-		img2->setImage("assets/floor.jpg");
-		//Button:
-		Button<InputOutputController>* newProd = new Button<InputOutputController>(this, &InputOutputController::addProducer, cml::vector2f(0.025, 0.5),cml::vector2f(0.95,0.3), cml::vector4f(0.4,0.4,0.4,0));
-		newProd->addSubElement(img2);
-	//right hudElement
-	hud=new HudElement(cml::vector2f(0.9,0.1),cml::vector2f(0.1,0.8),cml::vector4f(0,0.8,0,0.6));
-	hud->addSubElement(newAtr);
-	hud->addSubElement(newProd);
-	//ende wieder löschen
-	
-	hudElementRight_=hud;
-	hudElementBottom_=0;
-*/
 
 	hudElementBottom_=0;
 	hudElementRight_ = new HudElement(cml::vector2f(0.9,0.0),cml::vector2f(0.1,0.8),cml::vector4f(1,1,1,0));
