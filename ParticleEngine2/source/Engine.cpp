@@ -152,13 +152,15 @@ void Engine::addProducer(Producer* toAddProducer)
 void Engine::deleteSelectableObject(SelectableObject* toDelete)
 {
 	for(std::list<Affector*>::iterator itr= affectors_.begin(); itr!=affectors_.end();){
-		if(*itr==toDelete){
+		if((*itr)==toDelete){
+			delete toDelete;
 			itr=affectors_.erase(itr);
 		}
 		else itr++;
 	}
 	for(std::list<Producer*>::iterator itr= producers_.begin(); itr!=producers_.end();){
-		if(*itr==toDelete){
+		if((*itr)==toDelete){
+			delete toDelete;
 			itr=producers_.erase(itr);
 		}
 		else itr++;
