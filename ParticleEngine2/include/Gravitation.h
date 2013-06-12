@@ -25,7 +25,24 @@ public:
 
 private:
 
-	cml::vector3f force_;
+	void increasePosX();
+	void decreasePosX();
+	void increasePosY();
+	void decreasePosY();
+	void increasePosZ();
+	void decreasePosZ();
+	void increaseDirecX();
+	void increaseDirecY();
+	void decreaseDirecX();
+	void decreaseDirecY();
+	void increaseStrength();
+	void decreaseStrength();
+
+	GLfloat			alpha_;
+		
+	GLfloat			beta_;
+
+	cml::vector3f	force_;
 
 	oogl::Model*	model_;
 };
