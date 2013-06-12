@@ -7,8 +7,8 @@ Engine::Engine(void):
 	producers_()
 {
 
-	/*test*
-	Affector* testAffector = new Gravitation(cml::vector3f(-5.0, 0.0, 0.0), cml::vector3f(0.0, -0.01, 0.0));
+	/*test*/
+	Affector* testAffector = new Gravitation(cml::vector3f(-5.0, 0.0, 0.0), cml::vector3f(0.0, -0.1, 0.0));
 	addAffector(testAffector);
 	/**/
 
@@ -30,13 +30,13 @@ Engine::Engine(void):
 	/*test*/
 	Particle::ParticleSpecification particleSpecification;
 	particleSpecification.mass = 1.0;
-	particleSpecification.lifetime = 1000;
+	particleSpecification.lifetime = 100;
 	particleSpecification.color = cml::vector4f(1.0, 1.0, 0.0, 0.00);
 	particleSpecification.size = 0.05;
 
 	Producer::ProducerSpecification producerSpecification;
 	producerSpecification.spawnTime = 0.3;
-	producerSpecification.initialForce = cml::vector3f(0.1, 0.0, 0.0);
+	producerSpecification.initialForce = cml::vector3f(0.0, 0.0, 0.1);
 	producerSpecification.spreadStrength = 0;
 
 	Producer* testProducer = new Producer( cml::vector3f(0.0, 0.0, 0.0), producerSpecification, particleSpecification);

@@ -14,9 +14,9 @@ Producer::Producer(cml::vector3f position, GLfloat spawnTime, cml::vector3f init
 	else{
 		spreadStrength_ = spreadStrength;
 	}
-	//caluculate die direction the Producer is shooting at with to angles
-	beta_=std::asin(initialForce_[1]/initialForce_.length())*(2*M_PI/360);
-	alpha_=std::acos(initialForce_[0]/initialForce_.length())*(2*M_PI/360);
+	//caluculate the direction the Gravitation is aiming at in two angles
+	GLfloat dump;
+	cml::cartesian_to_spherical(initialForce_, dump, beta_, alpha_, 2, cml::SphericalType::colatitude);
 
 	model_ = oogl::loadModel("assets/stardestroyer/stardestroyer.3ds", oogl::Model::LOAD_NORMALIZE_TWO);
 }
@@ -35,8 +35,9 @@ Producer::Producer(cml::vector3f position, ProducerSpecification producerSpecifi
 	else{
 		spreadStrength_ = producerSpecification.spreadStrength;
 	}
-	alpha_=std::asin(initialForce_[0]/initialForce_.length())*(2*M_PI/360);
-	beta_=std::acos(initialForce_[2]/initialForce_.length())*(2*M_PI/360);
+	//caluculate the direction the Gravitation is aiming at in two angles
+	GLfloat dump;
+	cml::cartesian_to_spherical(initialForce_, dump, beta_, alpha_, 2, cml::SphericalType::colatitude);
 
 	model_ = oogl::loadModel("assets/stardestroyer/stardestroyer.3ds", oogl::Model::LOAD_NORMALIZE_TWO);
 }
@@ -73,10 +74,13 @@ void Producer::draw()
 {
 	glPushMatrix();
 		glTranslatef(position_[0], position_[1], position_[2]);
-		glRotated(alpha_,0,1,0);	
-		glRotated(-beta_,1,0,0);
+		//right direction
+		glRotated(alpha_ / (2*M_PI/360), 0, 1, 0);	
+		glRotated(-beta_ / (2*M_PI/360), 1, 0, 0);
+		//model things
 		glRotated(-90,0,1,0);
 		glRotated(-90,1,0,0);
+
 		glScalef(size_*0.5,size_*0.5,size_*0.5);
 		glColor4f(1.0, 1.0, 1.0, 0.0);
 		//glutSolidSphere(size_, 10, 10);
@@ -156,9 +160,9 @@ HudElement* Producer::getHudElement(cml::vector2f size)
 	imageIncSize->setImage("assets/buttonPlus.png");
 	ImageElement* imageDecSize = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
 	imageDecSize->setImage("assets/buttonMinus.png");
-	Button<Producer>* buttonincreaseSize= new Button<Producer>(this, &Producer::increaseMass, cml::vector2f(0.64, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Producer>* buttonincreaseSize= new Button<Producer>(this, &Producer::increaseSize, cml::vector2f(0.64, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseSize->addSubElement(imageIncSize);
-	Button<Producer>* buttondecreaseSize= new Button<Producer>(this, &Producer::decreaseMass, cml::vector2f(0.64, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	Button<Producer>* buttondecreaseSize= new Button<Producer>(this, &Producer::decreaseSize, cml::vector2f(0.64, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseSize->addSubElement(imageDecSize);
 	//Lifetime
 	ImageElement* imageIncLife = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
@@ -285,77 +289,89 @@ void Producer::decreasePosZ()
 void Producer::increaseDirecX()
 {
 	GLfloat lenght= initialForce_.length();
-	alpha_+=10;
-	initialForce_[1]=(std::sin(beta_*(2*M_PI/360))*lenght);
-	initialForce_[2]=std::cos(beta_*(2*M_PI/360))*cos(alpha_*(2*M_PI/360))*lenght;
-	initialForce_[0]=std::cos(beta_*(2*M_PI/360))*sin(alpha_*(2*M_PI/360))*lenght;
+	alpha_ += 10  * (2*M_PI /360);
+	initialForce_[1]=(std::sin(beta_)*lenght);
+	initialForce_[2]=std::cos(beta_)*cos(alpha_)*lenght;
+	initialForce_[0]=std::cos(beta_)*sin(alpha_)*lenght;
 }
 
 void Producer::increaseDirecY()
 {
 	GLfloat lenght= initialForce_.length();
-	beta_+=10;
-	initialForce_[1]=(std::sin(beta_*(2*M_PI/360))*lenght);
-	initialForce_[2]=std::cos(beta_*(2*M_PI/360))*cos(alpha_*(2*M_PI/360))*lenght;
-	initialForce_[0]=std::cos(beta_*(2*M_PI/360))*sin(alpha_*(2*M_PI/360))*lenght;
+	beta_ += 10 * (2*M_PI /360);
+	initialForce_[1]=(std::sin(beta_)*lenght);
+	initialForce_[2]=std::cos(beta_)*cos(alpha_)*lenght;
+	initialForce_[0]=std::cos(beta_)*sin(alpha_)*lenght;
 }
 
 void Producer::decreaseDirecX()
 {
 	GLfloat lenght= initialForce_.length();
-	alpha_-=10;
-	initialForce_[1]=(std::sin(beta_*(2*M_PI/360))*lenght);
-	initialForce_[2]=std::cos(beta_*(2*M_PI/360))*cos(alpha_*(2*M_PI/360))*lenght;
-	initialForce_[0]=std::cos(beta_*(2*M_PI/360))*sin(alpha_*(2*M_PI/360))*lenght;
+	alpha_ -= 10 * (2*M_PI /360);
+	initialForce_[1]=(std::sin(beta_)*lenght);
+	initialForce_[2]=std::cos(beta_)*cos(alpha_)*lenght;
+	initialForce_[0]=std::cos(beta_)*sin(alpha_)*lenght;
 }
 
 void Producer::decreaseDirecY()
 {
 	GLfloat lenght= initialForce_.length();
-	beta_-=10;
-	initialForce_[1]=(std::sin(beta_*(2*M_PI/360))*lenght);
-	initialForce_[2]=std::cos(beta_*(2*M_PI/360))*cos(alpha_*(2*M_PI/360))*lenght;
-	initialForce_[0]=std::cos(beta_*(2*M_PI/360))*sin(alpha_*(2*M_PI/360))*lenght;
+	beta_ -= 10 * (2*M_PI /360);
+	initialForce_[1]=(std::sin(beta_)*lenght);
+	initialForce_[2]=std::cos(beta_)*cos(alpha_)*lenght;
+	initialForce_[0]=std::cos(beta_)*sin(alpha_)*lenght;
 }
 
 void Producer::increaseStrength()
 {
-	initialForce_+=cml::normalize(initialForce_)/125;
+	GLfloat lenght= initialForce_.length() + 0.002;
+	initialForce_[1]=(std::sin(beta_)*lenght);
+	initialForce_[2]=std::cos(beta_)*cos(alpha_)*lenght;
+	initialForce_[0]=std::cos(beta_)*sin(alpha_)*lenght;
 }
 void Producer::decreaseStrength()
 {
-	initialForce_-=cml::normalize(initialForce_)/125;
+	GLfloat lenght;
+	if(initialForce_.length() > 0.002){
+		lenght= initialForce_.length() - 0.002;
+	}
+	else{
+		lenght = 0;
+	}
+	initialForce_[1]=(std::sin(beta_)*lenght);
+	initialForce_[2]=std::cos(beta_)*cos(alpha_)*lenght;
+	initialForce_[0]=std::cos(beta_)*sin(alpha_)*lenght;
 }
 //Particle
 
 void Producer::increaseMass()
 {
-	particleSpecification_.mass+=0.5;
+	particleSpecification_.mass+=0.2;
 }
 void Producer::decreaseMass()
 {
-	if(particleSpecification_.mass>0.5)	{
-		particleSpecification_.mass-=0.5;
+	if(particleSpecification_.mass>0.2)	{
+		particleSpecification_.mass-=0.2;
 	}
 }
 void Producer::increaseSize()
 {
-	particleSpecification_.size+=0.5;
+	particleSpecification_.size+=0.01;
 }
 void Producer::decreaseSize()
 {
-	if(particleSpecification_.size>0.5){	
-		particleSpecification_.size-=0.5;
+	if(particleSpecification_.size>0.02){	
+		particleSpecification_.size-=0.01;
 	}
 }
 void Producer::increaseLifeTime()
 {
-	particleSpecification_.lifetime+=100;
+	particleSpecification_.lifetime+=10;
 }
 void Producer::decreaseLifeTime()
 {
-	if(particleSpecification_.lifetime>100){
-		particleSpecification_.lifetime-=100;
+	if(particleSpecification_.lifetime>=10){
+		particleSpecification_.lifetime-=10;
 	}
 }
 void Producer::changeColor()
