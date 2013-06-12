@@ -34,7 +34,7 @@ InputOutputController::InputOutputController(void)
 	angleY=0;
 	gridRange_=30;
 	clicked=false;
-
+/*
 	//wieder löschen:
 	//button1:
 		//Images::
@@ -57,7 +57,10 @@ InputOutputController::InputOutputController(void)
 	//ende wieder löschen
 	
 	hudElementRight_=hud;
+	hudElementBottom_=0;*/
+
 	hudElementBottom_=0;
+	hudElementRight_ = new HudElement(cml::vector2f(0.9,0.0),cml::vector2f(0.1,0.8),cml::vector4f(0,0.8,0,0.6));
 
 }
 

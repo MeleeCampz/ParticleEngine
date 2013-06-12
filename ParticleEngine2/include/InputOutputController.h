@@ -39,8 +39,6 @@ private:
 
 	GLboolean clicked;
 	GLint currentMousePosX_,currentMousePosY_;
-	//zum wieder löschen
-	HudElement*	hud;
 	void addAffector();
 	void addProducer();
 	void deleteSelectedObj();
