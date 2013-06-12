@@ -95,7 +95,6 @@ void InputOutputController::draw()
 			//glutSolidTeapot(1);	
 			engine_->draw();
 			drawGrid();
-			glDisable(GL_LIGHT0);
 			if(clicked){
 				select3dObject(currentMousePosX_,currentMousePosY_);
 				clicked=false;
@@ -204,7 +203,7 @@ void InputOutputController::initSzeneMaterial()
 {
 	// set material values
 	GLfloat globalAmbient[4] = {0.0, 0.0, 0.0, 1.0};
-    GLfloat ambient[4]       = {0.0, 0.0, 0.0, 1.0};
+    GLfloat ambient[4]       = {0.2, 0.2, 0.2, 1.0};
     GLfloat diffuse[4]       = {1.0, 1.0, 1.0, 1.0};
     GLfloat specular[4]      = {1.0, 1.0, 1.0, 1.0};
     // settings for material
@@ -293,7 +292,7 @@ void InputOutputController::drawGrid()
 {
 	glEnable(GL_BLEND);
 	for(GLint i= -gridRange_; i<=gridRange_;i++){
-		glColor4d(0.0,1.0,0.0,0.6);
+		glColor4d(0.0,1.0,0.0,1);
 		glBegin(GL_LINES);
 			glVertex3i(i,0,gridRange_);
 			glVertex3i(i,0,-gridRange_);
