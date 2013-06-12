@@ -7,27 +7,27 @@ Engine::Engine(void):
 	producers_()
 {
 
-	/*test*/
+	/*test
 	Affector* testAffector = new Gravitation(cml::vector3f(-5.0, 0.0, 0.0), cml::vector3f(0.0, -0.1, 0.0));
 	addAffector(testAffector);
-	/**/
+	*/
 
-	/*test*
+	/*test
 	Affector* testAffector2 = new AttractorLocal(cml::vector3f(-5.0, 3.0, 0.0), 0.01);
 	addAffector(testAffector2);
-	/**/
+	*/
 
 	/*test
 	Affector* testAffector3 = new AttractorLocal(cml::vector3f(5.0, 0.0, 0.0), -0.01);
 	addAffector(testAffector3);
 	*/
 
-	/*test*/
+	/*test
 	Affector* testAffector3 = new Friction(cml::vector3f(5.0, 5.0, 0.0), 0.01);
 	addAffector(testAffector3);
-	/**/
+	*/
 
-	/*test*/
+	/*test
 	Particle::ParticleSpecification particleSpecification;
 	particleSpecification.mass = 1.0;
 	particleSpecification.lifetime = 100;
@@ -41,7 +41,7 @@ Engine::Engine(void):
 
 	Producer* testProducer = new Producer( cml::vector3f(0.0, 0.0, 0.0), producerSpecification, particleSpecification);
 	addProducer(testProducer);
-	/**/
+	*/
 }
 
 

@@ -127,7 +127,7 @@ void Model3ds::render(RenderOptions options) {
 	LOG_DEBUG << "render " << fileName << std::endl;
 
 	//backup set attributes
-	glPushAttrib(GL_ENABLE_BIT | GL_LIGHTING_BIT | GL_POLYGON_BIT | GL_TEXTURE_BIT);
+	glPushAttrib(GL_ENABLE_BIT | GL_LIGHTING_BIT | GL_POLYGON_BIT | GL_TEXTURE_BIT | GL_CURRENT_BIT);
 
 	if(!(options & RENDER_NO_CULL_FACE)) {
 		glEnable( GL_CULL_FACE);
