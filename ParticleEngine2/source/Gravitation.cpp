@@ -6,18 +6,8 @@ Gravitation::Gravitation(cml::vector3f position, cml::vector3f force):
 	force_(force)
 {
 	//caluculate the direction the Gravitation is aiming at in two angles
-	/*if( force.length() != 0 ){
-		beta_ = std::asin( force[1] / force.length() );
-		alpha_ = cml:://std::asin( force[1] / (force.length() * cos(beta_)) );
-	}
-	else{
-		beta_ = 1;
-		alpha_ = 0;
-	}*/
-
 	GLfloat dump;
-
-	cml::cartesian_to_spherical(force, dump, beta_, alpha_, 2, cml::SphericalType::latitude);
+	cml::cartesian_to_spherical(force_, dump, beta_, alpha_, 2, cml::SphericalType::latitude);
 
 
 	model_ = oogl::loadModel("assets/Apple/apple.3ds", oogl::Model::LOAD_NORMALIZE_TWO);
@@ -33,9 +23,12 @@ void Gravitation::draw()
 {
 	glPushMatrix();
 		glTranslatef(position_[0], position_[1], position_[2]);
+		//right direction
 		glRotated(alpha_ / (2*M_PI/360), 0, 1, 0);	
-		glRotated(-beta_ / (2*M_PI/360), 1, 0, 0);	
+		glRotated(-beta_ / (2*M_PI/360), 1, 0, 0);
+		//model things	
 		glScalef(size_*0.5,size_*0.5,size_*0.5);
+
 		glRotated(-90, 1, 0, 0);
 		glColor4f(1.0, 1.0, 1.0, 0.0);
 		//glutSolidSphere(size_, 10, 10);

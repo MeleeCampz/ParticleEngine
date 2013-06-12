@@ -26,6 +26,12 @@ private:
 
 	GLfloat strength_;
 
+	void increasePosX();
+	void decreasePosX();
+	void increasePosY();
+	void decreasePosY();
+	void increasePosZ();
+	void decreasePosZ();
 	void increaseStrength();
 	void decreaseStrength();
 

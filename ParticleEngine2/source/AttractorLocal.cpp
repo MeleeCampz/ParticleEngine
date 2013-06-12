@@ -50,56 +50,64 @@ HudElement* AttractorLocal::getHudElement(cml::vector2f size)
 	hudElement->setPosition(cml::vector2f(0.0,1.0-size[1]));
 
 	ImageElement* hudBG = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
-	hudBG->setImage("assets/hudBG1.png");
-	
+	hudBG->setImage("assets/AttractorBG.png");
+
+	//POS
 	ImageElement* imageincreaseX = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
-	imageincreaseX->setImage("assets/x-.png");
+	imageincreaseX->setImage("assets/buttonMinus.png");
 	ImageElement* imagedecreaseX = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
-	imagedecreaseX->setImage("assets/x+.png");
+	imagedecreaseX->setImage("assets/buttonPlus.png");
 	
 	ImageElement* imageincreaseY = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
-	imageincreaseY->setImage("assets/y-.png");
+	imageincreaseY->setImage("assets/buttonMinus.png");
 	ImageElement* imagedecreaseY = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
-	imagedecreaseY->setImage("assets/y+.png");
+	imagedecreaseY->setImage("assets/buttonPlus.png");
 	
 	ImageElement* imageincreaseZ = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
-	imageincreaseZ->setImage("assets/z-.png");
+	imageincreaseZ->setImage("assets/buttonMinus.png");
 	ImageElement* imagedecreaseZ = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
-	imagedecreaseZ->setImage("assets/z+.png");
+	imagedecreaseZ->setImage("assets/buttonPlus.png");
 
-	ImageElement* imageincreaseS = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
-	imageincreaseS->setImage("assets/s-.png");
-	ImageElement* imagedecreaseS = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
-	imagedecreaseS->setImage("assets/s+.png");
-	
-	Button<AttractorLocal>* buttonIncreaseStrength = new Button<AttractorLocal>(this, &AttractorLocal::increaseStrength, cml::vector2f(0.7, 0.1), cml::vector2f(0.1,0.3), cml::vector4f(0.0, 1.0, 0.0, 0.0));
-	buttonIncreaseStrength->addSubElement(imagedecreaseS);
-	Button<AttractorLocal>* buttonDecreaseStrength = new Button<AttractorLocal>(this, &AttractorLocal::decreaseStrength, cml::vector2f(0.7, 0.6), cml::vector2f(0.1,0.3), cml::vector4f(1.0, 0.0, 0.0, 0.0));
-	buttonDecreaseStrength->addSubElement(imageincreaseS);
+	//Strengh
+	ImageElement* imageincreaseStrength = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
+	imageincreaseStrength->setImage("assets/buttonPlus.png");
+	ImageElement* imagedecreaseStrength = new ImageElement(cml::vector2f(0,0),cml::vector2i(1,1),cml::vector4d(0,0,0,0));
+	imagedecreaseStrength->setImage("assets/buttonMinus.png");
 
-	Button<AttractorLocal>* buttonincreaseX= new Button<AttractorLocal>(this, &AttractorLocal::decreasePosX, cml::vector2f(0.0, 0.4), cml::vector2f(0.1,0.3), cml::vector4f(0.0, 1.0, 0.0, 0.0));
+
+	//Pos
+	Button<AttractorLocal>* buttonincreaseX= new Button<AttractorLocal>(this, &AttractorLocal::decreasePosX, cml::vector2f(0.05, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseX->addSubElement(imageincreaseX);
-	Button<AttractorLocal>* buttondecreaseX= new Button<AttractorLocal>(this, &AttractorLocal::increasePosX, cml::vector2f(0.3, 0.4), cml::vector2f(0.1,0.3), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<AttractorLocal>* buttondecreaseX= new Button<AttractorLocal>(this, &AttractorLocal::increasePosX, cml::vector2f(0.01, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseX->addSubElement(imagedecreaseX);
 
-	Button<AttractorLocal>* buttonincreaseY= new Button<AttractorLocal>(this, &AttractorLocal::decreasePosY, cml::vector2f(0.5, 0.6), cml::vector2f(0.1,0.3), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<AttractorLocal>* buttonincreaseY= new Button<AttractorLocal>(this, &AttractorLocal::decreasePosY, cml::vector2f(0.05, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseY->addSubElement(imageincreaseY);
-	Button<AttractorLocal>* buttondecreaseY= new Button<AttractorLocal>(this, &AttractorLocal::increasePosY, cml::vector2f(0.5, 0.1), cml::vector2f(0.1,0.3), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<AttractorLocal>* buttondecreaseY= new Button<AttractorLocal>(this, &AttractorLocal::increasePosY, cml::vector2f(0.01, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseY->addSubElement(imagedecreaseY);
 
-	Button<AttractorLocal>* buttonincreaseZ= new Button<AttractorLocal>(this, &AttractorLocal::increasePosZ, cml::vector2f(0.15, 0.6), cml::vector2f(0.1,0.3), cml::vector4f(1.0, 0.0, 0.0, 0.0));
+	Button<AttractorLocal>* buttonincreaseZ= new Button<AttractorLocal>(this, &AttractorLocal::increasePosZ, cml::vector2f(0.05, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttonincreaseZ->addSubElement(imageincreaseZ);
-	Button<AttractorLocal>* buttondecreaseZ= new Button<AttractorLocal>(this, &AttractorLocal::decreasePosZ, cml::vector2f(0.15, 0.1), cml::vector2f(0.1,0.3), cml::vector4f(0.0, 1.0, 0.0, 0.0));
+	Button<AttractorLocal>* buttondecreaseZ= new Button<AttractorLocal>(this, &AttractorLocal::decreasePosZ, cml::vector2f(0.01, 0.35), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
 	buttondecreaseZ->addSubElement(imagedecreaseZ);
-	
-	hudElement->addSubElement(buttonIncreaseStrength);
-	hudElement->addSubElement(buttonDecreaseStrength);
+
+	//Strengh
+	Button<AttractorLocal>* buttonincreaseStrength= new Button<AttractorLocal>(this, &AttractorLocal::increaseStrength, cml::vector2f(0.28, 0.1), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	buttonincreaseStrength->addSubElement(imageincreaseStrength);
+	Button<AttractorLocal>* buttondecreaseStrength= new Button<AttractorLocal>(this, &AttractorLocal::decreaseStrength, cml::vector2f(0.28, 0.6), cml::vector2f(0.03,0.15), cml::vector4f(0.4,0.4,0.4,0));
+	buttondecreaseStrength->addSubElement(imagedecreaseStrength);
+
+	//POS
 	hudElement->addSubElement(buttonincreaseX);
 	hudElement->addSubElement(buttondecreaseX);
 	hudElement->addSubElement(buttonincreaseY);
 	hudElement->addSubElement(buttondecreaseY);
 	hudElement->addSubElement(buttonincreaseZ);
 	hudElement->addSubElement(buttondecreaseZ);
+	//STRENGTH
+	hudElement->addSubElement(buttondecreaseStrength);
+	hudElement->addSubElement(buttonincreaseStrength);
+	//BG
 	hudElement->addSubElement(hudBG);
 
 	return hudElement;
